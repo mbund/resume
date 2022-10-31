@@ -1,0 +1,37 @@
+---
+import { Icon } from "astro-icon";
+
+export interface Props {
+    info: string;
+    icon: string;
+    url: string;
+}
+
+const { info, icon, url } = Astro.props;
+---
+
+<a
+    id={`link-button-${info}`}
+    class="ml-8 mb-5 pr-8 relative flex flex-col justify-center group"
+    data-tooltip-target="tooltip-default"
+    href={url}
+>
+    <Icon name={icon} class="absolute -left-11 w-8" />
+    <code
+        class="bg-gray-700 transition group-hover:bg-gray-500 text-gray-200 px-4 py-2 rounded relative flex"
+    >
+        {info}
+    </code>
+    <Icon
+        name="ant-design:link-outlined"
+        class="absolute -right-2 w-8 transition-opacity opacity-0 group-hover:opacity-100"
+    />
+</a>
+
+<!-- <script defer define:vars={{ info, url }}>
+    const linkButton = document.getElementById(`link-button-${info}`);
+    linkButton.addEventListener("click", () => {
+        // window.open(url);
+        window.location.href = url;
+    });
+</script> -->

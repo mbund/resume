@@ -1,0 +1,35 @@
+---
+import CopyItem from "./CopyItem.astro";
+import LinkItem from "./LinkItem.astro";
+import fs from "node:fs/promises";
+
+// TODO: avoid using node builtin fs
+const url = new URL("../../public/mark@mbund.org.asc", import.meta.url);
+const gpgKey: string = await fs.readFile(url, "utf-8");
+---
+
+<div class="bg-gray-200 flex flex-col items-center h-screen justify-center">
+	<h1 class="text-2xl">Where am I?</h1>
+	<div class="py-4"></div>
+
+	<LinkItem
+		icon="ic:outline-email"
+		info="mark@mbund.org"
+		url="mailto:mark@mbund.org"
+	/>
+	<CopyItem
+		icon="akar-icons:key"
+		info="3148D531A1F2F8E1D3D74ABCE66C269DB4CFCC08"
+		copy={gpgKey}
+	/>
+	<!-- <CopyItem icon="cib:matrix" info="" copy="" /> -->
+	<LinkItem
+		icon="bi:git"
+		info="git.mbund.org/mbund"
+		url="https://git.mbund.org/mbund"
+	/>
+	<!-- <CopyItem icon="cib:monero" info="wallet address" copy="" /> -->
+	<div class="py-6"></div>
+	<LinkItem icon="bi:github" info="mbund" url="https://github.com/mbund" />
+	<!-- <CopyItem icon="bi:discord" info="" copy="" /> -->
+</div>
