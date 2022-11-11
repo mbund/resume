@@ -1,14 +1,27 @@
 ---
 import CopyItem from "./CopyItem.astro";
 import LinkItem from "./LinkItem.astro";
-import fs from "node:fs/promises";
 
-// TODO: avoid using node builtin fs
-const url = new URL("../../public/mark@mbund.org.asc", import.meta.url);
-const gpgKey: string = await fs.readFile(url, "utf-8");
+const gpgKey = `
+_____BEGIN PGP PUBLIC KEY BLOCK_____
+
+mDMEY0yXPhYJKwYBBAHaRw8BAQdAiMtK43RPyGZYQfLUJDIKsuuPLFcpeYSLTY4W
+/rYen760H01hcmsgQnVuZHNjaHVoIDxtYXJrQG1idW5kLm9yZz6IkwQTFgoAOxYh
+BDFI1TGh8vjh09dKvOZsJp20z8wIBQJjTJc+AhsDBQsJCAcCAiICBhUKCQgLAgQW
+AgMBAh4HAheAAAoJEOZsJp20z8wI1OwA/04PEXJI6lEdEm5zAxIsoQN/t0s9ohwL
+dEJpPTJ8i4BlAQCG8NGDvV8L2m2Fi6j584VHjECra6lwZwwwDYtUo3n5CLg4BGNM
+lz4SCisGAQQBl1UBBQEBB0CRH5VujFsA6zV9zjqxPrWPOOUPFbYF+f3IB65YI2I/
+XwMBCAeIeAQYFgoAIBYhBDFI1TGh8vjh09dKvOZsJp20z8wIBQJjTJc+AhsMAAoJ
+EOZsJp20z8wIkEcA/jois8rEXzfkMIk3ZPJVBd+aWRl/trpCa3Iae/hbNAgnAP9R
+/0aLxUa8QwoazO+t5edy0AqwcdM4gtZqjW8i/ff5DA==
+=zOcB
+_____END PGP PUBLIC KEY BLOCK_____
+`
+	.trim()
+	.replaceAll("_", "-"); // astro linter gets mad by any three "-" so replace them
 ---
 
-<div class="bg-gray-200 flex flex-col items-center h-screen justify-center">
+<div class="bg-lime-100 flex flex-col items-center h-screen justify-center">
 	<h1 class="text-2xl">Where am I?</h1>
 	<div class="py-4"></div>
 
@@ -29,7 +42,7 @@ const gpgKey: string = await fs.readFile(url, "utf-8");
 		url="https://git.mbund.org/mbund"
 	/>
 	<!-- <CopyItem icon="cib:monero" info="wallet address" copy="" /> -->
-	<div class="py-6"></div>
-	<LinkItem icon="bi:github" info="mbund" url="https://github.com/mbund" />
+	<!-- <div class="py-6"></div> -->
+	<!-- <LinkItem icon="bi:github" info="mbund" url="https://github.com/mbund" /> -->
 	<!-- <CopyItem icon="bi:discord" info="" copy="" /> -->
 </div>
