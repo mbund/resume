@@ -1,0 +1,4 @@
+[devshell]
+packages = [
+  "nodejs-18_x"
+]
