@@ -22,6 +22,8 @@ const t = getLanguage(lang);
   description={t["meta.resume.description"]}
   image="https://mbund.dev/headshot.jpg"
 >
+  {["de"].includes(lang) && <style>@page { size: A4; }</style>}
+  {["en"].includes(lang) && <style>@page { size: Letter; }</style>}
   <div class="m-12">
     <div class="flex mb-3 justify-between">
       <div>

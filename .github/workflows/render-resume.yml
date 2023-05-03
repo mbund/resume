@@ -1,0 +1,43 @@
+name: Render Resume
+
+on:
+  push:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Chromium
+        run: |
+          sudo snap install chromium
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          run_install: true
+
+      - name: Run server and render resumes
+        run: |
+          pnpm preview &
+          chromium --headless --disable-gpu --print-to-pdf=resume-mark-bundschuh-$(date --iso-8601).pdf --no-margins http://localhost:3000/en/resume
+          chromium --headless --disable-gpu --print-to-pdf=lebenslauf-mark-bundschuh-$(date --iso-8601).pdf --no-margins http://localhost:3000/de/resume
+          kill %1
+
+      - name: Get tag name
+        id: tag-name
+        run: |
+          echo "tagname=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+
+      - name: Upload resumes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create ${{ steps.tag-name.outputs.tagname }} -t "Resume" -n "Generated resumes (${{ steps.tag-name.outputs.tagname }})"
+          gh release upload ${{ steps.tag-name.outputs.tagname }} *.pdf
