@@ -2,7 +2,6 @@
 import { Icon } from "astro-icon";
 
 import Layout from "../../layouts/main.astro";
-import Project from "../../components/Project.astro";
 import Skill from "../../components/Skill.astro";
 
 import { languages, getLanguage, type Language } from "../../i18n";
@@ -32,24 +31,24 @@ const t = getLanguage(lang);
 
       <div class="flex">
         <div class="mr-4">
-          <div class="flex items-center justify-end">
+          <a href="https://openstreetmap.org/search?query=Columbus, Ohio" class="flex items-center justify-end">
             <p class="text-base font-medium">Columbus, OH</p>
             <Icon name="mdi:map-marker" class="h-6 ml-1" />
-          </div>
-          <div class="flex items-center justify-end">
+          </a>
+          <a href="mailto:mark@mbund.org" class="flex items-center justify-end">
             <p class="text-base font-medium">mark@mbund.org</p>
             <Icon name="mdi:email" class="h-6 ml-1" />
-          </div>
+          </a>
         </div>
         <div>
-          <div class="flex items-center justify-end">
+          <a href="https://mbund.dev" class="flex items-center justify-end">
             <p class="text-base font-medium">mbund.dev</p>
             <Icon name="ph:globe" class="h-6 ml-1" />
-          </div>
-          <div class="flex items-center justify-end">
+          </a>
+          <a href="https://github.com/mbund" class="flex items-center justify-end">
             <p class="text-base font-medium">mbund</p>
             <Icon name="mdi:github" class="h-6 ml-1" />
-          </div>
+          </a>
         </div>
       </div>
     </div>
@@ -69,44 +68,81 @@ const t = getLanguage(lang);
           <p class="text-lg uppercase text-blue-500 font-mono">
             {t["experience.title"]}
           </p>
-          <Project
-            title="canvas-cli"
-            description={t["personal-project.canvas-cli.description"]}
-          >
-            <Icon name="logos:rust" class="h-5 mr-1" />
-            <p class="text-sm">Rust</p>
-            <Icon name="logos:graphql" class="h-5 mr-1 ml-6" />
-            <p class="text-sm">GraphQL</p>
-          </Project>
 
-          <Project
-            title="cdr"
-            description={t["personal-project.cdr.description"]}
-          >
-            <Icon name="logos:typescript-icon" class="h-5 mr-1" />
-            <p class="text-sm">TypeScript</p>
-            <Icon name="simple-icons:astro" class="h-5 mr-1 ml-6" />
-            <p class="text-sm">Astro</p>
-          </Project>
+          <div class="rounded border-2 flex flex-col p-2 gap-1">
+            <div class="flex justify-between">
+              <a href="https://github.com/mbund/canvas-cli" class="flex items-center">
+                <Icon name="ic:outline-bookmark-border" class="h-6 mr-1" />
+                <p class="text-base font-medium">canvas-cli</p>
+              </a>
+              <div class="flex items-center flex-row justify-end">
+                <a href="https://rust-lang.org" class="flex items-center">
+                  <Icon name="logos:rust" class="h-5 mr-1" />
+                  <p class="text-sm">Rust</p>
+                </a>
+                <span class="ml-6"></span>
+                <a href="https://graphql.org" class="flex items-center">
+                  <Icon name="logos:graphql" class="h-5 mr-1" />
+                  <p class="text-sm">GraphQL</p>
+                </a>
+              </div>
+            </div>
+            <p class="text-sm">{t["personal-project.canvas-cli.description"]}</p>
+          </div>
 
-          <Project
-            title="nix-config"
-            description={t["personal-project.nix-config.description"]}
-          >
-            <Icon name="vscode-icons:file-type-nix" class="h-5 mr-1" />
-            <p class="text-sm">Nix</p>
-          </Project>
+          <div class="rounded border-2 flex flex-col p-2 gap-1">
+            <div class="flex justify-between">
+              <span class="flex items-center">
+                <a href="https://github.com/mbund/cdr" class="flex items-center mr-2">
+                  <Icon name="ic:outline-bookmark-border" class="h-6 mr-1" />
+                  <span class="text-base font-medium">cdr</span>
+                </a>
+                <a class="text-gray-400" href="https://mbund.github.io/cdr">mbund.github.io/cdr</a>
+              </span>
+              <div class="flex items-center flex-row justify-end">
+                <a href="https://typescriptlang.org" class="flex items-center">
+                  <Icon name="logos:typescript-icon" class="h-5 mr-1" />
+                  <p class="text-sm">TypeScript</p>
+                </a>
+                <span class="ml-6"></span>
+                <a href="https://astro.build" class="flex items-center">
+                  <Icon name="simple-icons:astro" class="h-5 mr-1" />
+                  <p class="text-sm">Astro</p>
+                </a>
+              </div>
+            </div>
+            <p class="text-sm">{t["personal-project.cdr.description"]}</p>
+          </div>
+
+          <div class="rounded border-2 flex flex-col p-2 gap-1">
+            <div class="flex justify-between">
+              <a href="https://github.com/mbund/nix-config" class="flex items-center">
+                <Icon name="ic:outline-bookmark-border" class="h-6 mr-1" />
+                <p class="text-base font-medium">nix-config</p>
+              </a>
+              <div class="flex items-center flex-row justify-end">
+                <a href="https://nixos.org" class="flex items-center">
+                  <Icon name="vscode-icons:file-type-nix" class="h-5 mr-1" />
+                  <p class="text-sm">Nix</p>
+                </a>
+              </div>
+            </div>
+            <p class="text-sm">{t["personal-project.nix-config.description"]}</p>
+          </div>
+
         </div>
 
         <ol class="relative border-l border-gray-200">
           <li class="mb-2 ml-6">
-            <span
+            <a
+              href="https://osucyber.club"
               class="absolute flex items-center justify-center w-6 h-6 -left-3 bg-white ring-8 ring-white"
             >
               <img src="/images/osucyber-logo.svg" />
-            </span>
+            </a>
             <h3 class="flex items-center mb-1">
-              {t["experience.vice-president-cyber.header"]}<span
+              <a
+                href="https://osucyber.club">{t["experience.vice-president-cyber.header"]}</a><span
                 class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded ml-3"
                 >{t["experience.present"]}</span
               >
@@ -137,13 +173,14 @@ const t = getLanguage(lang);
             </p>
           </li>
           <li class="mb-2 ml-6">
-            <span
+            <a
+              href="https://insigma.de"
               class="absolute flex items-center justify-center w-6 h-6 bg-white -left-3 ring-8 ring-white"
             >
               <img src="/images/insigma-logo-m.png" />
-            </span>
+            </a>
             <h3 class="mb-1">
-              {t["experience.internship-insigma.header"]}
+              <a href="https://insigma.de">{t["experience.internship-insigma.header"]}</a>
             </h3>
             <time
               class="block mb-2 text-sm font-normal leading-none text-gray-400"
@@ -174,45 +211,51 @@ const t = getLanguage(lang);
             <p class="uppercase font-mono">
               {t["skills.preferred-tech.title"]}
             </p>
-            <Skill icon="logos:typescript-icon">TypeScript</Skill>
-            <Skill icon="logos:react">React</Skill>
-            <Skill icon="logos:nextjs-icon">Next.js</Skill>
-            <Skill icon="simple-icons:astro">Astro</Skill>
-            <Skill icon="logos:prisma">Prisma</Skill>
-            <Skill icon="logos:graphql">GraphQL</Skill>
-            <Skill icon="logos:css-3">CSS</Skill>
-            <Skill icon="logos:tailwindcss-icon">TailwindCSS</Skill>
-            <Skill icon="logos:rust">Rust</Skill>
+            <Skill href="https://typescriptlang.org" icon="logos:typescript-icon">TypeScript</Skill>
+            <Skill href="https://react.dev" icon="logos:react">React</Skill>
+            <Skill href="https://nextjs.org" icon="logos:nextjs-icon">Next.js</Skill>
+            <Skill href="https://astro.build" icon="simple-icons:astro">Astro</Skill>
+            <Skill href="https://prisma.io" icon="logos:prisma">Prisma</Skill>
+            <Skill href="https://graphql.org" icon="logos:graphql">GraphQL</Skill>
+            <Skill href="https://w3.org/Style/CSS/Overview" icon="logos:css-3">CSS</Skill>
+            <Skill href="https://tailwindcss.com/" icon="logos:tailwindcss-icon">TailwindCSS</Skill>
+            <Skill href="https://rust-lang.org" icon="logos:rust">Rust</Skill>
             <Skill icon="logos:c">C</Skill>
-            <Skill icon="vscode-icons:file-type-zig">Zig</Skill>
+            <Skill href="https://ziglang.org" icon="vscode-icons:file-type-zig">Zig</Skill>
           </div>
           <div class="mb-2">
             <p class="uppercase font-mono">{t["skills.familiar-tech.title"]}</p>
             <Skill icon="logos:c-plusplus">C++</Skill>
-            <Skill icon="logos:python">Python</Skill>
-            <Skill icon="logos:c-sharp">C#</Skill>
-            <Skill icon="logos:bash-icon">Bash</Skill>
-            <Skill icon="logos:javascript">JavaScript</Skill>
-            <Skill icon="logos:kotlin">Kotlin</Skill>
+            <Skill href="https://python.org" icon="logos:python">Python</Skill>
+            <Skill href="https://dotnet.microsoft.com/languages/csharp" icon="logos:c-sharp">C#</Skill>
+            <Skill icon="logos:bash-icon">Bash/shells</Skill>
+            <Skill href="https://kotlinlang.org" icon="logos:kotlin">Kotlin</Skill>
           </div>
           <div class="mb-2">
             <p class="uppercase font-mono">
               {t["skills.infrastructure.title"]}
             </p>
-            <Skill icon="logos:debian">Debian</Skill>
-            <Skill icon="logos:ubuntu">Ubuntu</Skill>
-            <Skill icon="logos:fedora">Fedora</Skill>
-            <Skill icon="vscode-icons:file-type-nix">NixOS</Skill>
-            <Skill icon="logos:aws">AWS</Skill>
-            <Skill icon="logos:kubernetes">Kubernetes</Skill>
+            <Skill href="https://debian.org" icon="logos:debian">Debian</Skill>
+            <Skill href="https://ubuntu.com" icon="logos:ubuntu">Ubuntu</Skill>
+            <Skill href="https://fedoraproject.org" icon="logos:fedora">Fedora</Skill>
+            <Skill href="https://nixos.org" icon="vscode-icons:file-type-nix">NixOS</Skill>
+            <Skill href="https://aws.amazon.com" icon="logos:aws">AWS</Skill>
+            <Skill href="https://kubernetes.io/" icon="logos:kubernetes">Kubernetes</Skill>
             <Skill icon="mdi:database">{t["misc.relational-databases"]}</Skill>
           </div>
           <div>
             <p class="uppercase font-mono">{t["skills.tools.title"]}</p>
-            <Skill icon="logos:visual-studio-code">VSCode</Skill>
-            <Skill icon="logos:vim">Vim</Skill>
-            <Skill icon="logos:docker-icon">Docker</Skill>
-            <Skill icon="logos:git-icon">git</Skill>
+            <Skill href="https://code.visualstudio.com" icon="logos:visual-studio-code">VSCode</Skill>
+            <span class="inline-flex items-center mr-2">
+              <a href="https://www.vim.org" class="inline-flex items-center">
+                <Icon name="logos:vim" class="h-5 mr-1" />
+                <span>Vim</span>
+              </a>
+              <span>/</span>
+              <a href="https://neovim.io">neovim</a>
+            </span>
+            <Skill href="https://docker.com" icon="logos:docker-icon">Docker</Skill>
+            <Skill href="https://git-scm.com" icon="logos:git-icon">git</Skill>
           </div>
         </div>
 
