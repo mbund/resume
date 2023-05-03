@@ -1,18 +1,30 @@
 ---
 import Layout from "../layouts/main.astro";
 
-import { getLanguage, type Language } from "../i18n";
+import { getLanguage } from "../i18n";
 
 export function getStaticPaths() {
   return [{ params: { path: undefined } }, { params: { path: "resume" } }];
 }
 
 const t = getLanguage("en");
+
+const path = Astro.params.path as string;
+const meta = {
+  undefined: {
+    title: t["meta.index.title"],
+    description: t["meta.index.description"],
+  },
+  resume: {
+    title: t["meta.resume.title"],
+    description: t["meta.resume.description"],
+  },
+}[path]!;
 ---
 
 <Layout
-  title={t["meta.index.title"]}
-  description={t["meta.index.description"]}
+  title={meta.title}
+  description={meta.description}
   image="https://mbund.dev/images/headshot.jpg"
 >
   <script>

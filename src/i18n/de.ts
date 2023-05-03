@@ -6,7 +6,7 @@ export const de: IncompleteSchema = {
     "Informatikstudent an der Ohio State University. Interessiert an Cybersicherheit, Softwareentwicklung, Serveradministration und Technologie.",
   "misc.resume": "Lebenslauf",
   "meta.index.title": "Mark Bundschuh",
-  "meta.index.description": "Cybersecurity enthusiest and software developer",
+  "meta.index.description": "Softwareentwickler",
   "meta.resume.title": "Lebenslauf von Mark Bundschuh",
   "meta.resume.description":
     "Marks Lebenslauf, gestaltet mit Tailwind (als pdf ausdrucken)",
