@@ -1,22 +1,29 @@
 ---
+import Layout from "../layouts/main.astro";
+
+import { getLanguage, type Language } from "../i18n";
+
 export function getStaticPaths() {
   return [{ params: { path: undefined } }, { params: { path: "resume" } }];
 }
+
+const t = getLanguage("en");
 ---
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <script>
-      import { languages, type Language } from "../i18n";
+<Layout
+  title={t["meta.index.title"]}
+  description={t["meta.index.description"]}
+  image="https://mbund.dev/images/headshot.jpg"
+>
+  <script>
+    import { languages, type Language } from "../i18n";
 
-      const lang = (window.navigator.language || "en").substring(0, 2);
+    const lang = (window.navigator.language || "en").substring(0, 2);
 
-      if (languages.includes(lang as Language)) {
-        window.location.pathname = `/${lang}${window.location.pathname}`;
-      } else {
-        window.location.pathname = `/en${window.location.pathname}`;
-      }
-    </script>
-  </head>
-</html>
+    if (languages.includes(lang as Language)) {
+      window.location.pathname = `/${lang}${window.location.pathname}`;
+    } else {
+      window.location.pathname = `/en${window.location.pathname}`;
+    }
+  </script>
+</Layout>
