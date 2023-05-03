@@ -1,0 +1,2 @@
+*.config.cjs linguist-language=TypeScript
+*.config.mjs linguist-language=TypeScript

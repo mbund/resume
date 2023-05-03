@@ -1,0 +1,62 @@
+---
+import { Icon } from "astro-icon";
+
+import Layout from "../../layouts/main.astro";
+
+import { languages, getLanguage, type Language } from "../../i18n";
+
+export function getStaticPaths() {
+  return languages.map((lang) => {
+    return { params: { lang } };
+  });
+}
+
+const lang = Astro.params.lang as Language;
+const t = getLanguage(lang);
+---
+
+<Layout
+  title={t["meta.index.title"]}
+  description={t["meta.index.description"]}
+  image="https://mbund.dev/headshot.jpg"
+>
+  <div class="flex flex-col items-center h-screen justify-center">
+    <img src="/images/headshot.jpg" class="rounded-full w-48 m-2" />
+    <h1 class="text-4xl mb-8">{t["name"]}</h1>
+
+    <div class="max-w-prose px-6 text-center">
+      {t["about"]}
+    </div>
+
+    <div class="absolute bottom-0 w-full flex justify-center p-4">
+      <a
+        href="https://github.com/mbund"
+        class="hover:underline inline-flex items-center mr-2"
+      >
+        <Icon name="mdi:github" class="h-10 mr-1" />
+        <span class="hidden md:block">GitHub</span>
+      </a>
+      <a
+        href="https://www.linkedin.com/in/mark-bundschuh-18a27a26a"
+        class="hover:underline inline-flex items-center mr-2"
+      >
+        <Icon name="mdi:linkedin" class="h-10 mr-1" />
+        <span class="hidden md:block">LinkedIn</span>
+      </a>
+      <a
+        href="mailto:mark@mbund.org"
+        class="hover:underline inline-flex items-center mr-2"
+      >
+        <Icon name="mdi:email-outline" class="h-10 mr-1" />
+        <span class="hidden md:block">Email</span>
+      </a>
+      <a
+        href={`/${lang}/resume`}
+        class="hover:underline inline-flex items-center mr-2"
+      >
+        <Icon name="mdi:resume" class="h-10 mr-1" />
+        <span class="hidden md:block">{t["misc.resume"]}</span>
+      </a>
+    </div>
+  </div>
+</Layout>

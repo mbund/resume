@@ -1,0 +1,255 @@
+---
+import { Icon } from "astro-icon";
+
+import Layout from "../../layouts/main.astro";
+import Project from "../../components/Project.astro";
+import Skill from "../../components/Skill.astro";
+
+import { languages, getLanguage, type Language } from "../../i18n";
+
+export function getStaticPaths() {
+  return languages.map((lang) => {
+    return { params: { lang } };
+  });
+}
+
+const lang = Astro.params.lang as Language;
+const t = getLanguage(lang);
+---
+
+<Layout
+  title={t["meta.resume.title"]}
+  description={t["meta.resume.description"]}
+  image="https://mbund.dev/headshot.jpg"
+>
+  <div class="m-12">
+    <div class="flex mb-3 justify-between">
+      <div>
+        <p class="text-3xl font-medium">{t["name"]}</p>
+      </div>
+
+      <div class="flex">
+        <div class="mr-4">
+          <div class="flex items-center justify-end">
+            <p class="text-base font-medium">Columbus, OH</p>
+            <Icon name="mdi:map-marker" class="h-6 ml-1" />
+          </div>
+          <div class="flex items-center justify-end">
+            <p class="text-base font-medium">mark@mbund.org</p>
+            <Icon name="mdi:email" class="h-6 ml-1" />
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center justify-end">
+            <p class="text-base font-medium">mbund.dev</p>
+            <Icon name="ph:globe" class="h-6 ml-1" />
+          </div>
+          <div class="flex items-center justify-end">
+            <p class="text-base font-medium">mbund</p>
+            <Icon name="mdi:github" class="h-6 ml-1" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-row gap-3">
+      <div class="basis-3/5">
+        <div class="mb-3">
+          <p class="text-lg uppercase text-blue-500 font-mono">
+            {t["objective.title"]}
+          </p>
+          <p>
+            {t["objective.text"]}
+          </p>
+        </div>
+
+        <div class="flex flex-col gap-2 mb-4">
+          <p class="text-lg uppercase text-blue-500 font-mono">
+            {t["experience.title"]}
+          </p>
+          <Project
+            title="canvas-cli"
+            description={t["personal-project.canvas-cli.description"]}
+          >
+            <Icon name="logos:rust" class="h-5 mr-1" />
+            <p class="text-sm">Rust</p>
+            <Icon name="logos:graphql" class="h-5 mr-1 ml-6" />
+            <p class="text-sm">GraphQL</p>
+          </Project>
+
+          <Project
+            title="cdr"
+            description={t["personal-project.cdr.description"]}
+          >
+            <Icon name="logos:typescript-icon" class="h-5 mr-1" />
+            <p class="text-sm">TypeScript</p>
+            <Icon name="simple-icons:astro" class="h-5 mr-1 ml-6" />
+            <p class="text-sm">Astro</p>
+          </Project>
+
+          <Project
+            title="nix-config"
+            description={t["personal-project.nix-config.description"]}
+          >
+            <Icon name="vscode-icons:file-type-nix" class="h-5 mr-1" />
+            <p class="text-sm">Nix</p>
+          </Project>
+        </div>
+
+        <ol class="relative border-l border-gray-200">
+          <li class="mb-2 ml-6">
+            <span
+              class="absolute flex items-center justify-center w-6 h-6 -left-3 bg-white ring-8 ring-white"
+            >
+              <img src="/images/osucyber-logo.svg" />
+            </span>
+            <h3 class="flex items-center mb-1">
+              {t["experience.vice-president-cyber.header"]}<span
+                class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded ml-3"
+                >{t["experience.present"]}</span
+              >
+            </h3>
+            <time
+              class="block mb-2 text-sm font-normal leading-none text-gray-400"
+              >{t["experience.vice-president-cyber.subheader"]}</time
+            >
+            <p class="mb-4">
+              {t["experience.vice-president-cyber.description"]}
+            </p>
+          </li>
+          <li class="mb-2 ml-6">
+            <span
+              class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white"
+            >
+              <Icon name="mdi:dna" class="text-blue-700 p-1" />
+            </span>
+            <h3 class="mb-1">
+              {t["experience.coauthor-sandcat.header"]}
+            </h3>
+            <time
+              class="block mb-2 text-sm font-normal leading-none text-gray-400"
+              >{t["experience.coauthor-sandcat.subheader"]}</time
+            >
+            <p>
+              {t["experience.coauthor-sandcat.description"]}
+            </p>
+          </li>
+          <li class="mb-2 ml-6">
+            <span
+              class="absolute flex items-center justify-center w-6 h-6 bg-white -left-3 ring-8 ring-white"
+            >
+              <img src="/images/insigma-logo-m.png" />
+            </span>
+            <h3 class="mb-1">
+              {t["experience.internship-insigma.header"]}
+            </h3>
+            <time
+              class="block mb-2 text-sm font-normal leading-none text-gray-400"
+              >{t["experience.internship-insigma.subheader"]}</time
+            >
+            <p>
+              {t["experience.internship-insigma.description"]}
+            </p>
+          </li>
+        </ol>
+      </div>
+
+      <div class="basis-2/5">
+        <div class="mb-3">
+          <p class="text-lg uppercase text-blue-500 font-mono">
+            {t["interests.title"]}
+          </p>
+          <p>
+            {t["interests.description"]}
+          </p>
+        </div>
+
+        <div class="mb-3">
+          <p class="text-lg uppercase text-blue-500 font-mono">
+            {t["skills.title"]}
+          </p>
+          <div class="mb-2">
+            <p class="uppercase font-mono">
+              {t["skills.preferred-tech.title"]}
+            </p>
+            <Skill icon="logos:typescript-icon">TypeScript</Skill>
+            <Skill icon="logos:react">React</Skill>
+            <Skill icon="logos:nextjs-icon">Next.js</Skill>
+            <Skill icon="simple-icons:astro">Astro</Skill>
+            <Skill icon="logos:prisma">Prisma</Skill>
+            <Skill icon="logos:graphql">GraphQL</Skill>
+            <Skill icon="logos:css-3">CSS</Skill>
+            <Skill icon="logos:tailwindcss-icon">TailwindCSS</Skill>
+            <Skill icon="logos:rust">Rust</Skill>
+            <Skill icon="logos:c">C</Skill>
+            <Skill icon="vscode-icons:file-type-zig">Zig</Skill>
+          </div>
+          <div class="mb-2">
+            <p class="uppercase font-mono">{t["skills.familiar-tech.title"]}</p>
+            <Skill icon="logos:c-plusplus">C++</Skill>
+            <Skill icon="logos:python">Python</Skill>
+            <Skill icon="logos:c-sharp">C#</Skill>
+            <Skill icon="logos:bash-icon">Bash</Skill>
+            <Skill icon="logos:javascript">JavaScript</Skill>
+            <Skill icon="logos:kotlin">Kotlin</Skill>
+          </div>
+          <div class="mb-2">
+            <p class="uppercase font-mono">
+              {t["skills.infrastructure.title"]}
+            </p>
+            <Skill icon="logos:debian">Debian</Skill>
+            <Skill icon="logos:ubuntu">Ubuntu</Skill>
+            <Skill icon="logos:fedora">Fedora</Skill>
+            <Skill icon="vscode-icons:file-type-nix">NixOS</Skill>
+            <Skill icon="logos:aws">AWS</Skill>
+            <Skill icon="logos:kubernetes">Kubernetes</Skill>
+            <Skill icon="mdi:database">{t["misc.relational-databases"]}</Skill>
+          </div>
+          <div>
+            <p class="uppercase font-mono">{t["skills.tools.title"]}</p>
+            <Skill icon="logos:visual-studio-code">VSCode</Skill>
+            <Skill icon="logos:vim">Vim</Skill>
+            <Skill icon="logos:docker-icon">Docker</Skill>
+            <Skill icon="logos:git-icon">git</Skill>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <p class="text-lg uppercase text-blue-500 font-mono">
+            {t["languages.title"]}
+          </p>
+          <p>
+            {t["languages.description"]}
+          </p>
+        </div>
+
+        <div class="mb-3">
+          <p class="text-lg uppercase text-blue-500 font-mono">
+            {t["hobbies.title"]}
+          </p>
+          <p>{t["hobbies.description"]}</p>
+        </div>
+
+        <div class="mb-3">
+          <p class="text-lg uppercase text-blue-500 font-mono">
+            {t["education.title"]}
+          </p>
+          <p>{t["education.description"]}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  @page {
+    orientation: portait;
+    margin: 0;
+  }
+
+  @media print {
+    * {
+      print-color-adjust: exact;
+    }
+  }
+</style>
