@@ -25,65 +25,65 @@ const t = getLanguage(lang);
   {["en"].includes(lang) && <style>@page { size: Letter; }</style>}
   <div class="m-12">
     <div class="flex mb-3 justify-between">
-      <div>
-        <p class="text-3xl font-medium">{t["name"]}</p>
-      </div>
+      <section>
+        <h1 class="text-3xl font-medium">{t["name"]}</h1>
+      </section>
 
-      <div class="flex">
+      <address class="flex not-italic">
         <div class="mr-4">
           <a href="https://openstreetmap.org/search?query=Columbus, Ohio" class="flex items-center justify-end">
-            <p class="text-base font-medium">Columbus, OH</p>
+            <span class="text-base font-medium">Columbus, OH</span>
             <Icon name="mdi:map-marker" class="h-6 ml-1" />
           </a>
           <a href="mailto:mark@mbund.org" class="flex items-center justify-end">
-            <p class="text-base font-medium">mark@mbund.org</p>
+            <span class="text-base font-medium">mark@mbund.org</span>
             <Icon name="mdi:email" class="h-6 ml-1" />
           </a>
         </div>
         <div>
           <a href="https://mbund.dev" class="flex items-center justify-end">
-            <p class="text-base font-medium">mbund.dev</p>
+            <span class="text-base font-medium">mbund.dev</span>
             <Icon name="ph:globe" class="h-6 ml-1" />
           </a>
           <a href="https://github.com/mbund" class="flex items-center justify-end">
-            <p class="text-base font-medium">mbund</p>
+            <span class="text-base font-medium">mbund</span>
             <Icon name="mdi:github" class="h-6 ml-1" />
           </a>
         </div>
       </div>
-    </div>
+    </address>
 
     <div class="flex flex-row gap-3">
-      <div class="basis-3/5">
+      <section class="basis-3/5">
         <div class="mb-3">
-          <p class="text-lg uppercase text-blue-500 font-mono">
+          <h1 class="text-lg uppercase text-blue-500 font-mono">
             {t["objective.title"]}
-          </p>
+          </h1>
           <p>
             {t["objective.text"]}
           </p>
         </div>
 
         <div class="flex flex-col gap-2 mb-4">
-          <p class="text-lg uppercase text-blue-500 font-mono">
+          <h1 class="text-lg uppercase text-blue-500 font-mono">
             {t["experience.title"]}
-          </p>
+          </h1>
 
           <div class="rounded border-2 flex flex-col p-2 gap-1">
             <div class="flex justify-between">
               <a href="https://github.com/mbund/canvas-cli" class="flex items-center">
                 <Icon name="ic:outline-bookmark-border" class="h-6 mr-1" />
-                <p class="text-base font-medium">canvas-cli</p>
+                <h2 class="text-base font-medium">canvas-cli</h2>
               </a>
               <div class="flex items-center flex-row justify-end">
                 <a href="https://rust-lang.org" class="flex items-center">
                   <Icon name="logos:rust" class="h-5 mr-1" />
-                  <p class="text-sm">Rust</p>
+                  <span class="text-sm">Rust</span>
                 </a>
                 <span class="ml-2"></span>
                 <a href="https://graphql.org" class="flex items-center">
                   <Icon name="logos:graphql" class="h-5 mr-1" />
-                  <p class="text-sm">GraphQL</p>
+                  <span class="text-sm">GraphQL</span>
                 </a>
               </div>
             </div>
@@ -95,19 +95,19 @@ const t = getLanguage(lang);
               <span class="flex items-center">
                 <a href="https://github.com/mbund/cdr" class="flex items-center mr-1">
                   <Icon name="ic:outline-bookmark-border" class="h-6 mr-1" />
-                  <span class="text-base font-medium">cdr</span>
+                  <h2 class="text-base font-medium">cdr</h2>
                 </a>
                 <a class="text-gray-400" href="https://mbund.github.io/cdr">mbund.github.io/cdr</a>
               </span>
               <div class="flex items-center flex-row justify-end">
                 <a href="https://typescriptlang.org" class="flex items-center">
                   <Icon name="logos:typescript-icon" class="h-5 mr-1" />
-                  <p class="text-sm">TypeScript</p>
+                  <span class="text-sm">TypeScript</span>
                 </a>
                 <span class="ml-2"></span>
                 <a href="https://astro.build" class="flex items-center">
                   <Icon name="simple-icons:astro" class="h-5 mr-1" />
-                  <p class="text-sm">Astro</p>
+                  <span class="text-sm">Astro</span>
                 </a>
               </div>
             </div>
@@ -118,12 +118,12 @@ const t = getLanguage(lang);
             <div class="flex justify-between">
               <a href="https://github.com/mbund/nix-config" class="flex items-center">
                 <Icon name="ic:outline-bookmark-border" class="h-6 mr-1" />
-                <p class="text-base font-medium">nix-config</p>
+                <h2 class="text-base font-medium">nix-config</h2>
               </a>
               <div class="flex items-center flex-row justify-end">
                 <a href="https://nixos.org" class="flex items-center">
                   <Icon name="vscode-icons:file-type-nix" class="h-5 mr-1" />
-                  <p class="text-sm">Nix</p>
+                  <span class="text-sm">Nix</span>
                 </a>
               </div>
             </div>
@@ -140,16 +140,16 @@ const t = getLanguage(lang);
             >
               <img src="/images/osucyber-logo.svg" />
             </a>
-            <h3 class="flex items-center mb-1">
+            <h2 class="flex items-center mb-1">
               <a
                 href="https://osucyber.club">{t["experience.vice-president-cyber.header"]}</a><span
                 class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded ml-3"
                 >{t["experience.present"]}</span
               >
-            </h3>
-            <time
+            </h2>
+            <span
               class="block mb-2 text-sm font-normal leading-none text-gray-400"
-              >{t["experience.vice-president-cyber.subheader"]}</time
+              >{t["experience.vice-president-cyber.subheader"]}</span
             >
             <p class="mb-4">
               {t["experience.vice-president-cyber.description"]}
@@ -161,12 +161,12 @@ const t = getLanguage(lang);
             >
               <Icon name="mdi:dna" class="text-blue-700 p-1" />
             </span>
-            <h3 class="mb-1">
+            <h2 class="mb-1">
               {t["experience.coauthor-sandcat.header"]}
-            </h3>
-            <time
+            </h2>
+            <span
               class="block mb-2 text-sm font-normal leading-none text-gray-400"
-              >{t["experience.coauthor-sandcat.subheader"]}</time
+              >{t["experience.coauthor-sandcat.subheader"]}</span
             >
             <p>
               {t["experience.coauthor-sandcat.description"]}
@@ -179,38 +179,38 @@ const t = getLanguage(lang);
             >
               <img src="/images/insigma-logo-m.png" />
             </a>
-            <h3 class="mb-1">
+            <h2 class="mb-1">
               <a href="https://insigma.de">{t["experience.internship-insigma.header"]}</a>
-            </h3>
-            <time
+            </h2>
+            <span
               class="block mb-2 text-sm font-normal leading-none text-gray-400"
-              >{t["experience.internship-insigma.subheader"]}</time
+              >{t["experience.internship-insigma.subheader"]}</span
             >
             <p>
               {t["experience.internship-insigma.description"]}
             </p>
           </li>
         </ol>
-      </div>
+      </section>
 
-      <div class="basis-2/5">
+      <section class="basis-2/5">
         <div class="mb-3">
-          <p class="text-lg uppercase text-blue-500 font-mono">
+          <h1 class="text-lg uppercase text-blue-500 font-mono">
             {t["interests.title"]}
-          </p>
+          </h1>
           <p>
             {t["interests.description"]}
           </p>
         </div>
 
         <div class="mb-3">
-          <p class="text-lg uppercase text-blue-500 font-mono">
+          <h1 class="text-lg uppercase text-blue-500 font-mono">
             {t["skills.title"]}
-          </p>
+          </h1>
           <div class="mb-2">
-            <p class="uppercase font-mono">
+            <h2 class="uppercase font-mono">
               {t["skills.preferred-tech.title"]}
-            </p>
+            </h2>
             <Skill href="https://typescriptlang.org" icon="logos:typescript-icon">TypeScript</Skill>
             <Skill href="https://react.dev" icon="logos:react">React</Skill>
             <Skill href="https://nextjs.org" icon="logos:nextjs-icon">Next.js</Skill>
@@ -224,7 +224,7 @@ const t = getLanguage(lang);
             <Skill href="https://ziglang.org" icon="vscode-icons:file-type-zig">Zig</Skill>
           </div>
           <div class="mb-2">
-            <p class="uppercase font-mono">{t["skills.familiar-tech.title"]}</p>
+            <h2 class="uppercase font-mono">{t["skills.familiar-tech.title"]}</h2>
             <Skill icon="logos:c-plusplus">C++</Skill>
             <Skill href="https://python.org" icon="logos:python">Python</Skill>
             <Skill href="https://dotnet.microsoft.com/languages/csharp" icon="logos:c-sharp">C#</Skill>
@@ -232,9 +232,9 @@ const t = getLanguage(lang);
             <Skill href="https://kotlinlang.org" icon="logos:kotlin">Kotlin</Skill>
           </div>
           <div class="mb-2">
-            <p class="uppercase font-mono">
+            <h2 class="uppercase font-mono">
               {t["skills.infrastructure.title"]}
-            </p>
+            </h2>
             <Skill href="https://debian.org" icon="logos:debian">Debian</Skill>
             <Skill href="https://ubuntu.com" icon="logos:ubuntu">Ubuntu</Skill>
             <Skill href="https://fedoraproject.org" icon="logos:fedora">Fedora</Skill>
@@ -244,7 +244,7 @@ const t = getLanguage(lang);
             <Skill icon="mdi:database">{t["misc.relational-databases"]}</Skill>
           </div>
           <div>
-            <p class="uppercase font-mono">{t["skills.tools.title"]}</p>
+            <h2 class="uppercase font-mono">{t["skills.tools.title"]}</h2>
             <Skill href="https://code.visualstudio.com" icon="logos:visual-studio-code">VSCode</Skill>
             <span class="inline-flex items-center mr-2">
               <a href="https://www.vim.org" class="inline-flex items-center">
@@ -260,28 +260,28 @@ const t = getLanguage(lang);
         </div>
 
         <div class="mb-3">
-          <p class="text-lg uppercase text-blue-500 font-mono">
+          <h1 class="text-lg uppercase text-blue-500 font-mono">
             {t["languages.title"]}
-          </p>
+          </h1>
           <p>
             {t["languages.description"]}
           </p>
         </div>
 
         <div class="mb-3">
-          <p class="text-lg uppercase text-blue-500 font-mono">
+          <h1 class="text-lg uppercase text-blue-500 font-mono">
             {t["hobbies.title"]}
-          </p>
+          </h1>
           <p>{t["hobbies.description"]}</p>
         </div>
 
         <div class="mb-3">
-          <p class="text-lg uppercase text-blue-500 font-mono">
+          <h1 class="text-lg uppercase text-blue-500 font-mono">
             {t["education.title"]}
-          </p>
+          </h1>
           <p>{t["education.description"]}</p>
         </div>
-      </div>
+      </section>
     </div>
   </div>
 </Layout>
