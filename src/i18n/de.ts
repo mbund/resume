@@ -58,8 +58,7 @@ export const de: Schema = {
 
   "experience.intern-kudu.header": "Kudu Dynamics",
   "experience.intern-kudu.subheader": "Praktikum · Sommerferien 2023",
-  "experience.intern-kudu.description":
-    "Entwicklung an interner statischer Analysetools.",
+  "experience.intern-kudu.description": "Lorem ipsum dolar sit amet.",
 
   "experience.vice-president-cyber.header": "Cybersicherheits Klub bei OSU",
   "experience.vice-president-cyber.subheader":

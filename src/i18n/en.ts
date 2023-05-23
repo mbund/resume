@@ -58,8 +58,7 @@ export const en: Schema = {
 
   "experience.intern-kudu.header": "Kudu Dynamics",
   "experience.intern-kudu.subheader": "Intern · Summer 2023",
-  "experience.intern-kudu.description":
-    "Internal binary analysis tooling development.",
+  "experience.intern-kudu.description": "Lorem ipsum dolar sit amet.",
 
   "experience.vice-president-cyber.header": "Cybersecurity Club at OSU",
   "experience.vice-president-cyber.subheader":
@@ -74,8 +73,7 @@ export const en: Schema = {
     "Assembled genome of an unknown virus which infected sand cats from the zoo in 2020.",
 
   "experience.internship-insigma.header": "INSIGMA IT Engineering GmbH",
-  "experience.internship-insigma.subheader":
-    "Internship · Summer 2021 · Remote",
+  "experience.internship-insigma.subheader": "Intern · Summer 2021 · Remote",
   "experience.internship-insigma.description":
     "Remote internship with a software company. Helped migrate an old website to C# ASP.NET MVC. Communication was done entirely in German.",
 } as const;
