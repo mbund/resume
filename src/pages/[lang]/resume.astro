@@ -16,8 +16,8 @@ const lang = Astro.params.lang as Language;
 const t = getLanguage(lang);
 ---
 
-{["en"].includes(lang) && <style>@import "/src/styles/resume_us.css";</style>}
-{["de"].includes(lang) && <style>@import "/src/styles/resume_eu.css";</style>}
+{["en"].includes(lang) && <style set:html="@page { size: Letter; }" />}
+{["de"].includes(lang) && <style set:html="@page { size: A4; }" />}
 
 <Layout
   title={t["meta.resume.title"]}
