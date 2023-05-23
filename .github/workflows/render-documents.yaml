@@ -24,7 +24,7 @@ jobs:
         run: |
           mkdir -p ~/.local/share/fonts/adobe-fonts/source-code-pro
           git clone --branch release --depth 1 https://github.com/adobe-fonts/source-code-pro ~/.local/share/fonts/adobe-fonts/source-code-pro
-          fc-cache -f -v $FONT_HOME/adobe-fonts/source-code-pro
+          fc-cache -f -v ~/.local/share/fonts/adobe-fonts/source-code-pro
 
       - name: Checkout
         uses: actions/checkout@v3
