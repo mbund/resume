@@ -1,7 +1,13 @@
 name: Deploy to GitHub Pages
 
 on:
+  workflow_dispatch:
   push:
+    branches:
+      - master
+    paths:
+      - src/**
+      - public/**
 
 permissions:
   pages: write
