@@ -9,7 +9,7 @@ interface Props {
 const { icon, href: site } = Astro.props;
 ---
 
-<a href={site} class="inline-flex items-center mr-2">
-  <Icon name={icon} class="h-5 mr-1" />
-  <slot />
+<a href={site} class="inline-flex items-center">
+  <Icon name={icon} class="h-4 mr-1" />
+  <span class="text-sm"><slot /></span>
 </a>

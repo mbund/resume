@@ -66,7 +66,7 @@ const t = getLanguage(lang);
           <h1 class="text-lg uppercase text-blue-500 font-mono">
             {t["objective.title"]}
           </h1>
-          <p>
+          <p class="text-sm">
             {t["objective.text"]}
           </p>
         </div>
@@ -173,7 +173,7 @@ const t = getLanguage(lang);
               class="block mb-2 text-sm font-normal leading-none text-gray-400"
               >{t["experience.intern-kudu.subheader"]}</span
             >
-            <p class="mb-4">
+            <p class="text-sm">
               {t["experience.intern-kudu.description"]}
             </p>
           </li>
@@ -185,18 +185,20 @@ const t = getLanguage(lang);
               <img src="/images/osucyber-logo.svg" />
             </a>
             <h2 class="flex items-center mb-1">
-              <a href="https://osucyber.club"
-                >{t["experience.vice-president-cyber.header"]}</a
-              ><span
+              <a href="https://osucyber.club">
+                {t["experience.vice-president-cyber.header"]}
+              </a>
+              <span
                 class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded ml-3"
-                >{t["experience.present"]}</span
               >
+                {t["experience.present"]}
+              </span>
             </h2>
             <span
               class="block mb-2 text-sm font-normal leading-none text-gray-400"
               >{t["experience.vice-president-cyber.subheader"]}</span
             >
-            <p class="mb-4">
+            <p class="text-sm">
               {t["experience.vice-president-cyber.description"]}
             </p>
           </li>
@@ -213,7 +215,7 @@ const t = getLanguage(lang);
               class="block mb-2 text-sm font-normal leading-none text-gray-400"
               >{t["experience.coauthor-sandcat.subheader"]}</span
             >
-            <p>
+            <p class="text-sm">
               {t["experience.coauthor-sandcat.description"]}
             </p>
           </li>
@@ -233,7 +235,7 @@ const t = getLanguage(lang);
               class="block mb-2 text-sm font-normal leading-none text-gray-400"
               >{t["experience.internship-insigma.subheader"]}</span
             >
-            <p>
+            <p class="text-sm">
               {t["experience.internship-insigma.description"]}
             </p>
           </li>
@@ -245,7 +247,7 @@ const t = getLanguage(lang);
           <h1 class="text-lg uppercase text-blue-500 font-mono">
             {t["interests.title"]}
           </h1>
-          <p>
+          <p class="text-sm">
             {t["interests.description"]}
           </p>
         </div>
@@ -258,90 +260,117 @@ const t = getLanguage(lang);
             <h2 class="uppercase font-mono">
               {t["skills.preferred-tech.title"]}
             </h2>
-            <Skill
-              href="https://typescriptlang.org"
-              icon="logos:typescript-icon"
-            >
-              TypeScript
-            </Skill>
-            <Skill href="https://react.dev" icon="logos:react">React</Skill>
-            <Skill href="https://nextjs.org" icon="logos:nextjs-icon">
-              Next.js
-            </Skill>
-            <Skill href="https://astro.build" icon="simple-icons:astro">
-              Astro
-            </Skill>
-            <Skill href="https://prisma.io" icon="logos:prisma">Prisma</Skill>
-            <Skill href="https://graphql.org" icon="logos:graphql">
-              GraphQL
-            </Skill>
-            <Skill href="https://w3.org/Style/CSS/Overview" icon="logos:css-3">
-              CSS
-            </Skill>
-            <Skill href="https://tailwindcss.com" icon="logos:tailwindcss-icon">
-              TailwindCSS
-            </Skill>
-            <Skill href="https://rust-lang.org" icon="logos:rust">Rust</Skill>
-            <Skill href="https://ziglang.org" icon="vscode-icons:file-type-zig">
-              Zig
-            </Skill>
+            <div class="flex flex-wrap gap-1">
+              <Skill
+                href="https://typescriptlang.org"
+                icon="logos:typescript-icon"
+              >
+                TypeScript
+              </Skill>
+              <Skill href="https://react.dev" icon="logos:react">React</Skill>
+              <Skill href="https://nextjs.org" icon="logos:nextjs-icon">
+                Next.js
+              </Skill>
+              <Skill href="https://astro.build" icon="simple-icons:astro">
+                Astro
+              </Skill>
+              <Skill href="https://prisma.io" icon="logos:prisma">Prisma</Skill>
+              <Skill href="https://graphql.org" icon="logos:graphql">
+                GraphQL
+              </Skill>
+              <Skill
+                href="https://tailwindcss.com"
+                icon="logos:tailwindcss-icon"
+              >
+                TailwindCSS
+              </Skill>
+              <Skill
+                href="https://w3.org/Style/CSS/Overview"
+                icon="logos:css-3"
+              >
+                CSS
+              </Skill>
+              <Skill href="https://rust-lang.org" icon="logos:rust">Rust</Skill>
+              <Skill
+                href="https://ziglang.org"
+                icon="vscode-icons:file-type-zig"
+              >
+                Zig
+              </Skill>
+            </div>
           </div>
           <div class="mb-2">
             <h2 class="uppercase font-mono">
               {t["skills.familiar-tech.title"]}
             </h2>
-            <Skill icon="logos:c">C</Skill>
-            <Skill icon="logos:c-plusplus">C++</Skill>
-            <Skill
-              href="https://dotnet.microsoft.com/languages/csharp"
-              icon="logos:c-sharp"
-            >
-              C#
-            </Skill>
-            <Skill href="https://python.org" icon="logos:python">Python</Skill>
-            <Skill icon="logos:bash-icon">Bash/shells</Skill>
-            <Skill href="https://kotlinlang.org" icon="logos:kotlin">
-              Kotlin
-            </Skill>
+            <div class="flex flex-wrap gap-1">
+              <Skill icon="logos:c">C</Skill>
+              <Skill icon="logos:c-plusplus">C++</Skill>
+              <Skill href="https://python.org" icon="logos:python">
+                Python
+              </Skill>
+              <Skill icon="logos:bash-icon">Bash/shells</Skill>
+              <Skill
+                href="https://dotnet.microsoft.com/languages/csharp"
+                icon="logos:c-sharp"
+              >
+                C#
+              </Skill>
+              <Skill href="https://kotlinlang.org" icon="logos:kotlin">
+                Kotlin
+              </Skill>
+            </div>
           </div>
           <div class="mb-2">
             <h2 class="uppercase font-mono">
               {t["skills.infrastructure.title"]}
             </h2>
-            <Skill href="https://debian.org" icon="logos:debian">Debian</Skill>
-            <Skill href="https://ubuntu.com" icon="logos:ubuntu">Ubuntu</Skill>
-            <Skill href="https://fedoraproject.org" icon="logos:fedora">
-              Fedora
-            </Skill>
-            <Skill href="https://nixos.org" icon="vscode-icons:file-type-nix">
-              NixOS
-            </Skill>
-            <Skill href="https://aws.amazon.com" icon="logos:aws">AWS</Skill>
-            <Skill href="https://kubernetes.io" icon="logos:kubernetes">
-              Kubernetes
-            </Skill>
-            <Skill icon="mdi:database">{t["misc.relational-databases"]}</Skill>
+            <div class="flex flex-wrap gap-1">
+              <Skill href="https://debian.org" icon="logos:debian">
+                Debian
+              </Skill>
+              <Skill href="https://ubuntu.com" icon="logos:ubuntu">
+                Ubuntu
+              </Skill>
+              <Skill href="https://fedoraproject.org" icon="logos:fedora">
+                Fedora
+              </Skill>
+              <Skill href="https://nixos.org" icon="vscode-icons:file-type-nix">
+                NixOS
+              </Skill>
+              <Skill href="https://aws.amazon.com" icon="logos:aws">AWS</Skill>
+              <Skill href="https://kubernetes.io" icon="logos:kubernetes">
+                Kubernetes
+              </Skill>
+              <Skill icon="mdi:database">
+                {t["misc.relational-databases"]}
+              </Skill>
+            </div>
           </div>
           <div>
             <h2 class="uppercase font-mono">{t["skills.tools.title"]}</h2>
-            <Skill
-              href="https://code.visualstudio.com"
-              icon="logos:visual-studio-code"
-            >
-              VSCode
-            </Skill>
-            <span class="inline-flex items-center mr-2">
-              <a href="https://www.vim.org" class="inline-flex items-center">
-                <Icon name="logos:vim" class="h-5 mr-1" />
-                <span>Vim</span>
-              </a>
-              <span>/</span>
-              <a href="https://neovim.io">neovim</a>
-            </span>
-            <Skill href="https://docker.com" icon="logos:docker-icon">
-              Docker
-            </Skill>
-            <Skill href="https://git-scm.com" icon="logos:git-icon">git</Skill>
+            <div class="flex flex-wrap gap-1">
+              <Skill
+                href="https://code.visualstudio.com"
+                icon="logos:visual-studio-code"
+              >
+                VSCode
+              </Skill>
+              <span class="inline-flex items-center mr-1 text-sm">
+                <a href="https://www.vim.org" class="inline-flex items-center">
+                  <Icon name="logos:vim" class="h-4 mr-1" />
+                  <span>Vim</span>
+                </a>
+                <span>/</span>
+                <a href="https://neovim.io">neovim</a>
+              </span>
+              <Skill href="https://docker.com" icon="logos:docker-icon">
+                Docker
+              </Skill>
+              <Skill href="https://git-scm.com" icon="logos:git-icon">
+                git
+              </Skill>
+            </div>
           </div>
         </div>
 
@@ -349,7 +378,7 @@ const t = getLanguage(lang);
           <h1 class="text-lg uppercase text-blue-500 font-mono">
             {t["languages.title"]}
           </h1>
-          <p>
+          <p class="text-sm">
             {t["languages.description"]}
           </p>
         </div>
@@ -358,14 +387,14 @@ const t = getLanguage(lang);
           <h1 class="text-lg uppercase text-blue-500 font-mono">
             {t["hobbies.title"]}
           </h1>
-          <p>{t["hobbies.description"]}</p>
+          <p class="text-sm">{t["hobbies.description"]}</p>
         </div>
 
         <div class="mb-3">
           <h1 class="text-lg uppercase text-blue-500 font-mono">
             {t["education.title"]}
           </h1>
-          <p>{t["education.description"]}</p>
+          <p class="text-sm">{t["education.description"]}</p>
         </div>
       </section>
     </div>
