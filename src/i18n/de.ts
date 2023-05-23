@@ -1,27 +1,36 @@
-import type { IncompleteSchema } from ".";
+import type { Schema } from ".";
 
-export const de: IncompleteSchema = {
+export const de: Schema = {
   name: "Mark Bundschuh",
   about:
     "Informatikstudent an der Ohio State University. Interessiert an Cybersicherheit, Softwareentwicklung, Serveradministration und Technologie.",
-  "misc.resume": "Lebenslauf",
   "meta.index.title": "Mark Bundschuh",
   "meta.index.description": "Softwareentwickler",
   "meta.resume.title": "Lebenslauf von Mark Bundschuh",
   "meta.resume.description":
     "Marks Lebenslauf, gestaltet mit Tailwind (als pdf ausdrucken)",
+  "meta.card.front.title": "Visitenkarte von Mark Bundschuh (Vorderseite)",
+  "meta.card.back.title": "Visitenkarte von Mark Bundschuh (Rückseite)",
+  "meta.card.description":
+    "Marks Visitenkarte, gestaltet mit Tailwind (als pdf ausdrucken)",
+
+  "misc.resume": "Lebenslauf",
+  "misc.relational-databases": "Relationale Datenbanken",
+  "misc.phone": "[redacted]",
+
+  "card.profression": "Softwareentwickler",
 
   "objective.title": "Zielsetzung",
-  "objective.text": "Praktikumsmöglichkeit für den Sommer 2023.",
+  "objective.text": "Praktikumsmöglichkeit für den Sommer 2024.",
 
   "personal-project.canvas-cli.description":
     "Benutz die Canvas API um Dateien auf Canvas hochzuladen und mehr",
 
   "personal-project.cdr.description":
-    "Klassenabhängigkeiten visualisieren an der OSU",
+    "Löst der Graph der Klassenvoraussetzungen an der OSU und erstellt ein interaktives Diagramm",
 
-  "personal-project.nix-config.description":
-    "Meine NixOS und home-manager Konfiguration, die ich für meine tägliche Arbeit verwende",
+  "personal-project.homelab.description":
+    "Homelab Kubernetes-Cluster, der viele Apps wie Nextcloud, Searxng, Gitea und mehr hostet",
 
   "interests.title": "Leidenschaften",
   "interests.description":
@@ -32,7 +41,6 @@ export const de: IncompleteSchema = {
   "skills.familiar-tech.title": "Bekannte Technologien",
   "skills.infrastructure.title": "Infrastruktur",
   "skills.tools.title": "Werkzeuge",
-  "misc.relational-databases": "Relationale Datenbanken",
 
   "languages.title": "Sprachen",
   "languages.description": "Zweisprachig, Deutsch und Englisch",
@@ -47,6 +55,11 @@ export const de: IncompleteSchema = {
 
   "experience.title": "Erfahrung",
   "experience.present": "Jetzt",
+
+  "experience.intern-kudu.header": "Kudu Dynamics",
+  "experience.intern-kudu.subheader": "Praktikum · Sommerferien 2023",
+  "experience.intern-kudu.description":
+    "Entwicklung an interner statischer Analysetools.",
 
   "experience.vice-president-cyber.header": "Cybersicherheits Klub bei OSU",
   "experience.vice-president-cyber.subheader":

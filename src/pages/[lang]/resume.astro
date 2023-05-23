@@ -16,13 +16,14 @@ const lang = Astro.params.lang as Language;
 const t = getLanguage(lang);
 ---
 
+{["en"].includes(lang) && <style>@import "/src/styles/resume_us.css";</style>}
+{["de"].includes(lang) && <style>@import "/src/styles/resume_eu.css";</style>}
+
 <Layout
   title={t["meta.resume.title"]}
   description={t["meta.resume.description"]}
   image="https://mbund.dev/images/headshot.jpg"
 >
-  {["de"].includes(lang) && <style>@page { size: A4; }</style>}
-  {["en"].includes(lang) && <style>@page { size: Letter; }</style>}
   <div class="m-12">
     <div class="flex mb-3 justify-between">
       <section>
@@ -31,12 +32,18 @@ const t = getLanguage(lang);
 
       <address class="flex not-italic">
         <div class="mr-4">
-          <a href="https://openstreetmap.org/search?query=Columbus, Ohio" class="flex items-center justify-end">
+          <a
+            href="https://openstreetmap.org/search?query=Columbus, Ohio"
+            class="flex items-center justify-end"
+          >
             <span class="text-base font-medium">Columbus, OH</span>
             <Icon name="mdi:map-marker" class="h-6 ml-1" />
           </a>
-          <a href="mailto:mark@mbund.org" class="flex items-center justify-end">
-            <span class="text-base font-medium">mark@mbund.org</span>
+          <a
+            href="mailto:bundschuhmark@gmail.com"
+            class="flex items-center justify-end"
+          >
+            <span class="text-base font-medium">bundschuhmark@gmail.com</span>
             <Icon name="mdi:email" class="h-6 ml-1" />
           </a>
         </div>
@@ -45,13 +52,16 @@ const t = getLanguage(lang);
             <span class="text-base font-medium">mbund.dev</span>
             <Icon name="ph:globe" class="h-6 ml-1" />
           </a>
-          <a href="https://github.com/mbund" class="flex items-center justify-end">
+          <a
+            href="https://github.com/mbund"
+            class="flex items-center justify-end"
+          >
             <span class="text-base font-medium">mbund</span>
             <Icon name="mdi:github" class="h-6 ml-1" />
           </a>
         </div>
-      </div>
-    </address>
+      </address>
+    </div>
 
     <div class="flex flex-row gap-3">
       <section class="basis-3/5">
@@ -71,7 +81,10 @@ const t = getLanguage(lang);
 
           <div class="rounded border-2 flex flex-col p-2 gap-1">
             <div class="flex justify-between">
-              <a href="https://github.com/mbund/canvas-cli" class="flex items-center">
+              <a
+                href="https://github.com/mbund/canvas-cli"
+                class="flex items-center"
+              >
                 <Icon name="ic:outline-bookmark-border" class="h-6 mr-1" />
                 <h2 class="text-base font-medium">canvas-cli</h2>
               </a>
@@ -87,17 +100,24 @@ const t = getLanguage(lang);
                 </a>
               </div>
             </div>
-            <p class="text-sm">{t["personal-project.canvas-cli.description"]}</p>
+            <p class="text-sm">
+              {t["personal-project.canvas-cli.description"]}
+            </p>
           </div>
 
           <div class="rounded border-2 flex flex-col p-2 gap-1">
             <div class="flex justify-between">
               <span class="flex items-center">
-                <a href="https://github.com/mbund/cdr" class="flex items-center mr-1">
+                <a
+                  href="https://github.com/mbund/cdr"
+                  class="flex items-center mr-1"
+                >
                   <Icon name="ic:outline-bookmark-border" class="h-6 mr-1" />
                   <h2 class="text-base font-medium">cdr</h2>
                 </a>
-                <a class="text-gray-400" href="https://mbund.github.io/cdr">mbund.github.io/cdr</a>
+                <a class="text-gray-400" href="https://mbund.github.io/cdr"
+                  >mbund.github.io/cdr</a
+                >
               </span>
               <div class="flex items-center flex-row justify-end">
                 <a href="https://typescriptlang.org" class="flex items-center">
@@ -116,23 +136,50 @@ const t = getLanguage(lang);
 
           <div class="rounded border-2 flex flex-col p-2 gap-1">
             <div class="flex justify-between">
-              <a href="https://github.com/mbund/nix-config" class="flex items-center">
-                <Icon name="ic:outline-bookmark-border" class="h-6 mr-1" />
-                <h2 class="text-base font-medium">nix-config</h2>
-              </a>
+              <span class="flex items-center">
+                <a
+                  href="https://github.com/mbund/homelab"
+                  class="flex items-center mr-1"
+                >
+                  <Icon name="ic:outline-bookmark-border" class="h-6 mr-1" />
+                  <h2 class="text-base font-medium">homelab</h2>
+                </a>
+                <a class="text-gray-400" href="https://mbund.github.io/homelab"
+                  >mbund.github.io/homelab</a
+                >
+              </span>
               <div class="flex items-center flex-row justify-end">
-                <a href="https://nixos.org" class="flex items-center">
-                  <Icon name="vscode-icons:file-type-nix" class="h-5 mr-1" />
-                  <span class="text-sm">Nix</span>
+                <a href="https://kubernetes.io" class="flex items-center">
+                  <Icon name="logos:kubernetes" class="h-5 mr-1" />
+                  <span class="text-sm">Kubernetes</span>
                 </a>
               </div>
             </div>
-            <p class="text-sm">{t["personal-project.nix-config.description"]}</p>
+            <p class="text-sm">{t["personal-project.homelab.description"]}</p>
           </div>
-
         </div>
 
         <ol class="relative border-l border-gray-200">
+          <li class="mb-2 ml-6">
+            <a
+              href="https://kududyn.com"
+              class="absolute flex items-center justify-center w-6 h-6 -left-3 bg-white ring-8 ring-white"
+            >
+              <img src="/images/kudu-dynamics.svg" />
+            </a>
+            <h2 class="flex items-center mb-1">
+              <a href="https://kududyn.com"
+                >{t["experience.intern-kudu.header"]}</a
+              >
+            </h2>
+            <span
+              class="block mb-2 text-sm font-normal leading-none text-gray-400"
+              >{t["experience.intern-kudu.subheader"]}</span
+            >
+            <p class="mb-4">
+              {t["experience.intern-kudu.description"]}
+            </p>
+          </li>
           <li class="mb-2 ml-6">
             <a
               href="https://osucyber.club"
@@ -141,8 +188,9 @@ const t = getLanguage(lang);
               <img src="/images/osucyber-logo.svg" />
             </a>
             <h2 class="flex items-center mb-1">
-              <a
-                href="https://osucyber.club">{t["experience.vice-president-cyber.header"]}</a><span
+              <a href="https://osucyber.club"
+                >{t["experience.vice-president-cyber.header"]}</a
+              ><span
                 class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded ml-3"
                 >{t["experience.present"]}</span
               >
@@ -180,7 +228,9 @@ const t = getLanguage(lang);
               <img src="/images/insigma-logo-m.png" />
             </a>
             <h2 class="mb-1">
-              <a href="https://insigma.de">{t["experience.internship-insigma.header"]}</a>
+              <a href="https://insigma.de"
+                >{t["experience.internship-insigma.header"]}</a
+              >
             </h2>
             <span
               class="block mb-2 text-sm font-normal leading-none text-gray-400"
@@ -211,25 +261,51 @@ const t = getLanguage(lang);
             <h2 class="uppercase font-mono">
               {t["skills.preferred-tech.title"]}
             </h2>
-            <Skill href="https://typescriptlang.org" icon="logos:typescript-icon">TypeScript</Skill>
+            <Skill
+              href="https://typescriptlang.org"
+              icon="logos:typescript-icon"
+            >
+              TypeScript
+            </Skill>
             <Skill href="https://react.dev" icon="logos:react">React</Skill>
-            <Skill href="https://nextjs.org" icon="logos:nextjs-icon">Next.js</Skill>
-            <Skill href="https://astro.build" icon="simple-icons:astro">Astro</Skill>
+            <Skill href="https://nextjs.org" icon="logos:nextjs-icon">
+              Next.js
+            </Skill>
+            <Skill href="https://astro.build" icon="simple-icons:astro">
+              Astro
+            </Skill>
             <Skill href="https://prisma.io" icon="logos:prisma">Prisma</Skill>
-            <Skill href="https://graphql.org" icon="logos:graphql">GraphQL</Skill>
-            <Skill href="https://w3.org/Style/CSS/Overview" icon="logos:css-3">CSS</Skill>
-            <Skill href="https://tailwindcss.com/" icon="logos:tailwindcss-icon">TailwindCSS</Skill>
+            <Skill href="https://graphql.org" icon="logos:graphql">
+              GraphQL
+            </Skill>
+            <Skill href="https://w3.org/Style/CSS/Overview" icon="logos:css-3">
+              CSS
+            </Skill>
+            <Skill href="https://tailwindcss.com" icon="logos:tailwindcss-icon">
+              TailwindCSS
+            </Skill>
             <Skill href="https://rust-lang.org" icon="logos:rust">Rust</Skill>
-            <Skill icon="logos:c">C</Skill>
-            <Skill href="https://ziglang.org" icon="vscode-icons:file-type-zig">Zig</Skill>
+            <Skill href="https://ziglang.org" icon="vscode-icons:file-type-zig">
+              Zig
+            </Skill>
           </div>
           <div class="mb-2">
-            <h2 class="uppercase font-mono">{t["skills.familiar-tech.title"]}</h2>
+            <h2 class="uppercase font-mono">
+              {t["skills.familiar-tech.title"]}
+            </h2>
+            <Skill icon="logos:c">C</Skill>
             <Skill icon="logos:c-plusplus">C++</Skill>
+            <Skill
+              href="https://dotnet.microsoft.com/languages/csharp"
+              icon="logos:c-sharp"
+            >
+              C#
+            </Skill>
             <Skill href="https://python.org" icon="logos:python">Python</Skill>
-            <Skill href="https://dotnet.microsoft.com/languages/csharp" icon="logos:c-sharp">C#</Skill>
             <Skill icon="logos:bash-icon">Bash/shells</Skill>
-            <Skill href="https://kotlinlang.org" icon="logos:kotlin">Kotlin</Skill>
+            <Skill href="https://kotlinlang.org" icon="logos:kotlin">
+              Kotlin
+            </Skill>
           </div>
           <div class="mb-2">
             <h2 class="uppercase font-mono">
@@ -237,15 +313,26 @@ const t = getLanguage(lang);
             </h2>
             <Skill href="https://debian.org" icon="logos:debian">Debian</Skill>
             <Skill href="https://ubuntu.com" icon="logos:ubuntu">Ubuntu</Skill>
-            <Skill href="https://fedoraproject.org" icon="logos:fedora">Fedora</Skill>
-            <Skill href="https://nixos.org" icon="vscode-icons:file-type-nix">NixOS</Skill>
+            <Skill href="https://fedoraproject.org" icon="logos:fedora">
+              Fedora
+            </Skill>
+            <Skill href="https://nixos.org" icon="vscode-icons:file-type-nix">
+              NixOS
+            </Skill>
             <Skill href="https://aws.amazon.com" icon="logos:aws">AWS</Skill>
-            <Skill href="https://kubernetes.io/" icon="logos:kubernetes">Kubernetes</Skill>
+            <Skill href="https://kubernetes.io" icon="logos:kubernetes">
+              Kubernetes
+            </Skill>
             <Skill icon="mdi:database">{t["misc.relational-databases"]}</Skill>
           </div>
           <div>
             <h2 class="uppercase font-mono">{t["skills.tools.title"]}</h2>
-            <Skill href="https://code.visualstudio.com" icon="logos:visual-studio-code">VSCode</Skill>
+            <Skill
+              href="https://code.visualstudio.com"
+              icon="logos:visual-studio-code"
+            >
+              VSCode
+            </Skill>
             <span class="inline-flex items-center mr-2">
               <a href="https://www.vim.org" class="inline-flex items-center">
                 <Icon name="logos:vim" class="h-5 mr-1" />
@@ -254,7 +341,9 @@ const t = getLanguage(lang);
               <span>/</span>
               <a href="https://neovim.io">neovim</a>
             </span>
-            <Skill href="https://docker.com" icon="logos:docker-icon">Docker</Skill>
+            <Skill href="https://docker.com" icon="logos:docker-icon">
+              Docker
+            </Skill>
             <Skill href="https://git-scm.com" icon="logos:git-icon">git</Skill>
           </div>
         </div>

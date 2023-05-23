@@ -1,0 +1,13 @@
+---
+import { languages, type Language } from "../../../i18n";
+
+export function getStaticPaths() {
+  return languages.map((lang) => {
+    return { params: { lang } };
+  });
+}
+
+const lang = Astro.params.lang as Language;
+---
+
+<meta http-equiv="refresh" content=`0;url=/${lang}/card/front` />

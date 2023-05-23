@@ -7,17 +7,25 @@ export type Language = (typeof languages)[number];
 export type Schema = {
   name: string;
   about: string;
-  "misc.resume": string;
   "meta.index.title": string;
   "meta.index.description": string;
   "meta.resume.title": string;
   "meta.resume.description": string;
+  "meta.card.front.title": string;
+  "meta.card.back.title": string;
+  "meta.card.description": string;
+
+  "misc.resume": string;
+  "misc.relational-databases": string;
+  "misc.phone": string;
+
+  "card.profression": string;
 
   "objective.title": string;
   "objective.text": string;
   "personal-project.canvas-cli.description": string;
   "personal-project.cdr.description": string;
-  "personal-project.nix-config.description": string;
+  "personal-project.homelab.description": string;
   "interests.title": string;
   "interests.description": string;
   "skills.title": string;
@@ -25,7 +33,6 @@ export type Schema = {
   "skills.familiar-tech.title": string;
   "skills.infrastructure.title": string;
   "skills.tools.title": string;
-  "misc.relational-databases": string;
   "languages.title": string;
   "languages.description": string;
   "education.title": string;
@@ -34,6 +41,9 @@ export type Schema = {
   "hobbies.description": string;
   "experience.title": string;
   "experience.present": string;
+  "experience.intern-kudu.header": string;
+  "experience.intern-kudu.subheader": string;
+  "experience.intern-kudu.description": string;
   "experience.vice-president-cyber.header": string;
   "experience.vice-president-cyber.subheader": string;
   "experience.vice-president-cyber.description": string;

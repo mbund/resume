@@ -1,7 +1,13 @@
-name: Render resumes
+name: Render Documents
 
 on:
+  workflow_dispatch:
   push:
+    branches:
+      - main
+    paths:
+      - src/pages/[lang]/resume.astro
+      - src/pages/[lang]/card/**
 
 permissions:
   contents: write
@@ -27,12 +33,16 @@ jobs:
         run: |
           pnpm build
 
-      - name: Run server and render resumes
+      - name: Run server and render documents
         run: |
           pnpm preview &
           sleep 10
           chromium --headless --disable-gpu --print-to-pdf=resume-mark-bundschuh-$(date --iso-8601).pdf --no-margins http://localhost:3000/en/resume
+          chromium --headless --disable-gpu --print-to-pdf=business-card-front-mark-bundschuh-$(date --iso-8601).pdf --no-margins http://localhost:3000/en/card/front
+          chromium --headless --disable-gpu --print-to-pdf=business-card-back-mark-bundschuh-$(date --iso-8601).pdf --no-margins http://localhost:3000/en/card/back
           chromium --headless --disable-gpu --print-to-pdf=lebenslauf-mark-bundschuh-$(date --iso-8601).pdf --no-margins http://localhost:3000/de/resume
+          chromium --headless --disable-gpu --print-to-pdf=visitenkarte-vorderseite-mark-bundschuh-$(date --iso-8601).pdf --no-margins http://localhost:3000/de/card/front
+          chromium --headless --disable-gpu --print-to-pdf=visitenkarte-rueckseite-mark-bundschuh-$(date --iso-8601).pdf --no-margins http://localhost:3000/de/card/back
           kill %1
 
       - name: Get tag name
@@ -40,10 +50,9 @@ jobs:
         run: |
           echo "tagname=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
 
-      - name: Upload resumes
-        if: "contains(github.event.head_commit.message, '[resume]')"
+      - name: Upload documents
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create ${{ steps.tag-name.outputs.tagname }} -t "Resume" -n "Generated resumes (${{ steps.tag-name.outputs.tagname }})"
+          gh release create ${{ steps.tag-name.outputs.tagname }} -t "Documents" -n "Generated documents (${{ steps.tag-name.outputs.tagname }})"
           gh release upload ${{ steps.tag-name.outputs.tagname }} *.pdf

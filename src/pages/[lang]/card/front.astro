@@ -1,0 +1,93 @@
+---
+import { Icon } from "astro-icon";
+
+import Layout from "../../../layouts/main.astro";
+
+import { languages, getLanguage, type Language } from "../../../i18n";
+
+export function getStaticPaths() {
+  return languages.map((lang) => {
+    return { params: { lang } };
+  });
+}
+
+const lang = Astro.params.lang as Language;
+const t = getLanguage(lang);
+---
+
+{["en"].includes(lang) && <style>@import "/src/styles/card_us.css";</style>}
+{["de"].includes(lang) && <style>@import "/src/styles/card_eu.css";</style>}
+
+<Layout
+  title={t["meta.card.front.title"]}
+  description={t["meta.card.description"]}
+  image="https://mbund.dev/images/headshot.jpg"
+>
+  <div
+    class="content flex flex-col justify-between absolute top-0 bottom-0 left-0 right-0 m-6"
+  >
+    <div>
+      <div class="text-xl font-medium text-rose-950">{t["name"]}</div>
+      <div class="uppercase text-xs font-medium text-rose-950">
+        {t["card.profression"]}
+      </div>
+    </div>
+    <div class="flex justify-between items-end">
+      <div>
+        <a
+          href="mailto:bundschuhmark@gmail.com"
+          class="flex items-center text-rose-950"
+        >
+          <Icon name="mdi:email" class="h-4 mr-1" />
+          <span class="text-xs font-medium">bundschuhmark@gmail.com</span>
+        </a>
+        <a href="tel:[redacted]" class="flex items-center text-rose-950">
+          <Icon name="mdi:phone" class="h-4 mr-1" />
+          <span class="text-xs font-medium">{t["misc.phone"]}</span>
+        </a>
+        <a href="https://mbund.dev" class="flex items-center text-rose-950">
+          <Icon name="ph:globe" class="h-4 mr-1" />
+          <span class="text-xs font-medium">mbund.dev</span>
+        </a>
+      </div>
+      <div>
+        <a
+          href="https://openstreetmap.org/search?query=Columbus, Ohio"
+          class="flex items-center text-rose-600"
+        >
+          <span class="text-xs font-medium uppercase">Columbus, OH</span>
+          <Icon name="mdi:map-marker" class="h-4 ml-1" />
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="slice"></div>
+</Layout>
+
+<style>
+  @page {
+    orientation: landscape;
+    margin: 0;
+  }
+
+  @media print {
+    * {
+      print-color-adjust: exact;
+    }
+  }
+
+  .slice {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    @apply bg-gradient-to-r from-orange-600 to-rose-600;
+    clip-path: polygon(0 0, 100% 0, 50% 100%, 0 100%);
+  }
+
+  body {
+    font-family: "Source Code Pro";
+  }
+</style>
