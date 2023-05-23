@@ -4,10 +4,10 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - main
+      - master
     paths:
-      - src/pages/[lang]/resume.astro
-      - src/pages/[lang]/card/**
+      - src/**
+      - public/**
 
 permissions:
   contents: write
