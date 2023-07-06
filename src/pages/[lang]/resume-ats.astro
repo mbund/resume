@@ -1,0 +1,252 @@
+---
+import Layout from "../../layouts/main.astro";
+
+import {
+  languages,
+  getLanguage,
+  skills,
+  type Language,
+  type SkillMeta,
+} from "../../i18n";
+
+export function getStaticPaths() {
+  return languages.map((lang) => {
+    return { params: { lang } };
+  });
+}
+
+const lang = Astro.params.lang as Language;
+const t = getLanguage(lang);
+
+// const x: SkillMeta[] = [skills.];
+---
+
+{["en"].includes(lang) && <style set:html="@page { size: Letter; }" />}
+{["de"].includes(lang) && <style set:html="@page { size: A4; }" />}
+
+<Layout
+  title={t["meta.resume.title"]}
+  description={t["meta.resume.description"]}
+  image="https://mbund.dev/images/headshot.jpg"
+>
+  <div class="m-12">
+    <div class="flex flex-col items-center">
+      <h1 class="text-3xl font-medium">{t["name"]}</h1>
+
+      <span class="text-base font-medium">
+        <a href="https://openstreetmap.org/search?query=Columbus, Ohio">
+          Columbus, OH
+        </a>
+        ·
+        <a href="mailto:mark@mbund.org">mark@mbund.org</a>
+        ·
+        <a href="https://github.com/mbund">https://github.com/mbund</a>
+      </span>
+    </div>
+
+    <div>
+      <h1 class="text-lg uppercase text-blue-500 font-mono">
+        {t["objective.title"]}
+      </h1>
+      <p class="text-sm">
+        {t["objective.text"]}
+      </p>
+    </div>
+
+    <div>
+      <h1 class="text-lg uppercase text-blue-500 font-mono">
+        {t["interests.title"]}
+      </h1>
+      <p class="text-sm">
+        {t["interests.description"]}
+      </p>
+    </div>
+
+    <div>
+      <h1 class="text-lg uppercase text-blue-500 font-mono">
+        {t["projects.title"]}
+      </h1>
+
+      <div class="mb-2">
+        <h2>
+          <span class="font-bold mr-4">
+            <a href="https://github.com/mbund/canvas-cli">mbund/canvas-cli</a>
+          </span>
+          <span>Rust</span>
+        </h2>
+        <p class="text-sm">
+          {t["personal-project.canvas-cli.description"]}
+        </p>
+      </div>
+
+      <div class="mb-2">
+        <h2 class="flex justify-between">
+          <div>
+            <span class="font-bold mr-4">
+              <a href="https://github.com/mbund/cdr">mbund/cdr</a>
+            </span>
+            <span>TypeScript · Astro</span>
+          </div>
+          <a href="https://mbund.github.io/cdr">https://mbund.github.io/cdr</a>
+        </h2>
+        <p class="text-sm">
+          {t["personal-project.cdr.description"]}
+        </p>
+      </div>
+
+      <div class="mb-2">
+        <h2 class="flex justify-between">
+          <div>
+            <span class="font-bold mr-4">
+              <a href="https://github.com/mbund/homelab">mbund/homelab</a>
+            </span>
+            <span>Kubernetes · Cloudflare</span>
+          </div>
+          <a href="https://docs.mbund.org">https://docs.mbund.org</a>
+        </h2>
+        <p class="text-sm">
+          {t["personal-project.homelab.description"]}
+        </p>
+      </div>
+    </div>
+
+    <div>
+      <h1 class="text-lg uppercase text-blue-500 font-mono">
+        {t["experience.title"]}
+      </h1>
+
+      <div class="mb-2">
+        <h2 class="flex justify-between">
+          <span class="font-bold">
+            <a href="https://kududyn.com">
+              {t["experience.intern-kudu.header"]}
+            </a>
+          </span>
+          <span>{t["experience.intern-kudu.subheader"]}</span>
+        </h2>
+        <p class="text-sm">
+          {t["experience.intern-kudu.description"]}
+        </p>
+      </div>
+
+      <div class="mb-2">
+        <h2 class="flex justify-between">
+          <span class="font-bold">
+            <a href="https://osucyber.club">
+              {t["experience.vice-president-cyber.header"]}
+            </a>
+          </span>
+          <span>{t["experience.vice-president-cyber.subheader"]}</span>
+        </h2>
+        <p class="text-sm">
+          {t["experience.vice-president-cyber.description"]}
+        </p>
+      </div>
+
+      <div class="mb-2">
+        <h2 class="flex justify-between">
+          <span class="font-bold"
+            >{t["experience.coauthor-sandcat.header"]}</span
+          >
+          <span>{t["experience.coauthor-sandcat.subheader"]}</span>
+        </h2>
+        <p class="text-sm">
+          {t["experience.coauthor-sandcat.description"]}
+        </p>
+      </div>
+
+      <div class="mb-2">
+        <h2 class="flex justify-between">
+          <span class="font-bold">
+            <a href="https://insigma.de">
+              {t["experience.internship-insigma.header"]}
+            </a>
+          </span>
+          <span>{t["experience.internship-insigma.subheader"]}</span>
+        </h2>
+        <p class="text-sm">
+          {t["experience.internship-insigma.description"]}
+        </p>
+      </div>
+    </div>
+
+    <div>
+      <h1 class="text-lg uppercase text-blue-500 font-mono">
+        {t["skills.familiar-tech.title"]}
+      </h1>
+      {
+        [
+          [
+            skills.typescript,
+            skills.react,
+            skills.nextjs,
+            skills.astro,
+            skills.tailwind,
+            skills.css,
+          ],
+          [skills.zig, skills.rust, skills.c, skills.cpp],
+          [skills.python, skills.csharp, skills.bash, skills.kotlin],
+          [
+            skills.debian,
+            skills.ubuntu,
+            skills.fedora,
+            skills.nixos,
+            skills.aws,
+            skills.kubernetes,
+            skills.systemd,
+          ],
+          [skills.vscode, skills.vim, skills.docker, skills.git],
+        ].map((skills) => (
+          <p>
+            {skills.map((skill, i) => (
+              <>
+                <span>{i > 0 && " · "}</span>
+                <a href={skill.url}>{skill.name}</a>
+              </>
+            ))}
+          </p>
+        ))
+      }
+    </div>
+
+    <div>
+      <h1 class="text-lg uppercase text-blue-500 font-mono">
+        {t["education.title"]}
+      </h1>
+      <p class="text-sm">
+        {t["education.description"]}
+      </p>
+    </div>
+
+    <div>
+      <h1 class="text-lg uppercase text-blue-500 font-mono">
+        {t["languages.title"]}
+      </h1>
+      <p class="text-sm">
+        {t["languages.description"]}
+      </p>
+    </div>
+
+    <div>
+      <h1 class="text-lg uppercase text-blue-500 font-mono">
+        {t["hobbies.title"]}
+      </h1>
+      <p class="text-sm">
+        {t["hobbies.description"]}
+      </p>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  @page {
+    orientation: portait;
+    margin: 0;
+  }
+
+  @media print {
+    * {
+      print-color-adjust: exact;
+    }
+  }
+</style>

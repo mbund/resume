@@ -4,7 +4,7 @@ import { Icon } from "astro-icon";
 import Layout from "../../layouts/main.astro";
 import Skill from "../../components/Skill.astro";
 
-import { languages, getLanguage, type Language } from "../../i18n";
+import { languages, getLanguage, skills, type Language } from "../../i18n";
 
 export function getStaticPaths() {
   return languages.map((lang) => {
@@ -91,10 +91,6 @@ const t = getLanguage(lang);
                   <span class="text-sm">Rust</span>
                 </a>
                 <span class="ml-2"></span>
-                <a href="https://graphql.org" class="flex items-center">
-                  <Icon name="logos:graphql" class="h-5 mr-1" />
-                  <span class="text-sm">GraphQL</span>
-                </a>
               </div>
             </div>
             <p class="text-sm">
@@ -141,8 +137,8 @@ const t = getLanguage(lang);
                   <Icon name="ic:outline-bookmark-border" class="h-6 mr-1" />
                   <h2 class="text-base font-medium">homelab</h2>
                 </a>
-                <a class="text-gray-400" href="https://mbund.github.io/homelab"
-                  >mbund.github.io/homelab</a
+                <a class="text-gray-400" href="https://docs.mbund.org"
+                  >docs.mbund.org</a
                 >
               </span>
               <div class="flex items-center flex-row justify-end">
@@ -260,116 +256,80 @@ const t = getLanguage(lang);
             <h2 class="uppercase font-mono">
               {t["skills.preferred-tech.title"]}
             </h2>
-            <div class="flex flex-wrap gap-1">
-              <Skill
-                href="https://typescriptlang.org"
-                icon="logos:typescript-icon"
-              >
-                TypeScript
-              </Skill>
-              <Skill href="https://react.dev" icon="logos:react">React</Skill>
-              <Skill href="https://nextjs.org" icon="logos:nextjs-icon">
-                Next.js
-              </Skill>
-              <Skill href="https://astro.build" icon="simple-icons:astro">
-                Astro
-              </Skill>
-              <Skill href="https://prisma.io" icon="logos:prisma">Prisma</Skill>
-              <Skill href="https://graphql.org" icon="logos:graphql">
-                GraphQL
-              </Skill>
-              <Skill
-                href="https://tailwindcss.com"
-                icon="logos:tailwindcss-icon"
-              >
-                TailwindCSS
-              </Skill>
-              <Skill
-                href="https://w3.org/Style/CSS/Overview"
-                icon="logos:css-3"
-              >
-                CSS
-              </Skill>
-              <Skill href="https://rust-lang.org" icon="logos:rust">Rust</Skill>
-              <Skill
-                href="https://ziglang.org"
-                icon="vscode-icons:file-type-zig"
-              >
-                Zig
-              </Skill>
-            </div>
+            {
+              [
+                [
+                  skills.typescript,
+                  skills.react,
+                  skills.nextjs,
+                  skills.astro,
+                  skills.tailwind,
+                  skills.css,
+                ],
+                [skills.rust, skills.zig],
+              ].map((skills) => (
+                <div class="flex flex-wrap gap-1">
+                  {skills.map((skill, i) => (
+                    <Skill href={skill.url} icon={skill.icon}>
+                      {skill.name}
+                    </Skill>
+                  ))}
+                </div>
+              ))
+            }
           </div>
           <div class="mb-2">
             <h2 class="uppercase font-mono">
               {t["skills.familiar-tech.title"]}
             </h2>
             <div class="flex flex-wrap gap-1">
-              <Skill icon="logos:c">C</Skill>
-              <Skill icon="logos:c-plusplus">C++</Skill>
-              <Skill href="https://python.org" icon="logos:python">
-                Python
-              </Skill>
-              <Skill icon="logos:bash-icon">Bash/shells</Skill>
-              <Skill
-                href="https://dotnet.microsoft.com/languages/csharp"
-                icon="logos:c-sharp"
-              >
-                C#
-              </Skill>
-              <Skill href="https://kotlinlang.org" icon="logos:kotlin">
-                Kotlin
-              </Skill>
+              {
+                [
+                  skills.c,
+                  skills.cpp,
+                  skills.python,
+                  skills.csharp,
+                  skills.bash,
+                  skills.kotlin,
+                ].map((skill) => (
+                  <Skill href={skill.url} icon={skill.icon}>
+                    {skill.name}
+                  </Skill>
+                ))
+              }
             </div>
           </div>
           <div class="mb-2">
             <h2 class="uppercase font-mono">
               {t["skills.infrastructure.title"]}
             </h2>
-            <div class="flex flex-wrap gap-1">
-              <Skill href="https://debian.org" icon="logos:debian">
-                Debian
-              </Skill>
-              <Skill href="https://ubuntu.com" icon="logos:ubuntu">
-                Ubuntu
-              </Skill>
-              <Skill href="https://fedoraproject.org" icon="logos:fedora">
-                Fedora
-              </Skill>
-              <Skill href="https://nixos.org" icon="vscode-icons:file-type-nix">
-                NixOS
-              </Skill>
-              <Skill href="https://aws.amazon.com" icon="logos:aws">AWS</Skill>
-              <Skill href="https://kubernetes.io" icon="logos:kubernetes">
-                Kubernetes
-              </Skill>
-              <Skill icon="mdi:database">
-                {t["misc.relational-databases"]}
-              </Skill>
-            </div>
+            {
+              [
+                [skills.debian, skills.ubuntu, skills.fedora, skills.nixos],
+                [skills.aws, skills.kubernetes, skills.systemd],
+              ].map((skills) => (
+                <div class="flex flex-wrap gap-1">
+                  {skills.map((skill, i) => (
+                    <Skill href={skill.url} icon={skill.icon}>
+                      {skill.name}
+                    </Skill>
+                  ))}
+                </div>
+              ))
+            }
           </div>
           <div>
             <h2 class="uppercase font-mono">{t["skills.tools.title"]}</h2>
             <div class="flex flex-wrap gap-1">
-              <Skill
-                href="https://code.visualstudio.com"
-                icon="logos:visual-studio-code"
-              >
-                VSCode
-              </Skill>
-              <span class="inline-flex items-center mr-1 text-sm">
-                <a href="https://www.vim.org" class="inline-flex items-center">
-                  <Icon name="logos:vim" class="h-4 mr-1" />
-                  <span>Vim</span>
-                </a>
-                <span>/</span>
-                <a href="https://neovim.io">neovim</a>
-              </span>
-              <Skill href="https://docker.com" icon="logos:docker-icon">
-                Docker
-              </Skill>
-              <Skill href="https://git-scm.com" icon="logos:git-icon">
-                git
-              </Skill>
+              {
+                [skills.vscode, skills.vim, skills.docker, skills.git].map(
+                  (skill) => (
+                    <Skill href={skill.url} icon={skill.icon}>
+                      {skill.name}
+                    </Skill>
+                  )
+                )
+              }
             </div>
           </div>
         </div>
