@@ -5,17 +5,18 @@ import {
   languages,
   getLanguage,
   skills,
+  defaultLanguage,
   type Language,
   type SkillMeta,
 } from "../../i18n";
 
 export function getStaticPaths() {
-  return languages.map((lang) => {
+  return [...languages, undefined].map((lang) => {
     return { params: { lang } };
   });
 }
 
-const lang = Astro.params.lang as Language;
+const lang = (Astro.params.lang as Language | undefined) ?? defaultLanguage;
 const t = getLanguage(lang);
 ---
 
@@ -35,9 +36,9 @@ const t = getLanguage(lang);
         <a href="https://openstreetmap.org/search?query=Columbus, Ohio">
           Columbus, OH
         </a>
-        ·
+         ·
         <a href="mailto:mark@mbund.org">mark@mbund.org</a>
-        ·
+         ·
         <a href="https://github.com/mbund">https://github.com/mbund</a>
       </span>
     </div>

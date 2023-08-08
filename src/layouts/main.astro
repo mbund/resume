@@ -1,4 +1,6 @@
 ---
+import { defaultLanguage } from '../i18n';
+
 interface Props {
   title: string;
   description: string;
@@ -22,6 +24,17 @@ const { title, description, image } = Astro.props;
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
     <title>{title}</title>
+    <script>
+      import { languages, defaultLanguage, type Language } from "../i18n";
+      const l = (window.navigator.language || defaultLanguage).substring(0, 2);
+      const lang = languages.includes(l as Language) ? l : defaultLanguage
+      if (!window.location.pathname.startsWith(`/${lang}`)) {
+        window.location.pathname = `/${lang}${window.location.pathname}`;
+      }
+    </script>
+    {Astro.params.lang === undefined && (
+      <meta http-equiv="refresh" content=`0;url=/${defaultLanguage}${new URL(Astro.request.url).pathname}` />
+    )}
   </head>
   <body>
     <slot />

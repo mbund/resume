@@ -3,15 +3,20 @@ import { Icon } from "astro-icon";
 
 import Layout from "../../layouts/main.astro";
 
-import { languages, getLanguage, type Language } from "../../i18n";
+import {
+  languages,
+  getLanguage,
+  defaultLanguage,
+  type Language,
+} from "../../i18n";
 
 export function getStaticPaths() {
-  return languages.map((lang) => {
+  return [...languages, undefined].map((lang) => {
     return { params: { lang } };
   });
 }
 
-const lang = Astro.params.lang as Language;
+const lang = (Astro.params.lang as Language | undefined) ?? defaultLanguage;
 const t = getLanguage(lang);
 ---
 
