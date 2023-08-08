@@ -8,6 +8,7 @@ on:
     paths:
       - src/**
       - public/**
+      - .github/workflows/**
 
 permissions:
   contents: write
