@@ -1,5 +1,5 @@
 ---
-import Layout from "../../layouts/main.astro";
+import Layout from "~/layouts/main.astro";
 
 import {
   languages,
@@ -8,7 +8,7 @@ import {
   defaultLanguage,
   type Language,
   type SkillMeta,
-} from "../../i18n";
+} from "~/i18n";
 
 export function getStaticPaths() {
   return [...languages, undefined].map((lang) => {

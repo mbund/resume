@@ -1,4 +1,4 @@
-import type { Schema } from ".";
+import type { Schema } from "~/i18n";
 
 export const en: Schema = {
   name: "Mark Bundschuh",

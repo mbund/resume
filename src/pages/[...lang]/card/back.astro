@@ -1,12 +1,7 @@
 ---
-import Layout from "../../../layouts/main.astro";
+import Layout from "~/layouts/main.astro";
 
-import {
-  languages,
-  getLanguage,
-  defaultLanguage,
-  type Language,
-} from "../../../i18n";
+import { languages, getLanguage, defaultLanguage, type Language } from "~/i18n";
 
 export function getStaticPaths() {
   return [...languages, undefined].map((lang) => {
