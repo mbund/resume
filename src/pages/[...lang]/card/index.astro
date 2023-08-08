@@ -1,5 +1,5 @@
 ---
-import { languages, defaultLanguage, type Language } from "../../../i18n";
+import { languages, defaultLanguage } from "../../../i18n";
 
 export function getStaticPaths() {
   return [...languages, undefined].map((lang) => {
@@ -7,24 +7,16 @@ export function getStaticPaths() {
   });
 }
 
-const lang = (Astro.params.lang as Language | undefined) ?? defaultLanguage;
+const path = new URL(Astro.request.url).pathname;
 
-console.log(new URL(Astro.request.url).pathname);
+const url = languages.some((x) => path.startsWith(`/${x}`))
+  ? `${path}/front`
+  : `/${defaultLanguage}/card/front`;
 ---
 
 <head>
   <script>
-    import { languages, defaultLanguage, type Language } from "../../../i18n";
-    const l = (window.navigator.language || defaultLanguage).substring(0, 2);
-    const lang = languages.includes(l as Language) ? l : defaultLanguage;
-    if (
-      !languages.some((x) => window.location.pathname.startsWith(`/${x}/front`))
-    ) {
-      window.location.pathname = `/${lang}${window.location.pathname}/front`;
-    }
+    window.location.pathname += `/front`;
   </script>
-  <meta
-    http-equiv="refresh"
-    content=`0;url=/${lang}${new URL(Astro.request.url).pathname}/front`
-  />
+  <meta http-equiv="refresh" content=`0;url=${url}` />
 </head>
