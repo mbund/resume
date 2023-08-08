@@ -1,0 +1,30 @@
+---
+import { languages, defaultLanguage, type Language } from "../../../i18n";
+
+export function getStaticPaths() {
+  return [...languages, undefined].map((lang) => {
+    return { params: { lang } };
+  });
+}
+
+const lang = (Astro.params.lang as Language | undefined) ?? defaultLanguage;
+
+console.log(new URL(Astro.request.url).pathname);
+---
+
+<head>
+  <script>
+    import { languages, defaultLanguage, type Language } from "../../../i18n";
+    const l = (window.navigator.language || defaultLanguage).substring(0, 2);
+    const lang = languages.includes(l as Language) ? l : defaultLanguage;
+    if (
+      !languages.some((x) => window.location.pathname.startsWith(`/${x}/front`))
+    ) {
+      window.location.pathname = `/${lang}${window.location.pathname}/front`;
+    }
+  </script>
+  <meta
+    http-equiv="refresh"
+    content=`0;url=/${lang}${new URL(Astro.request.url).pathname}/front`
+  />
+</head>

@@ -28,7 +28,7 @@ const { title, description, image } = Astro.props;
       import { languages, defaultLanguage, type Language } from "../i18n";
       const l = (window.navigator.language || defaultLanguage).substring(0, 2);
       const lang = languages.includes(l as Language) ? l : defaultLanguage
-      if (!window.location.pathname.startsWith(`/${lang}`)) {
+      if (!languages.some(x => window.location.pathname.startsWith(`/${x}`))) {
         window.location.pathname = `/${lang}${window.location.pathname}`;
       }
     </script>
