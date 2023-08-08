@@ -17,8 +17,6 @@ export function getStaticPaths() {
 
 const lang = Astro.params.lang as Language;
 const t = getLanguage(lang);
-
-// const x: SkillMeta[] = [skills.];
 ---
 
 {["en"].includes(lang) && <style set:html="@page { size: Letter; }" />}
@@ -145,18 +143,6 @@ const t = getLanguage(lang);
 
       <div class="mb-2">
         <h2 class="flex justify-between">
-          <span class="font-bold"
-            >{t["experience.coauthor-sandcat.header"]}</span
-          >
-          <span>{t["experience.coauthor-sandcat.subheader"]}</span>
-        </h2>
-        <p class="text-sm">
-          {t["experience.coauthor-sandcat.description"]}
-        </p>
-      </div>
-
-      <div class="mb-2">
-        <h2 class="flex justify-between">
           <span class="font-bold">
             <a href="https://insigma.de">
               {t["experience.internship-insigma.header"]}
@@ -196,7 +182,7 @@ const t = getLanguage(lang);
             skills.systemd,
           ],
           [skills.vscode, skills.vim, skills.docker, skills.git],
-        ].map((skills) => (
+        ].map((skills: SkillMeta[]) => (
           <p>
             {skills.map((skill, i) => (
               <>

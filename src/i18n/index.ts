@@ -51,9 +51,6 @@ export type Schema = {
   "experience.internship-insigma.header": string;
   "experience.internship-insigma.subheader": string;
   "experience.internship-insigma.description": string;
-  "experience.coauthor-sandcat.header": string;
-  "experience.coauthor-sandcat.subheader": string;
-  "experience.coauthor-sandcat.description": string;
 };
 
 export type IncompleteSchema = {
@@ -85,7 +82,7 @@ function createSkillsData<T extends Record<string, SkillMeta>>(data: T): T {
   return data;
 }
 
-const skillsData = createSkillsData({
+export const skills = createSkillsData({
   typescript: {
     name: "TypeScript",
     url: "https://typescriptlang.org",
@@ -176,5 +173,3 @@ const skillsData = createSkillsData({
   },
   git: { name: "git", url: "https://git-scm.com", icon: "logos:git-icon" },
 });
-
-export const skills: typeof skillsData = skillsData;

@@ -60,19 +60,14 @@ export const en: Schema = {
 
   "experience.intern-kudu.header": "Kudu Dynamics",
   "experience.intern-kudu.subheader": "Intern · Summer 2023",
-  "experience.intern-kudu.description": "Lorem ipsum dolar sit amet.",
+  "experience.intern-kudu.description":
+    "In support of Kudu Dynamics' DARPA PACE effort, developed a VSCode extension to assist in Linux Kernel development and bug triaging process. Integrated automated tooling to examine and reveal higher impact risks from known bugs in the kernel. Continuously field tested the extension by reproducing known CVEs to find valuable UI/UX improvement areas. Participated in daily stand up meetings, sprint planning and retrospective meetings, code reviews following an Agile-like development process.",
 
   "experience.vice-president-cyber.header": "Cybersecurity Club at OSU",
   "experience.vice-president-cyber.subheader":
     "Vice President · Winter 2023-present",
   "experience.vice-president-cyber.description":
     "Participate in hacking and cybersecurity competitions throughout the year. Manage club infrastructure on AWS and host BuckeyeCTF yearly.",
-
-  "experience.coauthor-sandcat.header": "Outbreak of FIP in three Sand Cats",
-  "experience.coauthor-sandcat.subheader":
-    "Coauthor · 2023 · Research · Other experience",
-  "experience.coauthor-sandcat.description":
-    "Assembled genome of an unknown virus which infected sand cats from the zoo in 2020.",
 
   "experience.internship-insigma.header": "INSIGMA IT Engineering GmbH",
   "experience.internship-insigma.subheader": "Intern · Summer 2021 · Remote",

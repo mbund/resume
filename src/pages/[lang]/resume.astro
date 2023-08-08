@@ -4,7 +4,13 @@ import { Icon } from "astro-icon";
 import Layout from "../../layouts/main.astro";
 import Skill from "../../components/Skill.astro";
 
-import { languages, getLanguage, skills, type Language } from "../../i18n";
+import {
+  languages,
+  getLanguage,
+  skills,
+  type Language,
+  SkillMeta,
+} from "../../i18n";
 
 export function getStaticPaths() {
   return languages.map((lang) => {
@@ -199,23 +205,6 @@ const t = getLanguage(lang);
             </p>
           </li>
           <li class="mb-2 ml-6">
-            <span
-              class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white"
-            >
-              <Icon name="mdi:dna" class="text-blue-700 p-1" />
-            </span>
-            <h2 class="mb-1">
-              {t["experience.coauthor-sandcat.header"]}
-            </h2>
-            <span
-              class="block mb-2 text-sm font-normal leading-none text-gray-400"
-              >{t["experience.coauthor-sandcat.subheader"]}</span
-            >
-            <p class="text-sm">
-              {t["experience.coauthor-sandcat.description"]}
-            </p>
-          </li>
-          <li class="mb-2 ml-6">
             <a
               href="https://insigma.de"
               class="absolute flex items-center justify-center w-6 h-6 bg-white -left-3 ring-8 ring-white"
@@ -291,7 +280,7 @@ const t = getLanguage(lang);
                   skills.csharp,
                   skills.bash,
                   skills.kotlin,
-                ].map((skill) => (
+                ].map((skill: SkillMeta) => (
                   <Skill href={skill.url} icon={skill.icon}>
                     {skill.name}
                   </Skill>

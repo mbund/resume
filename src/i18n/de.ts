@@ -68,12 +68,6 @@ export const de: Schema = {
   "experience.vice-president-cyber.description":
     "Partizipieren bei Hacking und Cybersicherheitswettbewerben. Verwalte die Klub Infrastruktur auf AWS und veranstalte jährlich BuckeyeCTF.",
 
-  "experience.coauthor-sandcat.header": "Outbreak of FIP in three Sand Cats",
-  "experience.coauthor-sandcat.subheader":
-    "Mitautor · 2023 · Forschung · Andere Erfahrung",
-  "experience.coauthor-sandcat.description":
-    "Das Genom eines unbekannten Virus assembliert, das 2020 Sandkatzen aus dem Zoo infizierte.",
-
   "experience.internship-insigma.header": "INSIGMA IT Engineering GmbH",
   "experience.internship-insigma.subheader":
     "Praktikum · Sommerferien 2021 · Homeoffice",
