@@ -71,7 +71,16 @@ const t = getLanguage(lang);
           <span class="font-bold mr-4">
             <a href="https://github.com/mbund/canvas-cli">mbund/canvas-cli</a>
           </span>
-          <span>Rust</span>
+          <span
+            >{
+              [skills.rust].map((skill, i) => (
+                <>
+                  {i > 0 && " · "}
+                  <a href={skill.url}>{skill.name}</a>
+                </>
+              ))
+            }</span
+          >
         </h2>
         <p class="text-sm">
           {t["personal-project.canvas-cli.description"]}
@@ -84,7 +93,16 @@ const t = getLanguage(lang);
             <span class="font-bold mr-4">
               <a href="https://github.com/mbund/cdr">mbund/cdr</a>
             </span>
-            <span>TypeScript · Astro</span>
+            <span
+              >{
+                [skills.typescript, skills.astro].map((skill, i) => (
+                  <>
+                    {i > 0 && " · "}
+                    <a href={skill.url}>{skill.name}</a>
+                  </>
+                ))
+              }</span
+            >
           </div>
           <a href="https://mbund.github.io/cdr">https://mbund.github.io/cdr</a>
         </h2>
@@ -99,7 +117,16 @@ const t = getLanguage(lang);
             <span class="font-bold mr-4">
               <a href="https://github.com/mbund/homelab">mbund/homelab</a>
             </span>
-            <span>Kubernetes · Cloudflare</span>
+            <span
+              >{
+                [skills.kubernetes].map((skill, i) => (
+                  <>
+                    {i > 0 && " · "}
+                    <a href={skill.url}>{skill.name}</a>
+                  </>
+                ))
+              }</span
+            >
           </div>
           <a href="https://docs.mbund.org">https://docs.mbund.org</a>
         </h2>
