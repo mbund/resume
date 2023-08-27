@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
 import { defaultLanguage } from "~/i18n";
 
 interface Props {
@@ -23,6 +24,7 @@ const { title, description, image } = Astro.props;
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
+    <ViewTransitions />
     <title>{title}</title>
     <script>
       import { languages, defaultLanguage, type Language } from "~/i18n";
