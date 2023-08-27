@@ -51,7 +51,7 @@ export const en: Schema = {
 
   "education.title": "Education",
   "education.description":
-    "The Ohio State University, BS in Computer Science and Engineering. 2026 expected graduation",
+    "The Ohio State University, BS in Computer Science and Engineering. December 2025 expected graduation",
 
   "projects.title": "Personal Projects",
 
