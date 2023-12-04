@@ -2,10 +2,6 @@ import type { Schema } from "~/i18n";
 
 export const de: Schema = {
   name: "Mark Bundschuh",
-  about:
-    "Informatikstudent an der Ohio State University. Interessiert an Cybersicherheit, Softwareentwicklung, Serveradministration und Technologie.",
-  "meta.index.title": "Mark Bundschuh",
-  "meta.index.description": "Softwareentwickler",
   "meta.resume.title": "Lebenslauf von Mark Bundschuh",
   "meta.resume.description":
     "Marks Lebenslauf, gestaltet mit Tailwind (als pdf ausdrucken)",

@@ -2,30 +2,21 @@
 import { Icon } from "astro-icon";
 
 import Layout from "~/layouts/main.astro";
-
-import { languages, getLanguage, defaultLanguage, type Language } from "~/i18n";
-
-export function getStaticPaths() {
-  return [...languages, undefined].map((lang) => {
-    return { params: { lang } };
-  });
-}
-
-const lang = (Astro.params.lang as Language | undefined) ?? defaultLanguage;
-const t = getLanguage(lang);
 ---
 
 <Layout
-  title={t["meta.index.title"]}
-  description={t["meta.index.description"]}
+  title="Mark Bundschuh - Software Developer"
+  description="Computer Science and Engineering Student at the Ohio State University. Interested in web development, system administration, and bleeding edge technology."
   image="https://mbund.dev/images/headshot.jpg"
 >
   <div class="flex flex-col items-center h-screen justify-center">
     <img src="/images/headshot.jpg" class="rounded-full w-48 m-2" />
-    <h1 class="text-4xl mb-8">{t["name"]}</h1>
+    <h1 class="text-4xl mb-8">Mark Bundschuh</h1>
 
     <div class="max-w-prose px-6 text-center">
-      {t["about"]}
+      Computer Science and Engineering Student at the Ohio State University.
+      Interested in web development, system administration, and bleeding edge
+      technology.
     </div>
 
     <div class="absolute bottom-0 w-full flex justify-center p-4">

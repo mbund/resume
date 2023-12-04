@@ -2,10 +2,6 @@ import type { Schema } from "~/i18n";
 
 export const en: Schema = {
   name: "Mark Bundschuh",
-  about:
-    "Computer Science and Engineering Student at the Ohio State University. Interested in cybersecurity, web development, system administration, and bleeding edge technology.",
-  "meta.index.title": "Mark Bundschuh",
-  "meta.index.description": "Cybersecurity enthusiest and software developer",
   "meta.resume.title": "Mark Bundschuh's Resume",
   "meta.resume.description":
     "Mark's resume styled with Tailwind (print to pdf to use)",
