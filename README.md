@@ -1,1 +1,1 @@
-Personal website, [resume, and business cards](https://github.com/mbund/site/releases/latest) built with [Astro](https://astro.build) and hosted at [mbund.dev](https://mbund.dev). Full i18n for English and German and statically hosted on GitHub Pages.
+[Resume, and business cards](https://github.com/mbund/site/releases/latest) built with [Astro](https://astro.build) and hosted at [resume.mbund.dev](https://resume.mbund.dev). Full i18n for English and German and statically hosted on GitHub Pages.
