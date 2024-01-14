@@ -226,10 +226,28 @@ const t = getLanguage(lang);
 
     <div>
       <h1 class="text-lg uppercase text-blue-500 font-mono">
-        Miscellaneous
+        {t["education.title"]}
       </h1>
       <p class="text-sm">
-        {t["education.description"]}. {t["languages.description"]}. {t["hobbies.description"]}.
+        {t["education.description"]}
+      </p>
+    </div>
+
+    <div>
+      <h1 class="text-lg uppercase text-blue-500 font-mono">
+        {t["languages.title"]}
+      </h1>
+      <p class="text-sm">
+        {t["languages.description"]}
+      </p>
+    </div>
+
+    <div>
+      <h1 class="text-lg uppercase text-blue-500 font-mono">
+        {t["hobbies.title"]}
+      </h1>
+      <p class="text-sm">
+        {t["hobbies.description"]}
       </p>
     </div>
   </div>
@@ -239,6 +257,10 @@ const t = getLanguage(lang);
   @page {
     orientation: portait;
     margin: 0;
+  }
+
+  html {
+    font-size: 13px;
   }
 
   @media print {
