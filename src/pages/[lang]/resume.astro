@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 
 import Layout from "~/layouts/main.astro";
 import Skill from "~/components/Skill.astro";
@@ -46,10 +46,10 @@ const t = getLanguage(lang);
             <Icon name="mdi:map-marker" class="h-6 ml-1" />
           </a>
           <a
-            href="mailto:bundschuhmark@gmail.com"
+            href="mailto:mark@mbund.dev"
             class="flex items-center justify-end"
           >
-            <span class="text-base font-medium">bundschuhmark@gmail.com</span>
+            <span class="text-base font-medium">mark@mbund.dev</span>
             <Icon name="mdi:email" class="h-6 ml-1" />
           </a>
         </div>
@@ -71,19 +71,39 @@ const t = getLanguage(lang);
 
     <div class="flex flex-row gap-3">
       <section class="basis-3/5">
-        <div class="mb-3">
-          <h1 class="text-lg uppercase text-blue-500 font-mono">
-            {t["objective.title"]}
-          </h1>
-          <p class="text-sm">
-            {t["objective.text"]}
-          </p>
-        </div>
-
         <div class="flex flex-col gap-2 mb-4">
           <h1 class="text-lg uppercase text-blue-500 font-mono">
             {t["experience.title"]}
           </h1>
+          
+          <div class="rounded border-2 flex flex-col p-2 gap-1">
+            <div class="flex justify-between">
+              <span class="flex items-center">
+                <a
+                  href="https://github.com/rhombusgg/rhombus"
+                  class="flex items-center mr-1"
+                >
+                  <Icon name="ic:outline-bookmark-border" class="h-6 mr-1" />
+                  <h2 class="text-base font-medium">rhombusgg/rhombus</h2>
+                </a>
+                <a class="text-gray-400" href="https://rhombus.gg"
+                  >rhombus.gg</a
+                >
+              </span>
+              <div class="flex items-center flex-row justify-end">
+                <a href="https://typescriptlang.org" class="flex items-center">
+                  <Icon name="logos:typescript-icon" class="h-5 mr-1" />
+                  <span class="text-sm">TypeScript</span>
+                </a>
+                <span class="ml-2"></span>
+                <a href="https://svelte.dev" class="flex items-center">
+                  <Icon name="devicon:svelte" class="h-5 mr-1" />
+                  <span class="text-sm">Svelte</span>
+                </a>
+              </div>
+            </div>
+            <p class="text-sm">{t["personal-project.rhombus.description"]}</p>
+          </div>
 
           <div class="rounded border-2 flex flex-col p-2 gap-1">
             <div class="flex justify-between">
@@ -92,7 +112,7 @@ const t = getLanguage(lang);
                 class="flex items-center"
               >
                 <Icon name="ic:outline-bookmark-border" class="h-6 mr-1" />
-                <h2 class="text-base font-medium">canvas-cli</h2>
+                <h2 class="text-base font-medium">mbund/canvas-cli</h2>
               </a>
               <div class="flex items-center flex-row justify-end">
                 <a href="https://rust-lang.org" class="flex items-center">
@@ -111,40 +131,11 @@ const t = getLanguage(lang);
             <div class="flex justify-between">
               <span class="flex items-center">
                 <a
-                  href="https://github.com/mbund/cdr"
-                  class="flex items-center mr-1"
-                >
-                  <Icon name="ic:outline-bookmark-border" class="h-6 mr-1" />
-                  <h2 class="text-base font-medium">cdr</h2>
-                </a>
-                <a class="text-gray-400" href="https://mbund.github.io/cdr"
-                  >mbund.github.io/cdr</a
-                >
-              </span>
-              <div class="flex items-center flex-row justify-end">
-                <a href="https://typescriptlang.org" class="flex items-center">
-                  <Icon name="logos:typescript-icon" class="h-5 mr-1" />
-                  <span class="text-sm">TypeScript</span>
-                </a>
-                <span class="ml-2"></span>
-                <a href="https://astro.build" class="flex items-center">
-                  <Icon name="simple-icons:astro" class="h-5 mr-1" />
-                  <span class="text-sm">Astro</span>
-                </a>
-              </div>
-            </div>
-            <p class="text-sm">{t["personal-project.cdr.description"]}</p>
-          </div>
-
-          <div class="rounded border-2 flex flex-col p-2 gap-1">
-            <div class="flex justify-between">
-              <span class="flex items-center">
-                <a
                   href="https://github.com/mbund/homelab"
                   class="flex items-center mr-1"
                 >
                   <Icon name="ic:outline-bookmark-border" class="h-6 mr-1" />
-                  <h2 class="text-base font-medium">homelab</h2>
+                  <h2 class="text-base font-medium">mbund/homelab</h2>
                 </a>
                 <a class="text-gray-400" href="https://docs.mbund.org"
                   >docs.mbund.org</a
@@ -191,7 +182,7 @@ const t = getLanguage(lang);
             </a>
             <h2 class="flex items-center mb-1">
               <a href="https://osucyber.club">
-                {t["experience.vice-president-cyber.header"]}
+                {t["experience.cyber-club.header"]}
               </a>
               <span
                 class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded ml-3"
@@ -201,10 +192,10 @@ const t = getLanguage(lang);
             </h2>
             <span
               class="block mb-2 text-sm font-normal leading-none text-gray-400"
-              >{t["experience.vice-president-cyber.subheader"]}</span
+              >{t["experience.cyber-club.subheader"]}</span
             >
             <p class="text-sm">
-              {t["experience.vice-president-cyber.description"]}
+              {t["experience.cyber-club.description"]}
             </p>
           </li>
           <li class="mb-2 ml-6">
@@ -233,6 +224,15 @@ const t = getLanguage(lang);
       <section class="basis-2/5">
         <div class="mb-3">
           <h1 class="text-lg uppercase text-blue-500 font-mono">
+            {t["objective.title"]}
+          </h1>
+          <p class="text-sm">
+            {t["objective.text"]}
+          </p>
+        </div>
+        
+        <div class="mb-3">
+          <h1 class="text-lg uppercase text-blue-500 font-mono">
             {t["interests.title"]}
           </h1>
           <p class="text-sm">
@@ -254,6 +254,7 @@ const t = getLanguage(lang);
                   skills.typescript,
                   skills.react,
                   skills.nextjs,
+                  skills.svelte,
                   skills.astro,
                   skills.tailwind,
                   skills.css,
@@ -298,7 +299,7 @@ const t = getLanguage(lang);
             {
               [
                 [skills.debian, skills.ubuntu, skills.fedora, skills.nixos],
-                [skills.aws, skills.kubernetes, skills.systemd],
+                [skills.aws, skills.kubernetes],
               ].map((skills) => (
                 <div class="flex flex-wrap gap-1">
                   {skills.map((skill, i) => (
@@ -357,6 +358,10 @@ const t = getLanguage(lang);
   @page {
     orientation: portait;
     margin: 0;
+  }
+
+  html {
+    font-size: 14px;
   }
 
   @media print {

@@ -22,7 +22,7 @@ export const de: Schema = {
   "personal-project.canvas-cli.description":
     "Benutz die Canvas API um Dateien auf Canvas hochzuladen und mehr",
 
-  "personal-project.cdr.description":
+  "personal-project.rhombus.description":
     "Löst der Graph der Klassenvoraussetzungen an der OSU und erstellt ein interaktives Diagramm",
 
   "personal-project.homelab.description":
@@ -58,10 +58,9 @@ export const de: Schema = {
   "experience.intern-kudu.subheader": "Praktikum · Sommerferien 2023",
   "experience.intern-kudu.description": "Lorem ipsum dolar sit amet.",
 
-  "experience.vice-president-cyber.header": "Cybersicherheits Klub bei OSU",
-  "experience.vice-president-cyber.subheader":
-    "Vizepräsident · Winter 2023-jetzt",
-  "experience.vice-president-cyber.description":
+  "experience.cyber-club.header": "Cybersicherheits Klub bei OSU",
+  "experience.cyber-club.subheader": "Vizepräsident · Winter 2023-jetzt",
+  "experience.cyber-club.description":
     "Partizipieren bei Hacking und Cybersicherheitswettbewerben. Verwalte die Klub Infrastruktur auf AWS und veranstalte jährlich BuckeyeCTF.",
 
   "experience.internship-insigma.header": "INSIGMA IT Engineering GmbH",

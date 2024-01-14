@@ -20,14 +20,14 @@ export const en: Schema = {
   "objective.text":
     "Internship opportunity for Summer 2024 that lets me apply and grow my skills in software.",
 
-  "personal-project.canvas-cli.description":
-    "Using the Canvas LMS API, upload files to submit assignments and more from the command line",
+  "personal-project.rhombus.description":
+    "Next generation CTF framework for players to compete in solving technical challenges. Built from the ground up with a focus on usability including innovative features such as an integrated ticketing system through a Discord bot, and challenge healthchecks. Fully free and open source and easy to self-host. (WIP)",
 
-  "personal-project.cdr.description":
-    "Solves the graph of class prerequisites at OSU and renders an interactive graph",
+  "personal-project.canvas-cli.description":
+    "Using the Canvas LMS API, upload files to submit assignments for class from the command line. Works with any Canvas instance (not just OSU's Carmen). Interacts with the REST API and has a slick interface.",
 
   "personal-project.homelab.description":
-    "Homelab Kubernetes cluster managed with GitOps practices, self-hosting many services like Nextcloud, Searxng, Gitea, and more",
+    "Homelab Kubernetes cluster managed with GitOps practices, self-hosting many services like Bitwarden, Nextcloud, Prometheus, Grafana, and more. Learning networking and infrastructure through reusing old hardware. Practicing good backup and monitoring practices, and always improving.",
 
   "interests.title": "Interests",
   "interests.description":
@@ -59,14 +59,13 @@ export const en: Schema = {
   "experience.intern-kudu.description":
     "In support of Kudu Dynamics' DARPA PACE effort, developed a VSCode extension to assist in Linux Kernel development and bug triaging process. Integrated automated tooling to examine and reveal higher impact risks from known bugs in the kernel. Continuously field tested the extension by reproducing known CVEs to find valuable UI/UX improvement areas. Participated in daily stand up meetings, sprint planning and retrospective meetings, code reviews following an Agile-like development process.",
 
-  "experience.vice-president-cyber.header": "Cybersecurity Club at OSU",
-  "experience.vice-president-cyber.subheader":
-    "Vice President · Winter 2023-present",
-  "experience.vice-president-cyber.description":
-    "Participate in hacking and cybersecurity competitions throughout the year. Manage club infrastructure on AWS and host BuckeyeCTF yearly.",
+  "experience.cyber-club.header": "Cybersecurity Club at OSU",
+  "experience.cyber-club.subheader": "President · Winter 2024-present",
+  "experience.cyber-club.description":
+    "Participate in hacking and cybersecurity competitions throughout the year. Manage club infrastructure on AWS and host BuckeyeCTF yearly. BuckeyeCTF 2023 included over 600 teams worldwide online, and 90 in person players. Managed logistical challenges of the in person event, as well as technical challenges (only ~3 minutes of downtime upscaling our Traefik instance). Coordinated with 7 different sponsor companies to provide funding and prizes for the event. Last year served as Vice President, and now this year as President.",
 
   "experience.internship-insigma.header": "INSIGMA IT Engineering GmbH",
   "experience.internship-insigma.subheader": "Intern · Summer 2021 · Remote",
   "experience.internship-insigma.description":
-    "Remote internship with a software company. Helped migrate an old website to C# ASP.NET MVC. Communication was done entirely in German.",
+    "Remote internship with a software company. Helped migrate a Visual Basic website to C# ASP.NET MVC. Also worked with Microsoft SQL Server, and other web technologies like CSS and TypeScript. Communication was done entirely in German.",
 } as const;

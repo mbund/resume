@@ -21,7 +21,7 @@ export type Schema = {
   "objective.title": string;
   "objective.text": string;
   "personal-project.canvas-cli.description": string;
-  "personal-project.cdr.description": string;
+  "personal-project.rhombus.description": string;
   "personal-project.homelab.description": string;
   "interests.title": string;
   "interests.description": string;
@@ -42,9 +42,9 @@ export type Schema = {
   "experience.intern-kudu.header": string;
   "experience.intern-kudu.subheader": string;
   "experience.intern-kudu.description": string;
-  "experience.vice-president-cyber.header": string;
-  "experience.vice-president-cyber.subheader": string;
-  "experience.vice-president-cyber.description": string;
+  "experience.cyber-club.header": string;
+  "experience.cyber-club.subheader": string;
+  "experience.cyber-club.description": string;
   "experience.internship-insigma.header": string;
   "experience.internship-insigma.subheader": string;
   "experience.internship-insigma.description": string;
@@ -95,10 +95,15 @@ export const skills = createSkillsData({
     url: "https://nextjs.org",
     icon: "logos:nextjs-icon",
   },
+  svelte: {
+    name: "Svelte",
+    url: "https://svelte.dev",
+    icon: "devicon:svelte",
+  },
   astro: {
     name: "Astro",
     url: "https://astro.build",
-    icon: "simple-icons:astro",
+    icon: "devicon:astro",
   },
   tailwind: {
     name: "TailwindCSS",
@@ -113,7 +118,7 @@ export const skills = createSkillsData({
   zig: {
     name: "Zig",
     url: "https://ziglang.org",
-    icon: "vscode-icons:file-type-zig",
+    icon: "devicon:zig",
   },
   rust: { name: "Rust", url: "https://rust-lang.org", icon: "logos:rust" },
   c: { name: "C", icon: "logos:c" },
@@ -123,12 +128,12 @@ export const skills = createSkillsData({
   kotlin: {
     name: "Kotlin",
     url: "https://kotlinlang.org",
-    icon: "logos:kotlin",
+    icon: "devicon:kotlin",
   },
   csharp: {
     name: "C#",
     url: "https://dotnet.microsoft.com/languages/csharp",
-    icon: "logos:c-sharp",
+    icon: "devicon:csharp",
   },
   debian: { name: "Debian", url: "https://debian.org", icon: "logos:debian" },
   ubuntu: { name: "Ubuntu", url: "https://ubuntu.com", icon: "logos:ubuntu" },
@@ -140,17 +145,12 @@ export const skills = createSkillsData({
   nixos: {
     name: "NixOS",
     url: "https://nixos.org",
-    icon: "vscode-icons:file-type-nix",
+    icon: "devicon:nixos",
   },
   kubernetes: {
     name: "Kubernetes",
     url: "https://kubernetes.io",
     icon: "logos:kubernetes",
-  },
-  systemd: {
-    name: "systemd",
-    url: "https://systemd.io",
-    icon: "vscode-icons:file-type-light-systemd",
   },
   aws: {
     name: "AWS",
