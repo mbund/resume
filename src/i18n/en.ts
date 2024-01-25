@@ -21,13 +21,13 @@ export const en: Schema = {
     "Internship opportunity for Summer 2024 that lets me apply and grow my skills in software.",
 
   "personal-project.rhombus.description":
-    "Next generation CTF framework for players to compete in solving technical cybersecurity based challenges. Built from the ground up with a focus on usability including innovative features such as an integrated ticketing system through a Discord bot, and challenge healthchecks. Fully free and open source and easy to self-host. (WIP)",
+    "Next generation CTF framework for players to compete in solving technical cybersecurity based challenges. Built from the ground up with a focus on usability including innovative features such as an integrated ticketing system through a Discord bot and challenge healthchecks. Fully free and open source and easy to self-host. (WIP)",
 
   "personal-project.canvas-cli.description":
-    "Using the Canvas LMS API, upload files to submit assignments for class from the command line. Works with any Canvas instance (not just OSU's Carmen). Interacts with the REST API and has a slick interface.",
+    "Using the Canvas LMS API, upload files to submit assignments for class and more from the command line. Works with any Canvas instance (not just OSU's Carmen). Interacts with the official REST API and has a slick interface.",
 
   "personal-project.homelab.description":
-    "Homelab Kubernetes cluster managed with GitOps practices, self-hosting many services like Bitwarden, Nextcloud, Prometheus, Grafana, and more. Learning networking and infrastructure through reusing old hardware. Practicing good backup and monitoring practices, and always improving.",
+    "Homelab Kubernetes cluster managed with GitOps practices, self-hosting many services like Bitwarden, Nextcloud, Prometheus, Grafana, and more. Learning networking and infrastructure by reusing old hardware. Practicing good backup and monitoring practices, and always improving.",
 
   "interests.title": "Interests",
   "interests.description":
@@ -39,7 +39,7 @@ export const en: Schema = {
   "skills.infrastructure.title": "Infrastructure",
   "skills.tools.title": "Tools",
 
-  "languages.title": "Languages",
+  "languages.title": "Natural Languages",
   "languages.description": "Bilingual in English and German",
 
   "hobbies.title": "Hobbies",
@@ -57,15 +57,15 @@ export const en: Schema = {
   "experience.intern-kudu.header": "Kudu Dynamics",
   "experience.intern-kudu.subheader": "Intern · Summer 2023",
   "experience.intern-kudu.description":
-    "In support of Kudu Dynamics' DARPA PACE effort, developed a VSCode extension to assist in Linux Kernel development and bug triaging process. Integrated automated tooling to examine and reveal higher impact risks from known bugs in the kernel. Continuously field tested the extension by reproducing known CVEs to find valuable UI/UX improvement areas. Participated in daily stand up meetings, sprint planning and retrospective meetings, code reviews following an Agile-like development process.",
+    "In support of Kudu Dynamics' DARPA PACE effort, developed a VSCode extension to assist in Linux Kernel development and bug triaging process. Integrated automated tooling to examine and reveal higher impact risks from known bugs in the kernel. Continuously field tested the extension by reproducing known CVEs to find valuable UI/UX improvement areas. Contributed to daily stand up meetings, sprint planning and retrospectives, as well as code reviews following an Agile-like development process.",
 
   "experience.cyber-club.header": "Cybersecurity Club at OSU",
-  "experience.cyber-club.subheader": "President · Winter 2024-present",
+  "experience.cyber-club.subheader": "President 2024 · Vice President 2023",
   "experience.cyber-club.description":
-    "Participate in hacking and cybersecurity competitions throughout the year. Manage club infrastructure on AWS and host BuckeyeCTF yearly. BuckeyeCTF 2023 included over 600 teams worldwide online, and 90 in person players. Managed logistical challenges of the in person event, as well as technical challenges (only ~3 minutes of downtime due to us upscaling our Traefik instance). All hosted on AWS and managed with Terraform. Coordinated with 7 different sponsor companies to provide funding and prizes for the event. Last year served as Vice President, and now this year as President.",
+    "Lead weekly in person meetings to introduce cybersecurity topics to OSU students and network with industry professionals. Manage club infrastructure on AWS with Terraform. Host BuckeyeCTF yearly, where last year included over 40 unique cyber-based player-solvable challenges, over 600 teams worldwide online, and 90 in person players. Authored 11 challenges ranging from vulnerable websites to bespoke emoji-encoded programming languages. Solved unexpected technical issues and kept 99.9% server uptime. Organized and worked through logistical issues including coordinating with 7 different sponsoring companies to provide funding and prizes for the event. Delegated tasks to members to play to their strengths and maximize team effectiveness.",
 
   "experience.internship-insigma.header": "INSIGMA IT Engineering GmbH",
-  "experience.internship-insigma.subheader": "Intern · Summer 2021 · Remote",
+  "experience.internship-insigma.subheader": "Intern · Remote · Summer 2021",
   "experience.internship-insigma.description":
-    "Remote internship with a software company. Helped migrate a Visual Basic website to C# ASP.NET MVC. Also worked with Microsoft SQL Server and web technologies like CSS and TypeScript. Communication was done entirely in German.",
+    "Migrated a Visual Basic website to C# ASP.NET MVC. Also worked with Microsoft SQL Server and web technologies like CSS and TypeScript. Communication was done entirely in German.",
 } as const;

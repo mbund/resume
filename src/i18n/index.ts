@@ -71,7 +71,7 @@ export const getLanguage = (lang: Language): Schema => {
 
 export type SkillMeta = {
   name: string;
-  url?: string;
+  url: string | undefined;
   icon: string;
 };
 
@@ -169,4 +169,14 @@ export const skills = createSkillsData({
     icon: "logos:docker-icon",
   },
   git: { name: "git", url: "https://git-scm.com", icon: "logos:git-icon" },
+  terraform: {
+    name: "Terraform",
+    url: "https://terraform.io",
+    icon: "logos:terraform-icon",
+  },
+  github_actions: {
+    name: "GitHub Actions",
+    url: "https://github.com/features/actions",
+    icon: "logos:github-icon",
+  },
 });

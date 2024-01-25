@@ -68,10 +68,8 @@ const t = getLanguage(lang);
 
     <div class="flex flex-row gap-3">
       <section class="basis-3/5">
-        <div class="flex flex-col gap-2 mb-4">
-          <h1 class="text-lg uppercase text-blue-500 font-mono">
-            {t["experience.title"]}
-          </h1>
+        <div class="flex flex-col gap-2 mb-2">
+          <h1 class="title">Personal Projects</h1>
 
           <div class="rounded border-2 flex flex-col p-2 gap-1">
             <div class="flex justify-between">
@@ -89,16 +87,18 @@ const t = getLanguage(lang);
               <div class="flex items-center flex-row justify-end">
                 <a href="https://typescriptlang.org" class="flex items-center">
                   <Icon name="logos:typescript-icon" class="h-5 mr-1" />
-                  <span class="text-sm">TypeScript</span>
+                  <span class="description">TypeScript</span>
                 </a>
                 <span class="ml-2"></span>
                 <a href="https://svelte.dev" class="flex items-center">
                   <Icon name="devicon:svelte" class="h-5 mr-1" />
-                  <span class="text-sm">Svelte</span>
+                  <span class="description">Svelte</span>
                 </a>
               </div>
             </div>
-            <p class="text-sm">{t["personal-project.rhombus.description"]}</p>
+            <p class="description">
+              {t["personal-project.rhombus.description"]}
+            </p>
           </div>
 
           <div class="rounded border-2 flex flex-col p-2 gap-1">
@@ -113,12 +113,12 @@ const t = getLanguage(lang);
               <div class="flex items-center flex-row justify-end">
                 <a href="https://rust-lang.org" class="flex items-center">
                   <Icon name="logos:rust" class="h-5 mr-1" />
-                  <span class="text-sm">Rust</span>
+                  <span class="description">Rust</span>
                 </a>
                 <span class="ml-2"></span>
               </div>
             </div>
-            <p class="text-sm">
+            <p class="description">
               {t["personal-project.canvas-cli.description"]}
             </p>
           </div>
@@ -140,77 +140,101 @@ const t = getLanguage(lang);
               <div class="flex items-center flex-row justify-end">
                 <a href="https://kubernetes.io" class="flex items-center">
                   <Icon name="logos:kubernetes" class="h-5 mr-1" />
-                  <span class="text-sm">Kubernetes</span>
+                  <span class="description">Kubernetes</span>
                 </a>
               </div>
             </div>
-            <p class="text-sm">{t["personal-project.homelab.description"]}</p>
+            <p class="description">
+              {t["personal-project.homelab.description"]}
+            </p>
           </div>
         </div>
 
+        <h1 class="title mb-2">Experience</h1>
+
         <ol class="relative border-l border-gray-200">
           <li class="mb-2 ml-6">
-            <a
-              href="https://kududyn.com"
-              class="absolute flex items-center justify-center w-6 h-6 -left-3 bg-white ring-8 ring-white"
-            >
+            <a href="https://kududyn.com" class="company">
               <img src="/images/kudu-dynamics.svg" />
             </a>
-            <h2 class="flex items-center mb-1">
+            <h2 class="flex items-center mb-1 justify-between">
               <a href="https://kududyn.com"
                 >{t["experience.intern-kudu.header"]}</a
               >
+              <div class="flex gap-2">
+                {
+                  [
+                    skills.typescript,
+                    skills.vscode,
+                    skills.python,
+                    skills.c,
+                    skills.docker,
+                  ].map((skill) => (
+                    <Skill href={skill.url} icon={skill.icon}>
+                      {skill.name}
+                    </Skill>
+                  ))
+                }
+              </div>
             </h2>
-            <span
-              class="block mb-2 text-sm font-normal leading-none text-gray-400"
-              >{t["experience.intern-kudu.subheader"]}</span
-            >
-            <p class="text-sm">
+            <div class="flex gap-2">
+              <span class="tag">Intern</span>
+              <span class="tag">Summer 2023</span>
+            </div>
+            <p class="description">
               {t["experience.intern-kudu.description"]}
             </p>
           </li>
           <li class="mb-2 ml-6">
-            <a
-              href="https://osucyber.club"
-              class="absolute flex items-center justify-center w-6 h-6 -left-3 bg-white ring-8 ring-white"
-            >
+            <a href="https://osucyber.club" class="company">
               <img src="/images/osucyber-logo.svg" />
             </a>
-            <h2 class="flex items-center mb-1">
+            <h2 class="flex items-center mb-1 justify-between">
               <a href="https://osucyber.club">
                 {t["experience.cyber-club.header"]}
               </a>
-              <span
-                class="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded ml-3"
-              >
-                {t["experience.present"]}
-              </span>
+              <div class="flex gap-2">
+                {
+                  [skills.aws, skills.terraform, skills.docker].map((skill) => (
+                    <Skill href={skill.url} icon={skill.icon}>
+                      {skill.name}
+                    </Skill>
+                  ))
+                }
+              </div>
             </h2>
-            <span
-              class="block mb-2 text-sm font-normal leading-none text-gray-400"
-              >{t["experience.cyber-club.subheader"]}</span
-            >
-            <p class="text-sm">
+            <div class="flex gap-2">
+              <span class="tag">President 2024</span>
+              <span class="tag">Vice President 2023</span>
+            </div>
+            <p class="description">
               {t["experience.cyber-club.description"]}
             </p>
           </li>
           <li class="mb-2 ml-6">
-            <a
-              href="https://insigma.de"
-              class="absolute flex items-center justify-center w-6 h-6 bg-white -left-3 ring-8 ring-white"
-            >
+            <a href="https://insigma.de" class="company">
               <img src="/images/insigma-logo-m.png" />
             </a>
-            <h2 class="mb-1">
+            <h2 class="mb-1 flex items-center justify-between">
               <a href="https://insigma.de"
                 >{t["experience.internship-insigma.header"]}</a
               >
+              <div class="flex gap-2">
+                {
+                  [skills.csharp, skills.css].map((skill) => (
+                    <Skill href={skill.url} icon={skill.icon}>
+                      {skill.name}
+                    </Skill>
+                  ))
+                }
+              </div>
             </h2>
-            <span
-              class="block mb-2 text-sm font-normal leading-none text-gray-400"
-              >{t["experience.internship-insigma.subheader"]}</span
-            >
-            <p class="text-sm">
+            <div class="flex gap-2">
+              <span class="tag">Intern</span>
+              <span class="tag">Remote</span>
+              <span class="tag">Summer 2021</span>
+            </div>
+            <p class="description">
               {t["experience.internship-insigma.description"]}
             </p>
           </li>
@@ -219,33 +243,32 @@ const t = getLanguage(lang);
 
       <section class="basis-2/5">
         <div class="mb-3">
-          <h1 class="text-lg uppercase text-blue-500 font-mono">
+          <h1 class="title">
             {t["objective.title"]}
           </h1>
-          <p class="text-sm">
+          <p class="description">
             {t["objective.text"]}
           </p>
         </div>
 
         <div class="mb-3">
-          <h1 class="text-lg uppercase text-blue-500 font-mono">
+          <h1 class="title">
             {t["interests.title"]}
           </h1>
-          <p class="text-sm">
+          <p class="description">
             {t["interests.description"]}
           </p>
         </div>
 
         <div class="mb-3">
-          <h1 class="text-lg uppercase text-blue-500 font-mono">
+          <h1 class="title">
             {t["skills.title"]}
           </h1>
+
           <div class="mb-2">
-            <h2 class="uppercase font-mono">
-              {t["skills.preferred-tech.title"]}
-            </h2>
-            {
-              [
+            <h2 class="uppercase font-mono">Languages/Frameworks/Libraries</h2>
+            <div class="flex flex-wrap gap-1">
+              {
                 [
                   skills.typescript,
                   skills.react,
@@ -254,32 +277,13 @@ const t = getLanguage(lang);
                   skills.astro,
                   skills.tailwind,
                   skills.css,
-                ],
-                [skills.rust, skills.zig],
-              ].map((skills) => (
-                <div class="flex flex-wrap gap-1">
-                  {skills.map((skill, i) => (
-                    <Skill href={skill.url} icon={skill.icon}>
-                      {skill.name}
-                    </Skill>
-                  ))}
-                </div>
-              ))
-            }
-          </div>
-          <div class="mb-2">
-            <h2 class="uppercase font-mono">
-              {t["skills.familiar-tech.title"]}
-            </h2>
-            <div class="flex flex-wrap gap-1">
-              {
-                [
+                  skills.rust,
+                  skills.zig,
                   skills.c,
                   skills.cpp,
                   skills.python,
                   skills.csharp,
                   skills.bash,
-                  skills.kotlin,
                 ].map((skill: SkillMeta) => (
                   <Skill href={skill.url} icon={skill.icon}>
                     {skill.name}
@@ -292,20 +296,24 @@ const t = getLanguage(lang);
             <h2 class="uppercase font-mono">
               {t["skills.infrastructure.title"]}
             </h2>
-            {
-              [
-                [skills.debian, skills.ubuntu, skills.fedora, skills.nixos],
-                [skills.aws, skills.kubernetes],
-              ].map((skills) => (
-                <div class="flex flex-wrap gap-1">
-                  {skills.map((skill, i) => (
-                    <Skill href={skill.url} icon={skill.icon}>
-                      {skill.name}
-                    </Skill>
-                  ))}
-                </div>
-              ))
-            }
+            <div class="flex flex-wrap gap-1">
+              {
+                [
+                  skills.debian,
+                  skills.ubuntu,
+                  skills.fedora,
+                  skills.nixos,
+                  skills.aws,
+                  skills.terraform,
+                  skills.kubernetes,
+                  skills.github_actions,
+                ].map((skill) => (
+                  <Skill href={skill.url} icon={skill.icon}>
+                    {skill.name}
+                  </Skill>
+                ))
+              }
+            </div>
           </div>
           <div>
             <h2 class="uppercase font-mono">{t["skills.tools.title"]}</h2>
@@ -324,26 +332,109 @@ const t = getLanguage(lang);
         </div>
 
         <div class="mb-3">
-          <h1 class="text-lg uppercase text-blue-500 font-mono">
+          <h1 class="title">Authored CTF Challenges</h1>
+          <div>
+            <p class="italic text-xs mb-2">
+              A Capture the Flag competition, or CTF for short, is a type of
+              cybersecurity competition where players compete in solving as many
+              challenges as possible, usually within a 48 hour time period.
+              Challenges are created with intentional vulnerabilities in mind
+              which players must find and exploit. These are some of the
+              challenges I've created.
+            </p>
+            <ul class="flex flex-col gap-2">
+              <li class="rounded border-2 flex flex-col p-2 gap-1 font-medium">
+                <div class="flex justify-between">
+                  <a
+                    href="https://github.com/cscosu/buckeyectf-2023-public/tree/master/misc-smederij"
+                    class="flex items-center mr-1"
+                  >
+                    <Icon name="mdi:sword-cross" class="h-6 mr-1" />
+                    <h2 class="text-base font-medium">
+                      buckeyectf-2023/smederij
+                    </h2>
+                  </a>
+                  <div class="flex gap-2">
+                    {
+                      [skills.github_actions].map((skill) => (
+                        <Skill href={skill.url} icon={skill.icon}>
+                          {skill.name}
+                        </Skill>
+                      ))
+                    }
+                  </div>
+                </div>
+                <p class="description">
+                  By chaining together multiple seemingly unrelated and
+                  innocuous GitHub Actions in a public respository the player is
+                  able to leak a secret action variable while only making pull
+                  requests.
+                </p>
+              </li>
+              <li class="rounded border-2 flex flex-col p-2 gap-1 font-medium">
+                <div class="flex justify-between">
+                  <a
+                    href="https://github.com/cscosu/buckeyectf-2023-public/tree/master/web-font-review"
+                    class="flex items-center mr-1"
+                  >
+                    <Icon name="mdi:sword-cross" class="h-6 mr-1" />
+                    <h2 class="text-base font-medium">
+                      buckeyectf-2023/font-review
+                    </h2>
+                  </a>
+                  <div class="flex gap-2">
+                    {
+                      [skills.python].map((skill) => (
+                        <Skill href={skill.url} icon={skill.icon}>
+                          {skill.name}
+                        </Skill>
+                      ))
+                    }
+                  </div>
+                </div>
+                <p class="description">
+                  An automated system "reviews" user uploaded fonts by checking
+                  whether or not they break the design of a unknown/secret page
+                  by causing an overflow. The player must dynamically generate
+                  fonts with variable length ligatures and leak the secret page
+                  one character at a time.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <h1 class="title">
             {t["languages.title"]}
           </h1>
-          <p class="text-sm">
+          <p class="description">
             {t["languages.description"]}
           </p>
         </div>
 
         <div class="mb-3">
-          <h1 class="text-lg uppercase text-blue-500 font-mono">
-            {t["hobbies.title"]}
-          </h1>
-          <p class="text-sm">{t["hobbies.description"]}</p>
+          <h1 class="title">Socials</h1>
+          <p class="description">
+            <a href="https://github.com/mbund" class="flex items-center">
+              <Icon name="mdi:github" class="h-6 mr-1" />
+              <span class="font-mono">github.com/mbund</span>
+            </a>
+            <a
+              href="https://linkedin.com/in/mark-bundschuh"
+              class="flex items-center"
+            >
+              <Icon name="mdi:linkedin" class="h-6 mr-1" />
+              <span class="font-mono">linkedin.com/in/mark-bundschuh</span>
+            </a>
+          </p>
         </div>
 
         <div class="mb-3">
-          <h1 class="text-lg uppercase text-blue-500 font-mono">
+          <h1 class="title">
             {t["education.title"]}
           </h1>
-          <p class="text-sm">{t["education.description"]}</p>
+          <p class="description">{t["education.description"]}</p>
         </div>
       </section>
     </div>
@@ -354,6 +445,22 @@ const t = getLanguage(lang);
   @page {
     orientation: portait;
     margin: 0;
+  }
+
+  .title {
+    @apply text-lg uppercase text-blue-500 font-mono;
+  }
+
+  .description {
+    @apply text-sm;
+  }
+
+  .tag {
+    @apply bg-blue-100 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded;
+  }
+
+  .company {
+    @apply absolute flex items-center justify-center w-6 h-6 -left-3 bg-white ring-8 ring-white;
   }
 
   html {
