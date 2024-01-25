@@ -67,5 +67,5 @@ export const en: Schema = {
   "experience.internship-insigma.header": "INSIGMA IT Engineering GmbH",
   "experience.internship-insigma.subheader": "Intern · Remote · Summer 2021",
   "experience.internship-insigma.description":
-    "Migrated a Visual Basic website to C# ASP.NET MVC. Also worked with Microsoft SQL Server and web technologies like CSS and TypeScript. Communication was done entirely in German.",
+    "Migrated a Visual Basic website to C# ASP.NET MVC. Also worked with Microsoft SQL Server and web technologies like CSS and TypeScript. Communicated entirely in German.",
 } as const;
