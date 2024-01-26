@@ -31,7 +31,7 @@ export const en: Schema = {
 
   "interests.title": "Interests",
   "interests.description":
-    "Software development, Linux, homelab & server administration, cybersecurity",
+    "Software development, Linux, homelab & server administration, cybersecurity.",
 
   "skills.title": "Skills",
   "skills.preferred-tech.title": "Preferred Tech",
@@ -47,7 +47,7 @@ export const en: Schema = {
 
   "education.title": "Education",
   "education.description":
-    "The Ohio State University, BS in Computer Science and Engineering. December 2025 expected graduation",
+    "The Ohio State University, BS in Computer Science and Engineering. December 2025 expected graduation.",
 
   "projects.title": "Personal Projects",
 

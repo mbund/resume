@@ -175,7 +175,7 @@ export const skills = createSkillsData({
     icon: "logos:terraform-icon",
   },
   github_actions: {
-    name: "GitHub Actions",
+    name: "GitHub CI/CD",
     url: "https://github.com/features/actions",
     icon: "logos:github-icon",
   },

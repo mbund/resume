@@ -31,217 +31,10 @@ const t = getLanguage(lang);
   image="https://mbund.dev/images/headshot.jpg"
 >
   <div class="m-12">
-    <div class="flex mb-3 justify-between">
-      <section>
-        <h1 class="text-3xl font-medium">{t["name"]}</h1>
-      </section>
-
-      <address class="flex not-italic">
-        <div class="mr-4">
-          <a
-            href="https://openstreetmap.org/search?query=Columbus, Ohio"
-            class="flex items-center justify-end"
-          >
-            <span class="text-base font-medium">Columbus, OH</span>
-            <Icon name="mdi:map-marker" class="h-6 ml-1" />
-          </a>
-          <a href="mailto:mark@mbund.dev" class="flex items-center justify-end">
-            <span class="text-base font-medium">mark@mbund.dev</span>
-            <Icon name="mdi:email" class="h-6 ml-1" />
-          </a>
-        </div>
-        <div>
-          <a href="https://mbund.dev" class="flex items-center justify-end">
-            <span class="text-base font-medium">mbund.dev</span>
-            <Icon name="ph:globe" class="h-6 ml-1" />
-          </a>
-          <a
-            href="https://github.com/mbund"
-            class="flex items-center justify-end"
-          >
-            <span class="text-base font-medium">mbund</span>
-            <Icon name="mdi:github" class="h-6 ml-1" />
-          </a>
-        </div>
-      </address>
-    </div>
-
     <div class="flex flex-row gap-3">
-      <section class="basis-3/5">
-        <div class="flex flex-col gap-2 mb-2">
-          <h1 class="title">Personal Projects</h1>
-
-          <div class="rounded border-2 flex flex-col p-2 gap-1">
-            <div class="flex justify-between">
-              <span class="flex items-center">
-                <a
-                  href="https://github.com/rhombusgg/rhombus"
-                  class="flex items-center mr-1"
-                >
-                  <Icon name="ic:outline-bookmark-border" class="h-6 mr-1" />
-                  <h2 class="text-base font-medium">rhombusgg/rhombus</h2>
-                </a>
-                <a class="text-gray-400" href="https://rhombus.gg">rhombus.gg</a
-                >
-              </span>
-              <div class="flex items-center flex-row justify-end">
-                <a href="https://typescriptlang.org" class="flex items-center">
-                  <Icon name="logos:typescript-icon" class="h-5 mr-1" />
-                  <span class="description">TypeScript</span>
-                </a>
-                <span class="ml-2"></span>
-                <a href="https://svelte.dev" class="flex items-center">
-                  <Icon name="devicon:svelte" class="h-5 mr-1" />
-                  <span class="description">Svelte</span>
-                </a>
-              </div>
-            </div>
-            <p class="description">
-              {t["personal-project.rhombus.description"]}
-            </p>
-          </div>
-
-          <div class="rounded border-2 flex flex-col p-2 gap-1">
-            <div class="flex justify-between">
-              <a
-                href="https://github.com/mbund/canvas-cli"
-                class="flex items-center"
-              >
-                <Icon name="ic:outline-bookmark-border" class="h-6 mr-1" />
-                <h2 class="text-base font-medium">mbund/canvas-cli</h2>
-              </a>
-              <div class="flex items-center flex-row justify-end">
-                <a href="https://rust-lang.org" class="flex items-center">
-                  <Icon name="logos:rust" class="h-5 mr-1" />
-                  <span class="description">Rust</span>
-                </a>
-                <span class="ml-2"></span>
-              </div>
-            </div>
-            <p class="description">
-              {t["personal-project.canvas-cli.description"]}
-            </p>
-          </div>
-
-          <div class="rounded border-2 flex flex-col p-2 gap-1">
-            <div class="flex justify-between">
-              <span class="flex items-center">
-                <a
-                  href="https://github.com/mbund/homelab"
-                  class="flex items-center mr-1"
-                >
-                  <Icon name="ic:outline-bookmark-border" class="h-6 mr-1" />
-                  <h2 class="text-base font-medium">mbund/homelab</h2>
-                </a>
-                <a class="text-gray-400" href="https://docs.mbund.org"
-                  >docs.mbund.org</a
-                >
-              </span>
-              <div class="flex items-center flex-row justify-end">
-                <a href="https://kubernetes.io" class="flex items-center">
-                  <Icon name="logos:kubernetes" class="h-5 mr-1" />
-                  <span class="description">Kubernetes</span>
-                </a>
-              </div>
-            </div>
-            <p class="description">
-              {t["personal-project.homelab.description"]}
-            </p>
-          </div>
-        </div>
-
-        <h1 class="title mb-2">Experience</h1>
-
-        <ol class="relative border-l border-gray-200">
-          <li class="mb-2 ml-6">
-            <a href="https://kududyn.com" class="company">
-              <img src="/images/kudu-dynamics.svg" />
-            </a>
-            <h2 class="flex items-center mb-1 justify-between">
-              <a href="https://kududyn.com"
-                >{t["experience.intern-kudu.header"]}</a
-              >
-              <div class="flex gap-2">
-                {
-                  [
-                    skills.typescript,
-                    skills.vscode,
-                    skills.python,
-                    skills.c,
-                    skills.docker,
-                  ].map((skill) => (
-                    <Skill href={skill.url} icon={skill.icon}>
-                      {skill.name}
-                    </Skill>
-                  ))
-                }
-              </div>
-            </h2>
-            <div class="flex gap-2">
-              <span class="tag">Intern</span>
-              <span class="tag">Summer 2023</span>
-            </div>
-            <p class="description">
-              {t["experience.intern-kudu.description"]}
-            </p>
-          </li>
-          <li class="mb-2 ml-6">
-            <a href="https://osucyber.club" class="company">
-              <img src="/images/osucyber-logo.svg" />
-            </a>
-            <h2 class="flex items-center mb-1 justify-between">
-              <a href="https://osucyber.club">
-                {t["experience.cyber-club.header"]}
-              </a>
-              <div class="flex gap-2">
-                {
-                  [skills.aws, skills.terraform, skills.docker].map((skill) => (
-                    <Skill href={skill.url} icon={skill.icon}>
-                      {skill.name}
-                    </Skill>
-                  ))
-                }
-              </div>
-            </h2>
-            <div class="flex gap-2">
-              <span class="tag">President 2024</span>
-              <span class="tag">Vice President 2023</span>
-            </div>
-            <p class="description">
-              {t["experience.cyber-club.description"]}
-            </p>
-          </li>
-          <li class="mb-2 ml-6">
-            <a href="https://insigma.de" class="company">
-              <img src="/images/insigma-logo-m.png" />
-            </a>
-            <h2 class="mb-1 flex items-center justify-between">
-              <a href="https://insigma.de"
-                >{t["experience.internship-insigma.header"]}</a
-              >
-              <div class="flex gap-2">
-                {
-                  [skills.csharp, skills.css].map((skill) => (
-                    <Skill href={skill.url} icon={skill.icon}>
-                      {skill.name}
-                    </Skill>
-                  ))
-                }
-              </div>
-            </h2>
-            <div class="flex gap-2">
-              <span class="tag">Intern</span>
-              <span class="tag">Remote</span>
-              <span class="tag">Summer 2021</span>
-            </div>
-            <p class="description">
-              {t["experience.internship-insigma.description"]}
-            </p>
-          </li>
-        </ol>
-      </section>
-
       <section class="basis-2/5">
+        <h1 class="text-3xl font-medium mb-3">{t["name"]}</h1>
+
         <div class="mb-3">
           <h1 class="title">
             {t["objective.title"]}
@@ -262,12 +55,49 @@ const t = getLanguage(lang);
 
         <div class="mb-3">
           <h1 class="title">
-            {t["skills.title"]}
+            {t["education.title"]}
           </h1>
+          <p class="description">{t["education.description"]}</p>
+        </div>
+
+        <div class="mb-3">
+          <h1 class="title">Contact</h1>
+          <p class="description">
+            <a href="mailto:mark@mbund.dev" class="flex items-center">
+              <Icon name="mdi:email" class="h-6 mr-1" />
+              <span class="font-mono">mark@mbund.dev</span>
+            </a>
+            <a
+              href="https://linkedin.com/in/mark-bundschuh"
+              class="flex items-center"
+            >
+              <Icon name="mdi:linkedin" class="h-6 mr-1" />
+              <span class="font-mono">linkedin.com/in/mark-bundschuh</span>
+            </a>
+            <a href="https://github.com/mbund" class="flex items-center">
+              <Icon name="mdi:github" class="h-6 mr-1" />
+              <span class="font-mono">github.com/mbund</span>
+            </a>
+            <a href="https://mbund.dev" class="flex items-center">
+              <Icon name="ph:globe" class="h-6 mr-1" />
+              <span class="font-mono">mbund.dev</span>
+            </a>
+            <a
+              href="https://openstreetmap.org/search?query=Columbus, Ohio"
+              class="flex items-center"
+            >
+              <Icon name="mdi:map-marker" class="h-6 mr-1" />
+              <span class="font-mono">Columbus, OH</span>
+            </a>
+          </p>
+        </div>
+
+        <div class="mb-3">
+          <h1 class="title">Technical Skills</h1>
 
           <div class="mb-2">
             <h2 class="uppercase font-mono">Languages/Frameworks/Libraries</h2>
-            <div class="flex flex-wrap gap-1">
+            <div class="grid grid-cols-3">
               {
                 [
                   skills.typescript,
@@ -296,7 +126,7 @@ const t = getLanguage(lang);
             <h2 class="uppercase font-mono">
               {t["skills.infrastructure.title"]}
             </h2>
-            <div class="flex flex-wrap gap-1">
+            <div class="grid grid-cols-3">
               {
                 [
                   skills.debian,
@@ -317,7 +147,7 @@ const t = getLanguage(lang);
           </div>
           <div>
             <h2 class="uppercase font-mono">{t["skills.tools.title"]}</h2>
-            <div class="flex flex-wrap gap-1">
+            <div class="grid grid-cols-3">
               {
                 [skills.vscode, skills.vim, skills.docker, skills.git].map(
                   (skill) => (
@@ -332,105 +162,286 @@ const t = getLanguage(lang);
         </div>
 
         <div class="mb-3">
-          <h1 class="title">Authored CTF Challenges</h1>
-          <div>
-            <p class="italic text-xs mb-2">
-              A Capture the Flag competition, or CTF for short, is a type of
-              cybersecurity competition where players compete in solving as many
-              challenges as possible, usually within a 48 hour time period.
-              Challenges are created with intentional vulnerabilities in mind
-              which players must find and exploit. These are some of the
-              challenges I've created.
-            </p>
-            <ul class="flex flex-col gap-2">
-              <li class="rounded border-2 flex flex-col p-2 gap-1 font-medium">
-                <div class="flex justify-between">
-                  <a
-                    href="https://github.com/cscosu/buckeyectf-2023-public/tree/master/misc-smederij"
-                    class="flex items-center mr-1"
-                  >
-                    <Icon name="mdi:sword-cross" class="h-6 mr-1" />
-                    <h2 class="text-base font-medium">smederij</h2>
-                  </a>
-                  <div class="flex gap-2">
-                    {
-                      [skills.github_actions].map((skill) => (
+          <h1 class="title">Power Skills</h1>
+          <ul class="description list-disc">
+            <li>Excellent leadership and communication abilities</li>
+            <li>Passionate about technology and driven to learn more</li>
+            <li>Disciplined about time management</li>
+            <li>High work ethic</li>
+            <li>Adaptable to any situation</li>
+            <li>Logical problem solver</li>
+          </ul>
+        </div>
+
+        <div class="mb-3">
+          <h1 class="title">Miscellaneous</h1>
+          <p class="description">
+            Bilingual in English and German. Love playing in person games like
+            Dungeons and Dragons, cards, or board games.
+          </p>
+        </div>
+      </section>
+
+      <section class="basis-3/5">
+        <div class="flex flex-col gap-2 mb-2">
+          <h1 class="title mb-2">Professional Experience</h1>
+
+          <ol class="relative border-l border-gray-200">
+            <li class="mb-2 ml-6">
+              <a href="https://kududyn.com" class="company">
+                <img src="/images/kudu-dynamics.svg" />
+              </a>
+              <h2 class="flex items-center mb-1 justify-between">
+                <a href="https://kududyn.com"
+                  >{t["experience.intern-kudu.header"]}</a
+                >
+                <div class="flex gap-2">
+                  {
+                    [
+                      skills.typescript,
+                      skills.vscode,
+                      skills.c,
+                      skills.python,
+                    ].map((skill) => (
+                      <Skill href={skill.url} icon={skill.icon}>
+                        {skill.name}
+                      </Skill>
+                    ))
+                  }
+                </div>
+              </h2>
+              <div class="flex gap-2">
+                <span class="tag">Intern</span>
+                <span class="tag">Summer 2023</span>
+              </div>
+              <ol class="description list-disc">
+                <li>
+                  Developed VSCode extension to assist in Linux Kernel
+                  development and bug triaging process for a DARPA effort.
+                </li>
+                <li>
+                  Integrated automated tooling to examine and reveal higher
+                  impact risks from known bugs in the kernel.
+                </li>
+                <li>
+                  Designed an inuitive UI to easily reproduce known CVEs and
+                  making finding potentially related bugs easier.
+                </li>
+                <li>
+                  Contributed to daily stand up meetings, sprint planning and
+                  retrospectives, as well as code reviews following an
+                  Agile-like development process.
+                </li>
+              </ol>
+            </li>
+            <li class="mb-2 ml-6">
+              <a href="https://osucyber.club" class="company">
+                <img src="/images/osucyber-logo.svg" />
+              </a>
+              <h2 class="flex items-center mb-1 justify-between">
+                <a href="https://osucyber.club">
+                  {t["experience.cyber-club.header"]}
+                </a>
+                <div class="flex gap-2">
+                  {
+                    [skills.aws, skills.terraform, skills.docker].map(
+                      (skill) => (
                         <Skill href={skill.url} icon={skill.icon}>
                           {skill.name}
                         </Skill>
-                      ))
-                    }
-                  </div>
+                      )
+                    )
+                  }
                 </div>
-                <p class="description">
-                  By chaining together multiple seemingly unrelated and
-                  innocuous GitHub Actions in a public respository the player is
-                  able to leak a secret action variable while only making pull
-                  requests.
-                </p>
-              </li>
-              <li class="rounded border-2 flex flex-col p-2 gap-1 font-medium">
-                <div class="flex justify-between">
-                  <a
-                    href="https://github.com/cscosu/buckeyectf-2023-public/tree/master/web-font-review"
-                    class="flex items-center mr-1"
+              </h2>
+              <div class="flex gap-2">
+                <span class="tag">President 2024</span>
+                <span class="tag">Vice President 2023</span>
+              </div>
+              <ol class="description list-disc">
+                <li>
+                  Lead weekly in person meetings to introduce cybersecurity
+                  topics to OSU students and network with industry
+                  professionals.
+                </li>
+                <li>Manage club infrastructure on AWS with Terraform.</li>
+                <li>
+                  Host BuckeyeCTF yearly, where last year included over 40
+                  unique cyber-based player-solvable challenges, over 600 teams
+                  worldwide online, and 90 in person players.
+                  <ol class="list-disc ml-8">
+                    <li>
+                      Authored 11 challenges ranging from vulnerable websites to
+                      bespoke emoji-encoded programming languages.
+                    </li>
+                    <li>
+                      Solved unexpected technical issues and kept 99.9% server
+                      uptime.
+                    </li>
+                    <li>
+                      Organized and worked through logistical issues including
+                      coordinating with 7 different sponsoring companies to
+                      provide funding and prizes for the event.
+                    </li>
+                    <li>
+                      Delegated tasks to members to play to their strengths and
+                      maximize team effectiveness.
+                    </li>
+                  </ol>
+                </li>
+              </ol>
+            </li>
+            <li class="mb-2 ml-6">
+              <a href="https://insigma.de" class="company">
+                <img src="/images/insigma-logo-m.png" />
+              </a>
+              <h2 class="mb-1 flex items-center justify-between">
+                <a href="https://insigma.de"
+                  >{t["experience.internship-insigma.header"]}</a
+                >
+                <div class="flex gap-2">
+                  {
+                    [skills.csharp, skills.css].map((skill) => (
+                      <Skill href={skill.url} icon={skill.icon}>
+                        {skill.name}
+                      </Skill>
+                    ))
+                  }
+                </div>
+              </h2>
+              <div class="flex gap-2">
+                <span class="tag">Intern</span>
+                <span class="tag">Remote</span>
+                <span class="tag">Summer 2021</span>
+              </div>
+              <ol class="description list-disc">
+                <li>
+                  Migrated a Visual Basic website to C# ASP.NET MVC and
+                  Microsoft SQL Server.
+                </li>
+                <li>
+                  Designed dynamic user facing views with CSS and TypeScript.
+                </li>
+                <li>Communicated entirely in German.</li>
+              </ol>
+            </li>
+          </ol>
+
+          <h1 class="title">Personal Projects</h1>
+
+          <ol class="relative">
+            <li class="mb-2 ml-6">
+              <a href="https://github.com/rhombusgg/rhombus" class="company">
+                <Icon name="ic:outline-bookmark-border" class="h-full w-full" />
+              </a>
+              <h2 class="flex items-center mb-1 justify-between">
+                <span>
+                  <a href="https://github.com/rhombusgg/rhombus"
+                    >rhombusgg/rhombus</a
                   >
-                    <Icon name="mdi:sword-cross" class="h-6 mr-1" />
-                    <h2 class="text-base font-medium">font-review</h2>
-                  </a>
-                  <div class="flex gap-2">
-                    {
-                      [skills.python].map((skill) => (
-                        <Skill href={skill.url} icon={skill.icon}>
-                          {skill.name}
-                        </Skill>
-                      ))
-                    }
-                  </div>
+                  <a class="text-gray-400 ml-1" href="https://rhombus.gg"
+                    >rhombus.gg</a
+                  >
+                </span>
+                <div class="flex gap-2">
+                  {
+                    [skills.typescript, skills.svelte].map((skill) => (
+                      <Skill href={skill.url} icon={skill.icon}>
+                        {skill.name}
+                      </Skill>
+                    ))
+                  }
                 </div>
-                <p class="description">
-                  An automated system "reviews" user uploaded fonts by checking
-                  whether or not they break the design of a unknown/secret page
-                  by causing an overflow. The player must dynamically generate
-                  fonts with variable length ligatures and leak the secret page
-                  one character at a time.
-                </p>
-              </li>
-            </ul>
-          </div>
-        </div>
+              </h2>
+              <ul class="description list-disc">
+                <li>
+                  Created a Jeopardy style challenge competition platform for
+                  CTFs from scratch
+                </li>
+                <li>
+                  Designed a cohesive and modern user interface, including
+                  extensive admin dashboards and following accessibility
+                  guidelines
+                </li>
+                <li>
+                  Implemented innovative features in the space such as
+                  scriptable health checks and a custom ticket support system
+                  interacting with Discord.
+                </li>
+              </ul>
+            </li>
 
-        <div class="mb-3">
-          <h1 class="title">
-            {t["languages.title"]}
-          </h1>
-          <p class="description">
-            {t["languages.description"]}
-          </p>
-        </div>
+            <li class="mb-2 ml-6">
+              <a href="https://github.com/mbund/canvas-cli" class="company">
+                <Icon name="ic:outline-bookmark-border" class="h-full w-full" />
+              </a>
+              <h2 class="flex items-center mb-1 justify-between">
+                <span>
+                  <a href="https://github.com/mbund/canvas-cli"
+                    >mbund/canvas-cli</a
+                  >
+                </span>
+                <div class="flex gap-2">
+                  {
+                    [skills.rust].map((skill) => (
+                      <Skill href={skill.url} icon={skill.icon}>
+                        {skill.name}
+                      </Skill>
+                    ))
+                  }
+                </div>
+              </h2>
+              <ul class="description list-disc">
+                <li>
+                  Interactive command line interface tool for automating common
+                  tasks as a student in OSU's learning management system,
+                  Canvas.
+                </li>
+                <li>
+                  Ensured compatibility with any university using Canvas by
+                  using offical REST APIs.
+                </li>
+              </ul>
+            </li>
 
-        <div class="mb-3">
-          <h1 class="title">Socials</h1>
-          <p class="description">
-            <a href="https://github.com/mbund" class="flex items-center">
-              <Icon name="mdi:github" class="h-6 mr-1" />
-              <span class="font-mono">github.com/mbund</span>
-            </a>
-            <a
-              href="https://linkedin.com/in/mark-bundschuh"
-              class="flex items-center"
-            >
-              <Icon name="mdi:linkedin" class="h-6 mr-1" />
-              <span class="font-mono">linkedin.com/in/mark-bundschuh</span>
-            </a>
-          </p>
-        </div>
-
-        <div class="mb-3">
-          <h1 class="title">
-            {t["education.title"]}
-          </h1>
-          <p class="description">{t["education.description"]}</p>
+            <li class="mb-2 ml-6">
+              <a href="https://github.com/mbund/homelab" class="company">
+                <Icon name="ic:outline-bookmark-border" class="h-full w-full" />
+              </a>
+              <h2 class="flex items-center mb-1 justify-between">
+                <span>
+                  <a href="https://github.com/mbund/homelab">mbund/homelab</a>
+                  <a class="text-gray-400 ml-1" href="https://docs.mbund.org"
+                    >docs.mbund.org</a
+                  >
+                </span>
+                <div class="flex gap-2">
+                  {
+                    [skills.kubernetes].map((skill) => (
+                      <Skill href={skill.url} icon={skill.icon}>
+                        {skill.name}
+                      </Skill>
+                    ))
+                  }
+                </div>
+              </h2>
+              <ul class="description list-disc">
+                <li>
+                  Recycled old hardware into personal servers using Kubernetes
+                  to breathe new life into them.
+                </li>
+                <li>
+                  Automated deployment of popular services such as Bitwarden,
+                  Nextcloud, Prometheus, Grafana and more using GitOps
+                  principles.
+                </li>
+                <li>
+                  Practice backup and disaster recovery with automated offsite
+                  cloud backups to keep important data safe.
+                </li>
+              </ul>
+            </li>
+          </ol>
         </div>
       </section>
     </div>

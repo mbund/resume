@@ -1,5 +1,5 @@
 ---
-import {Icon} from "astro-icon/components";
+import { Icon } from "astro-icon/components";
 
 interface Props {
   icon: string;
@@ -10,6 +10,6 @@ const { icon, href: site } = Astro.props;
 ---
 
 <a href={site} class="inline-flex items-center">
-  <Icon name={icon} class="h-4 mr-1" />
+  <Icon name={icon} class="h-4 w-6 mr-1" />
   <span class="text-sm"><slot /></span>
 </a>
