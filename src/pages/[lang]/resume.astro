@@ -31,10 +31,14 @@ const t = getLanguage(lang);
   image="https://mbund.dev/images/headshot.jpg"
 >
   <div class="m-12">
+    <div class="flex justify-center items-baseline font-mono">
+      <div class="ml-[22ch]"></div>
+      <span class="text-3xl text-blue-500">Mark Bundschuh</span>
+      <span class="text-xl">&nbsp;// Software Developer</span>
+    </div>
+
     <div class="flex flex-row gap-3">
       <section class="basis-2/5">
-        <h1 class="text-3xl font-medium mb-3">{t["name"]}</h1>
-
         <div class="mb-3">
           <h1 class="title">
             {t["objective.title"]}
@@ -104,7 +108,6 @@ const t = getLanguage(lang);
                   skills.react,
                   skills.nextjs,
                   skills.svelte,
-                  skills.astro,
                   skills.tailwind,
                   skills.css,
                   skills.rust,
@@ -163,9 +166,9 @@ const t = getLanguage(lang);
 
         <div class="mb-3">
           <h1 class="title">Power Skills</h1>
-          <ul class="description list-disc">
-            <li>Excellent leadership and communication abilities</li>
-            <li>Passionate about technology and driven to learn more</li>
+          <ul class="description list-disc list-inside ml-1">
+            <li>Experienced leader and good communicator</li>
+            <li>Passionate about tech and driven to learn</li>
             <li>Disciplined about time management</li>
             <li>High work ethic</li>
             <li>Adaptable to any situation</li>
@@ -184,10 +187,10 @@ const t = getLanguage(lang);
 
       <section class="basis-3/5">
         <div class="flex flex-col gap-2 mb-2">
-          <h1 class="title mb-2">Professional Experience</h1>
+          <h1 class="title">Professional Experience</h1>
 
           <ol class="relative border-l border-gray-200">
-            <li class="mb-2 ml-6">
+            <li class="mb-2 ml-8">
               <a href="https://kududyn.com" class="company">
                 <img src="/images/kudu-dynamics.svg" />
               </a>
@@ -234,7 +237,7 @@ const t = getLanguage(lang);
                 </li>
               </ol>
             </li>
-            <li class="mb-2 ml-6">
+            <li class="mb-2 ml-8">
               <a href="https://osucyber.club" class="company">
                 <img src="/images/osucyber-logo.svg" />
               </a>
@@ -291,7 +294,7 @@ const t = getLanguage(lang);
                 </li>
               </ol>
             </li>
-            <li class="mb-2 ml-6">
+            <li class="mb-2 ml-8">
               <a href="https://insigma.de" class="company">
                 <img src="/images/insigma-logo-m.png" />
               </a>
@@ -316,8 +319,8 @@ const t = getLanguage(lang);
               </div>
               <ol class="description list-disc">
                 <li>
-                  Migrated a Visual Basic website to C# ASP.NET MVC and
-                  Microsoft SQL Server.
+                  Migrated a Visual Basic website to C# ASP.NET and Microsoft
+                  SQL.
                 </li>
                 <li>
                   Designed dynamic user facing views with CSS and TypeScript.
@@ -330,7 +333,7 @@ const t = getLanguage(lang);
           <h1 class="title">Personal Projects</h1>
 
           <ol class="relative">
-            <li class="mb-2 ml-6">
+            <li class="mb-2 ml-8">
               <a href="https://github.com/rhombusgg/rhombus" class="company">
                 <Icon name="ic:outline-bookmark-border" class="h-full w-full" />
               </a>
@@ -355,8 +358,7 @@ const t = getLanguage(lang);
               </h2>
               <ul class="description list-disc">
                 <li>
-                  Created a Jeopardy style challenge competition platform for
-                  CTFs from scratch
+                  Created a Jeopardy style competition platform for hosting CTFs
                 </li>
                 <li>
                   Designed a cohesive and modern user interface, including
@@ -371,7 +373,7 @@ const t = getLanguage(lang);
               </ul>
             </li>
 
-            <li class="mb-2 ml-6">
+            <li class="mb-2 ml-8">
               <a href="https://github.com/mbund/canvas-cli" class="company">
                 <Icon name="ic:outline-bookmark-border" class="h-full w-full" />
               </a>
@@ -404,7 +406,7 @@ const t = getLanguage(lang);
               </ul>
             </li>
 
-            <li class="mb-2 ml-6">
+            <li class="mb-2 ml-8">
               <a href="https://github.com/mbund/homelab" class="company">
                 <Icon name="ic:outline-bookmark-border" class="h-full w-full" />
               </a>
@@ -436,7 +438,7 @@ const t = getLanguage(lang);
                   principles.
                 </li>
                 <li>
-                  Practice backup and disaster recovery with automated offsite
+                  Practiced backup and disaster recovery with automated offsite
                   cloud backups to keep important data safe.
                 </li>
               </ul>

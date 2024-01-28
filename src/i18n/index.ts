@@ -121,10 +121,10 @@ export const skills = createSkillsData({
     icon: "devicon:zig",
   },
   rust: { name: "Rust", url: "https://rust-lang.org", icon: "logos:rust" },
-  c: { name: "C", icon: "logos:c" },
-  cpp: { name: "C++", icon: "logos:c-plusplus" },
+  c: { name: "C", url: undefined, icon: "logos:c" },
+  cpp: { name: "C++", url: undefined, icon: "logos:c-plusplus" },
   python: { name: "Python", url: "https://python.org", icon: "logos:python" },
-  bash: { name: "Bash/shells", icon: "logos:bash-icon" },
+  bash: { name: "Bash/shells", url: undefined, icon: "logos:bash-icon" },
   kotlin: {
     name: "Kotlin",
     url: "https://kotlinlang.org",
@@ -175,7 +175,7 @@ export const skills = createSkillsData({
     icon: "logos:terraform-icon",
   },
   github_actions: {
-    name: "GitHub CI/CD",
+    name: "Actions",
     url: "https://github.com/features/actions",
     icon: "logos:github-icon",
   },
