@@ -82,7 +82,10 @@ const t = getLanguage(lang);
               <Icon name="mdi:github" class="h-6 mr-1" />
               <span class="font-mono">github.com/mbund</span>
             </a>
-            <a href="https://mbund.dev" class="flex items-center">
+            <a
+              href="https://mbund.dev?utm_source=resume&utm_campaign="
+              class="flex items-center"
+            >
               <Icon name="ph:globe" class="h-6 mr-1" />
               <span class="font-mono">mbund.dev</span>
             </a>
@@ -101,22 +104,21 @@ const t = getLanguage(lang);
 
           <div class="mb-2">
             <h2 class="uppercase font-mono">Languages/Frameworks/Libraries</h2>
-            <div class="grid grid-cols-3">
+            <div class="grid grid-flow-col grid-rows-4 grid-cols-3">
               {
                 [
-                  skills.typescript,
-                  skills.react,
-                  skills.nextjs,
-                  skills.svelte,
-                  skills.tailwind,
+                  skills.bash,
+                  skills.csharp,
+                  skills.cpp,
+                  skills.c,
                   skills.css,
+                  skills.nextjs,
+                  skills.python,
+                  skills.react,
+                  skills.svelte,
+                  skills.typescript,
                   skills.rust,
                   skills.zig,
-                  skills.c,
-                  skills.cpp,
-                  skills.python,
-                  skills.csharp,
-                  skills.bash,
                 ].map((skill: SkillMeta) => (
                   <Skill href={skill.url} icon={skill.icon}>
                     {skill.name}
@@ -129,17 +131,15 @@ const t = getLanguage(lang);
             <h2 class="uppercase font-mono">
               {t["skills.infrastructure.title"]}
             </h2>
-            <div class="grid grid-cols-3">
+            <div class="grid grid-flow-col grid-cols-3 grid-rows-2">
               {
                 [
-                  skills.debian,
-                  skills.ubuntu,
-                  skills.fedora,
-                  skills.nixos,
                   skills.aws,
-                  skills.terraform,
+                  skills.debian,
+                  skills.fedora,
                   skills.kubernetes,
-                  skills.github_actions,
+                  skills.terraform,
+                  skills.ubuntu,
                 ].map((skill) => (
                   <Skill href={skill.url} icon={skill.icon}>
                     {skill.name}
@@ -150,15 +150,19 @@ const t = getLanguage(lang);
           </div>
           <div>
             <h2 class="uppercase font-mono">{t["skills.tools.title"]}</h2>
-            <div class="grid grid-cols-3">
+            <div class="grid grid-flow-col grid-cols-3 grid-rows-2">
               {
-                [skills.vscode, skills.vim, skills.docker, skills.git].map(
-                  (skill) => (
-                    <Skill href={skill.url} icon={skill.icon}>
-                      {skill.name}
-                    </Skill>
-                  )
-                )
+                [
+                  skills.docker,
+                  skills.git,
+                  skills.nix,
+                  skills.vim,
+                  skills.vscode,
+                ].map((skill) => (
+                  <Skill href={skill.url} icon={skill.icon}>
+                    {skill.name}
+                  </Skill>
+                ))
               }
             </div>
           </div>
@@ -167,10 +171,9 @@ const t = getLanguage(lang);
         <div class="mb-3">
           <h1 class="title">Power Skills</h1>
           <ul class="description list-disc list-inside ml-1">
-            <li>Experienced leader and good communicator</li>
+            <li>Experienced leader</li>
             <li>Passionate about tech and driven to learn</li>
-            <li>Disciplined about time management</li>
-            <li>High work ethic</li>
+            <li>Strong work ethic</li>
             <li>Adaptable to any situation</li>
             <li>Logical problem solver</li>
           </ul>
@@ -187,24 +190,24 @@ const t = getLanguage(lang);
 
       <section class="basis-3/5">
         <div class="flex flex-col gap-2 mb-2">
-          <h1 class="title">Professional Experience</h1>
+          <h1 class="title">Previous Experience</h1>
 
           <ol class="relative border-l border-gray-200">
             <li class="mb-2 ml-8">
-              <a href="https://kududyn.com" class="company">
+              <a href="https://www.kududyn.com" class="company">
                 <img src="/images/kudu-dynamics.svg" />
               </a>
               <h2 class="flex items-center mb-1 justify-between">
-                <a href="https://kududyn.com"
+                <a href="https://www.kududyn.com"
                   >{t["experience.intern-kudu.header"]}</a
                 >
                 <div class="flex gap-2">
                   {
                     [
-                      skills.typescript,
-                      skills.vscode,
                       skills.c,
                       skills.python,
+                      skills.typescript,
+                      skills.vscode,
                     ].map((skill) => (
                       <Skill href={skill.url} icon={skill.icon}>
                         {skill.name}
@@ -221,10 +224,6 @@ const t = getLanguage(lang);
                 <li>
                   Developed VSCode extension to assist in Linux Kernel
                   development and bug triaging process for a DARPA effort.
-                </li>
-                <li>
-                  Integrated automated tooling to examine and reveal higher
-                  impact risks from known bugs in the kernel.
                 </li>
                 <li>
                   Designed an inuitive UI to easily reproduce known CVEs and
@@ -247,7 +246,7 @@ const t = getLanguage(lang);
                 </a>
                 <div class="flex gap-2">
                   {
-                    [skills.aws, skills.terraform, skills.docker].map(
+                    [skills.aws, skills.docker, skills.terraform].map(
                       (skill) => (
                         <Skill href={skill.url} icon={skill.icon}>
                           {skill.name}
@@ -314,18 +313,21 @@ const t = getLanguage(lang);
               </h2>
               <div class="flex gap-2">
                 <span class="tag">Intern</span>
-                <span class="tag">Remote</span>
                 <span class="tag">Summer 2021</span>
               </div>
               <ol class="description list-disc">
                 <li>
-                  Migrated a Visual Basic website to C# ASP.NET and Microsoft
-                  SQL.
+                  Engaged with the company's customers to gather requirements
+                  and feedback on features and website designs.
                 </li>
                 <li>
-                  Designed dynamic user facing views with CSS and TypeScript.
+                  Quickly iterated to find and implement the best possible
+                  workflows with the highest end user efficiency.
                 </li>
-                <li>Communicated entirely in German.</li>
+                <li>
+                  Communicated entirely in German in a diverse remote
+                  environment.
+                </li>
               </ol>
             </li>
           </ol>
@@ -348,7 +350,7 @@ const t = getLanguage(lang);
                 </span>
                 <div class="flex gap-2">
                   {
-                    [skills.typescript, skills.svelte].map((skill) => (
+                    [skills.svelte, skills.typescript].map((skill) => (
                       <Skill href={skill.url} icon={skill.icon}>
                         {skill.name}
                       </Skill>

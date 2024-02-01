@@ -131,7 +131,7 @@ export const skills = createSkillsData({
     icon: "devicon:kotlin",
   },
   csharp: {
-    name: "C#",
+    name: "C# ASP.NET",
     url: "https://dotnet.microsoft.com/languages/csharp",
     icon: "devicon:csharp",
   },
@@ -142,8 +142,8 @@ export const skills = createSkillsData({
     url: "https://fedoraproject.org",
     icon: "logos:fedora",
   },
-  nixos: {
-    name: "NixOS",
+  nix: {
+    name: "Nix",
     url: "https://nixos.org",
     icon: "devicon:nixos",
   },
@@ -175,7 +175,7 @@ export const skills = createSkillsData({
     icon: "logos:terraform-icon",
   },
   github_actions: {
-    name: "Actions",
+    name: "GH Actions",
     url: "https://github.com/features/actions",
     icon: "logos:github-icon",
   },
