@@ -14,6 +14,13 @@ jobs:
         run: |
           pip3 install git+https://github.com/mbund/jsonresume-to-linkedin.git
 
+      - name: Tunnel through home tailscale
+        env:
+          TS_AUTHKEY: ${{ secrets.TS_AUTHKEY }}
+        run: |
+          curl -fsSL https://tailscale.com/install.sh | sh
+          tailscale up --authkey $TS_AUTHKEY --exit-note=phantasien --hostname=github-action-tunnel
+
       - name: Update LinkedIn
         env:
           LINKEDIN_USERNAME: ${{ secrets.LINKEDIN_USERNAME }}
