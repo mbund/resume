@@ -1,6 +1,8 @@
 name: Update LinkedIn
 
-on: push
+on:
+  workflow_dispatch:
+  push:
 
 jobs:
   update-linkedin:

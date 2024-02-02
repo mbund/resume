@@ -8,6 +8,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Validate Resume
+        run: |
+          curl https://raw.githubusercontent.com/jsonresume/resume-schema/master/schema.json > schema.json
+          python3 .github/workflows/validate.py
+
       - name: Update Resume Gist
         env:
           GH_TOKEN: ${{ secrets.USER_PAT }}
