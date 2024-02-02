@@ -19,7 +19,7 @@ jobs:
           TS_AUTHKEY: ${{ secrets.TS_AUTHKEY }}
         run: |
           curl -fsSL https://tailscale.com/install.sh | sh
-          sudo tailscale up --auth-key $TS_AUTHKEY --exit-node=phantasien --hostname=github-action-tunnel
+          sudo tailscale up --auth-key $TS_AUTHKEY --exit-node=100.84.77.45 --hostname=github-action-tunnel
 
       - name: Update LinkedIn
         env:
