@@ -1,28 +1,25 @@
 {
-  "name": "mbund-personal-site",
+  "name": "mbund-resume",
   "type": "module",
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "work": "concurrently \"npm run dev\" \"npm run watch-print\"",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "watch-print": "onchange 'src/**/*.astro' 'resume.json' -- chromium --headless --disable-gpu --print-to-pdf=resume.pdf --no-margins http://localhost:4321 2> /dev/null"
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.1.0",
-    "@iconify-json/devicon": "^1.1.35",
-    "@iconify-json/ic": "^1.1.17",
-    "@iconify-json/logos": "^1.1.42",
-    "@iconify-json/mdi": "^1.1.64",
-    "@iconify-json/ph": "^1.1.10",
-    "@iconify-json/vscode-icons": "^1.1.32",
     "astro": "^4.1.2",
-    "astro-icon": "^1.0.2",
     "tailwindcss": "^3.4.1"
   },
   "devDependencies": {
+    "concurrently": "^8.2.2",
+    "onchange": "^7.1.0",
     "prettier": "^3.2.1",
     "prettier-plugin-astro": "^0.12.3",
     "prettier-plugin-tailwindcss": "^0.5.11"

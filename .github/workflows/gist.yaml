@@ -1,0 +1,20 @@
+name: Update Resume Gist
+
+on: push
+
+jobs:
+  update-resume-gist:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Update Resume Gist
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          GIST_ID=$(gh api gists | jq -r '.[] | select(.files | length == 1 and has("resume.json")) | .id')
+          if [ -z "$GIST_ID" ]; then
+            gh gist create --public --desc "https://registry.jsonresume.org/mbund" resume.json
+          else
+            gh gist edit $GIST_ID resume.json
+          fi

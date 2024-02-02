@@ -1,0 +1,20 @@
+name: Update LinkedIn
+
+on: push
+
+jobs:
+  update-linkedin:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install jsonresume-to-linkedin
+        run: |
+          pip3 install git+https://github.com/mbund/jsonresume-to-linkedin.git
+
+      - name: Update LinkedIn
+        env:
+          LINKEDIN_USERNAME: ${{ secrets.LINKEDIN_USERNAME }}
+          LINKEDIN_PASSWORD: ${{ secrets.LINKEDIN_PASSWORD }}
+        run: |
+          jsonresume-to-linkedin

@@ -1,0 +1,168 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/schema.json",
+  "basics": {
+    "name": "Mark Bundschuh",
+    "email": "mark@mbund.dev",
+    "label": "Software Engineer",
+    "location": {
+      "address": "Columbus, Ohio"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "mbund",
+        "url": "https://github.com/mbund"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "mark-bundschuh",
+        "url": "https://linkedin.com/in/mark-bundschuh"
+      }
+    ],
+    "url": "https://mbund.dev",
+    "summary": "Interested in software development, Linux, homelab & server administration, cybersecurity."
+  },
+  "objective": {
+    "summary": "Seeking an internship opportunity for Summer 2024 that lets me apply and grow my skills in software."
+  },
+  "education": [
+    {
+      "institution": "The Ohio State University",
+      "startDate": "2022-08",
+      "endDate": "2025-12",
+      "area": "Computer Science and Engineering",
+      "studyType": "BS"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Programming Languages",
+      "keywords": [
+        "Bash",
+        "C",
+        "C#",
+        "C++",
+        "CSS",
+        "Go",
+        "Python",
+        "HTML",
+        "JavaScript",
+        "Rust",
+        "TypeScript",
+        "Zig",
+        "Nix"
+      ]
+    },
+    {
+      "name": "Frameworks & Libraries",
+      "keywords": [
+        "ASP.NET",
+        "Astro",
+        "Next.js",
+        "React",
+        "Svelte",
+        "TailwindCSS"
+      ]
+    },
+    {
+      "name": "Tools & infrastructure",
+      "keywords": [
+        "AWS",
+        "Debian",
+        "Docker",
+        "Git",
+        "Kubernetes",
+        "Linux",
+        "Terraform",
+        "Ubuntu",
+        "Vim",
+        "VSCode"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native"
+    },
+    {
+      "language": "German",
+      "fluency": "Native"
+    }
+  ],
+  "work": [
+    {
+      "name": "Kudu Dynamics LLC",
+      "url": "https://www.kududyn.com",
+      "startDate": "2023-06",
+      "endDate": "2023-08",
+      "description": "Cybersecurity Contractor",
+      "position": "Software Engineering Intern",
+      "location": "Columbus, Ohio",
+      "highlights": [
+        "Developed VSCode extension in TypeScript to assist in Linux Kernel bug triaging process for a DARPA effort.",
+        "Designed an inuitive UI to easily reproduce vulnerabilities to make finding potentially related bugs easier .",
+        "Contributed to daily stand up meetings, sprint planning and retrospectives, as well as code reviews following an Agile-like development process."
+      ]
+    },
+    {
+      "name": "INSIGMA IT Engineering GmbH",
+      "url": "https://insigma.de",
+      "startDate": "2021-02",
+      "endDate": "2021-08",
+      "description": "Software Contractor",
+      "position": "Software Engineering Intern",
+      "location": "Remote",
+      "highlights": [
+        "Developed contracting company's internal management dashboard in C# with Microsoft ASP.NET.",
+        "Engaged with customers to gather requirements and feedback on features to find the most efficient workflows.",
+        "Communicated entirely in German in a diverse remote environment based out of Cologne, Germany."
+      ]
+    },
+    {
+      "name": "Ohio State Cybersecurity Club",
+      "url": "https://osucyber.club",
+      "startDate": "2023-01",
+      "description": "Student Organization",
+      "position": "President",
+      "location": "Columbus, Ohio",
+      "highlights": [
+        "Lead weekly meetings on various cybersecurity topics to students and network with industry professionals.",
+        "Manage club infrastructure on AWS with Terraform and Docker.",
+        "Host BuckeyeCTF yearly, a competition where last year hosted over 600 teams worldwide online, and 90 in person players. Solved technical issues and kept 99.9% server uptime. Organized and worked through logistical issues including coordinating with 7 different sponsoring companies to provide funding and prizes for the event."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "rhombus",
+      "url": "https://github.com/rhombusgg/rhombus",
+      "startDate": "2023-10",
+      "keywords": ["TypeScript", "Svelte"],
+      "highlights": [
+        "Created a Jeopardy style competition platform with a cohesive and modern user interface for hosting scalable and performant CTFs, written in Svelte and TypeScript.",
+        "Implemented innovative features in the space such as scriptable health checks and a custom ticket support system interacting with Discord."
+      ]
+    },
+    {
+      "name": "canvas-cli",
+      "url": "https://github.com/mbund/canvas-cli",
+      "startDate": "2023-01",
+      "keywords": ["Rust"],
+      "highlights": [
+        "Interactive command line interface tool for automating common tasks as a student in OSU's learning management system using official REST APIs.",
+        "Compatibile with any institution's Canvas LMS instance. Cross platform single binary made with Rust."
+      ]
+    },
+    {
+      "name": "homelab",
+      "url": "https://github.com/mbund/homelab",
+      "startDate": "2022-08",
+      "keywords": ["Kubernetes"],
+      "highlights": [
+        "Recycled old hardware into personal servers using Kubernetes to breathe new life into them hosting popular service such as Bitwarden, Nextcloud, and Grafana.",
+        "Practiced backup and disaster recovery with automated offsite cloud backups to keep important data safe."
+      ]
+    }
+  ]
+}

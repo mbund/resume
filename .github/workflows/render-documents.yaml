@@ -44,15 +44,9 @@ jobs:
         run: |
           pnpm preview &
           sleep 10
-          chromium --headless --disable-gpu --print-to-pdf=en-resume-mark-bundschuh-$(date --iso-8601).pdf --no-margins http://localhost:4321/en/resume
-          chromium --headless --disable-gpu --print-to-pdf=en-resume-ats-mark-bundschuh-$(date --iso-8601).pdf --no-margins http://localhost:4321/en/resume-ats
-          chromium --headless --disable-gpu --print-to-pdf=en-business-card-front-mark-bundschuh-$(date --iso-8601).pdf --no-margins http://localhost:4321/en/card/front
-          chromium --headless --disable-gpu --print-to-pdf=en-business-card-back-mark-bundschuh-$(date --iso-8601).pdf --no-margins http://localhost:4321/en/card/back
-          chromium --headless --disable-gpu --print-to-pdf=de-lebenslauf-mark-bundschuh-$(date --iso-8601).pdf --no-margins http://localhost:4321/de/resume
-          chromium --headless --disable-gpu --print-to-pdf=de-lebenslauf-bms-mark-bundschuh-$(date --iso-8601).pdf --no-margins http://localhost:4321/de/resume-ats
-          chromium --headless --disable-gpu --print-to-pdf=de-visitenkarte-vorderseite-mark-bundschuh-$(date --iso-8601).pdf --no-margins http://localhost:4321/de/card/front
-          chromium --headless --disable-gpu --print-to-pdf=de-visitenkarte-rueckseite-mark-bundschuh-$(date --iso-8601).pdf --no-margins http://localhost:4321/de/card/back
+          chromium --headless --disable-gpu --print-to-pdf=mark-bundschuh-resume.pdf --no-margins http://localhost:4321
           kill %1
+          cp mark-bundschuh-resume.pdf $(date --iso-8601)-mark-bundschuh-resume.pdf
 
       - name: Get tag name
         id: tag-name

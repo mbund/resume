@@ -1,0 +1,192 @@
+---
+import Layout from "~/layouts/main.astro";
+import resume from "~/../resume.json";
+
+const today = new Date();
+const title = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}-mark-bundschuh-resume.pdf`;
+
+const stripHttpPrefix = (url: string) => url.replace(/https:\/\//, "");
+
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+const formatDate = (date: string | undefined) => {
+  if (!date) return "Present";
+  const [year, month] = date.split("-");
+  return `${months[parseInt(month) - 1]} ${year}`;
+};
+---
+
+<Layout title={title}>
+  <div class="flex flex-col items-center">
+    <h1 class="text-3xl">{resume.basics.name}</h1>
+
+    <h2>
+      <span>
+        {resume.basics.location.address}
+      </span>
+      ·
+      <a href={`mailto:${resume.basics.email}`}>{resume.basics.email}</a>
+      ·
+      {
+        resume.basics.profiles.map((profile, i) => (
+          <>
+            <a class="font-mono" href={profile.url}>
+              {stripHttpPrefix(profile.url)}
+            </a>
+            <>{resume.basics.profiles.length - 1 !== i && <> · </>}</>
+          </>
+        ))
+      }
+    </h2>
+  </div>
+
+  <div class="wrapper flex flex-col">
+    <h1 class="title">Objective</h1>
+    <hr class="separator" />
+    <p>{resume.objective.summary}</p>
+
+    <h1 class="title">Education</h1>
+    <hr class="separator" />
+    <div class="wrapper flex flex-col gap-2">
+      {
+        resume.education.map((education) => (
+          <div>
+            <h2 class="flex justify-between">
+              <span class="font-bold">{education.institution}</span>
+              <span>
+                {formatDate(education.startDate)} -{" "}
+                {formatDate(education.endDate)}
+              </span>
+            </h2>
+            <p>
+              {education.studyType} {education.area}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+
+    <h1 class="title">Skills</h1>
+    <hr class="separator" />
+    <div class="grid grid-cols-[max-content_1fr] gap-x-4">
+      {
+        resume.skills.map((skill) => (
+          <>
+            <h2>{skill.name}:</h2>
+            <p>{skill.keywords.join(", ")}</p>
+          </>
+        ))
+      }
+    </div>
+
+    <h1 class="title">Experience</h1>
+    <hr class="separator" />
+    <div class="wrapper flex flex-col gap-2">
+      {
+        resume.work.map((work) => (
+          <div>
+            <h2 class="flex justify-between">
+              <span>
+                <span class="font-bold">{work.name}</span>
+                <span class="ml-2 italic">{work.description}</span>
+              </span>
+              <span>
+                {formatDate(work.startDate)} - {formatDate(work.endDate)}
+              </span>
+            </h2>
+            <h2 class="flex justify-between">
+              <span class="italic">{work.position}</span>
+              <span>{work.location}</span>
+            </h2>
+            <ul class="ml-8 list-disc">
+              {work.highlights
+                .filter((_, i) => i < 3)
+                .map((highlight) => (
+                  <li>{highlight}</li>
+                ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+
+    <h1 class="title">Projects</h1>
+    <hr class="separator" />
+    <div class="wrapper flex flex-col gap-2">
+      {
+        resume.projects
+          .filter((_, i) => i < 3)
+          .map((project) => (
+            <div>
+              <h2 class="flex justify-between">
+                <span class="font-bold">{project.name}</span>
+                <a class="font-mono" href={project.url}>
+                  {stripHttpPrefix(project.url)}
+                </a>
+              </h2>
+              <ul class="ml-8 list-disc">
+                {project.highlights
+                  .filter((_, i) => i < 2)
+                  .map((highlight) => (
+                    <li>{highlight}</li>
+                  ))}
+              </ul>
+            </div>
+          ))
+      }
+    </div>
+  </div>
+</Layout>
+
+<style lang="postcss">
+  html {
+    font-size: 13px;
+    margin: 0.25in;
+  }
+
+  .title {
+    @apply text-xl uppercase mt-2;
+  }
+
+  .separator {
+    @apply mb-2 h-[1px] border-0 bg-black;
+  }
+
+  @media print {
+    @page {
+      orientation: portait;
+      size: Letter;
+      margin: 0.25in;
+    }
+
+    html {
+      margin: 0;
+    }
+
+    * {
+      print-color-adjust: exact;
+    }
+
+    div:not(.wrapper) {
+      break-inside: avoid;
+    }
+
+    .pagebreak {
+      clear: both;
+      page-break-after: always;
+    }
+  }
+</style>
