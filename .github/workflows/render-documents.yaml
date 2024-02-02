@@ -1,14 +1,6 @@
 name: Render Documents
 
-on:
-  workflow_dispatch:
-  push:
-    branches:
-      - master
-    paths:
-      - src/**
-      - public/**
-      - .github/workflows/**
+on: push
 
 permissions:
   contents: write
@@ -28,7 +20,7 @@ jobs:
           fc-cache -f -v ~/.local/share/fonts/adobe-fonts/source-code-pro
 
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2

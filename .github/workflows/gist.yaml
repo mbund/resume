@@ -6,11 +6,11 @@ jobs:
   update-resume-gist:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Update Resume Gist
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.USER_PAT }}
         run: |
           GIST_ID=$(gh api gists | jq -r '.[] | select(.files | length == 1 and has("resume.json")) | .id')
           if [ -z "$GIST_ID" ]; then
