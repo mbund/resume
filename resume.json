@@ -4,6 +4,7 @@
     "name": "Mark Bundschuh",
     "email": "mark@mbund.dev",
     "label": "Software Engineer",
+    "image": "https://avatars.githubusercontent.com/u/25110595",
     "location": {
       "address": "Columbus, Ohio"
     },
@@ -20,7 +21,7 @@
       }
     ],
     "url": "https://mbund.dev",
-    "summary": "Interested in software development, Linux, homelab & server administration, cybersecurity."
+    "summary": "Interested in software development, Linux, homelab & server administration, and cybersecurity."
   },
   "objective": {
     "summary": "Seeking an internship opportunity for Summer 2024 that lets me apply and grow my skills in software."
@@ -31,7 +32,10 @@
       "startDate": "2022-08",
       "endDate": "2025-12",
       "area": "Computer Science and Engineering",
-      "studyType": "BS"
+      "studyType": "BS",
+      "score": "3.785",
+      "url": "https://osu.edu",
+      "courses": ["Algorithms and Data Structures", "Database Systems"]
     }
   ],
   "skills": [
