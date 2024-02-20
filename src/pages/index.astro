@@ -37,16 +37,16 @@ const formatDate = (date: string | undefined) => {
       <span>
         {resume.basics.location.address}
       </span>
-      ·
+      |
       <a href={`mailto:${resume.basics.email}`}>{resume.basics.email}</a>
-      ·
+      |
       {
         resume.basics.profiles.map((profile, i) => (
           <>
             <a class="font-mono" href={profile.url}>
               {stripHttpPrefix(profile.url)}
             </a>
-            <>{resume.basics.profiles.length - 1 !== i && <> · </>}</>
+            <>{resume.basics.profiles.length - 1 !== i && <> | </>}</>
           </>
         ))
       }
@@ -72,8 +72,69 @@ const formatDate = (date: string | undefined) => {
               </span>
             </h2>
             <p>
-              {education.studyType} {education.area}
+              {education.studyType} {education.area}, {education.score} GPA
             </p>
+            <p>Relavent Courses: {education.courses.join(", ")}</p>
+          </div>
+        ))
+      }
+    </div>
+
+    <h1 class="title">Professional Experience</h1>
+    <hr class="separator" />
+    <div class="wrapper flex flex-col gap-2">
+      {
+        resume.work.map((work) => (
+          <div>
+            <h2 class="flex justify-between">
+              <span>
+                <span class="font-bold">{work.name}</span> ({work.description})
+              </span>
+              <span>
+                {formatDate(work.startDate)} - {formatDate(work.endDate)}
+              </span>
+            </h2>
+            <h2 class="flex justify-between">
+              <span class="italic">{work.position}</span>
+              <span>{work.location}</span>
+            </h2>
+            <ul class="ml-8 list-disc">
+              {work.highlights
+                // .filter((_, i) => i < 3)
+                .map((highlight) => (
+                  <li>{highlight}</li>
+                ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+
+    <h1 class="title">Leadership Experience</h1>
+    <hr class="separator" />
+    <div class="wrapper flex flex-col gap-2">
+      {
+        resume.volunteer.map((volunteer) => (
+          <div>
+            <h2 class="flex justify-between">
+              <span>
+                <span class="font-bold">{volunteer.organization}</span>
+              </span>
+              <span>
+                {formatDate(volunteer.startDate)} -{" "}
+                {formatDate((volunteer as any).endDate)}
+              </span>
+            </h2>
+            <h2 class="flex justify-between">
+              <span class="italic">{volunteer.position}</span>
+            </h2>
+            <ul class="ml-8 list-disc">
+              {volunteer.highlights
+                .filter((_, i) => i < 3)
+                .map((highlight) => (
+                  <li>{highlight}</li>
+                ))}
+            </ul>
           </div>
         ))
       }
@@ -92,60 +153,27 @@ const formatDate = (date: string | undefined) => {
       }
     </div>
 
-    <h1 class="title">Experience</h1>
+    <h1 class="title">Projects</h1>
     <hr class="separator" />
     <div class="wrapper flex flex-col gap-2">
       {
-        resume.work.map((work) => (
-          <div>
+        [resume.projects[0], resume.projects[2]].map((project) => (
+          <div class="project">
             <h2 class="flex justify-between">
-              <span>
-                <span class="font-bold">{work.name}</span>
-                <span class="ml-2 italic">{work.description}</span>
-              </span>
-              <span>
-                {formatDate(work.startDate)} - {formatDate(work.endDate)}
-              </span>
-            </h2>
-            <h2 class="flex justify-between">
-              <span class="italic">{work.position}</span>
-              <span>{work.location}</span>
+              <span class="font-bold">{project.description}</span>
+              <a class="font-mono" href={project.url}>
+                {stripHttpPrefix(project.url)}
+              </a>
             </h2>
             <ul class="ml-8 list-disc">
-              {work.highlights
-                .filter((_, i) => i < 3)
+              {project.highlights
+                .filter((_, i) => i < 2)
                 .map((highlight) => (
                   <li>{highlight}</li>
                 ))}
             </ul>
           </div>
         ))
-      }
-    </div>
-
-    <h1 class="title">Projects</h1>
-    <hr class="separator" />
-    <div class="wrapper flex flex-col gap-2">
-      {
-        resume.projects
-          .filter((_, i) => i < 3)
-          .map((project) => (
-            <div>
-              <h2 class="flex justify-between">
-                <span class="font-bold">{project.name}</span>
-                <a class="font-mono" href={project.url}>
-                  {stripHttpPrefix(project.url)}
-                </a>
-              </h2>
-              <ul class="ml-8 list-disc">
-                {project.highlights
-                  .filter((_, i) => i < 2)
-                  .map((highlight) => (
-                    <li>{highlight}</li>
-                  ))}
-              </ul>
-            </div>
-          ))
       }
     </div>
   </div>
@@ -158,11 +186,15 @@ const formatDate = (date: string | undefined) => {
   }
 
   .title {
-    @apply text-xl uppercase mt-2;
+    @apply text-lg mt-2;
   }
 
   .separator {
     @apply mb-2 h-[1px] border-0 bg-black;
+  }
+
+  li {
+    list-style-type: "- ";
   }
 
   @media print {

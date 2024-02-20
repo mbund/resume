@@ -13,6 +13,10 @@ jobs:
         run: |
           sudo snap install chromium
 
+      - name: Install pdftk
+        run: |
+          sudo apt-get install pdftk-java
+
       - name: Install Source Code Pro font
         run: |
           mkdir -p ~/.local/share/fonts/adobe-fonts/source-code-pro
@@ -36,9 +40,11 @@ jobs:
         run: |
           pnpm preview &
           sleep 10
-          chromium --headless --disable-gpu --print-to-pdf=mark-bundschuh-resume.pdf --no-margins http://localhost:4321
+          chromium --headless --disable-gpu --print-to-pdf=mark-bundschuh-resume-full.pdf --no-margins http://localhost:4321
+          pdftk mark-bundschuh-resume-full.pdf cat 1 output mark-bundschuh-resume.pdf
           kill %1
           cp mark-bundschuh-resume.pdf $(date --iso-8601)-mark-bundschuh-resume.pdf
+          cp mark-bundschuh-resume-full.pdf $(date --iso-8601)-mark-bundschuh-resume-full.pdf
 
       - name: Get tag name
         id: tag-name

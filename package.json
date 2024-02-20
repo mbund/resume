@@ -4,13 +4,16 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "work": "concurrently \"npm run dev\" \"npm run watch-print\"",
-    "dev": "astro dev",
+    "dev": "concurrently \"pnpm run web\" \"pnpm run watch-print\" \"pnpm run watch-truncate\"",
+    "web": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "watch-print": "onchange 'src/**/*.astro' 'resume.json' -- chromium --headless --disable-gpu --print-to-pdf=resume.pdf --no-margins http://localhost:4321 2> /dev/null"
+    "print": "chromium --headless --disable-gpu --print-to-pdf=resume-full.pdf --no-margins http://localhost:4321",
+    "watch-print": "onchange 'src/**/*.astro' 'resume.json' -- pnpm run print 2> /dev/null",
+    "truncate": "pdftk resume-full.pdf cat 1 output resume.pdf",
+    "watch-truncate": "onchange 'resume-full.pdf' -- pnpm run truncate 2> /dev/null"
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.1.0",

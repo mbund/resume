@@ -24,7 +24,7 @@
     "summary": "Interested in software development, Linux, homelab & server administration, and cybersecurity."
   },
   "objective": {
-    "summary": "Seeking an internship opportunity for Summer 2024 that lets me apply and grow my skills in software."
+    "summary": "Internship opportunity for Summer 2024 that lets me apply and grow my skills in software."
   },
   "education": [
     {
@@ -104,8 +104,9 @@
       "position": "Software Engineering Intern",
       "location": "Columbus, Ohio",
       "highlights": [
-        "Developed VSCode extension in TypeScript to assist in Linux Kernel bug triaging process for a DARPA effort.",
-        "Designed an inuitive UI to easily reproduce vulnerabilities to make finding potentially related bugs easier .",
+        "Developed VSCode extension in TypeScript to assist in Linux kernel bug triaging process for a DARPA (U.S. Department of Defense research agency) effort.",
+        "Continuously field tested the extension on known CVEs (vulnerabilities) to find valuable improvement areas.",
+        "Made heavy use of Docker to speed up kernel builds with caching, and QEMU to run and debug the kernel in an isolated virtual machine.",
         "Contributed to daily stand up meetings, sprint planning and retrospectives, as well as code reviews following an Agile-like development process."
       ]
     },
@@ -118,33 +119,33 @@
       "position": "Software Engineering Intern",
       "location": "Remote",
       "highlights": [
-        "Developed contracting company's internal management dashboard in C# with Microsoft ASP.NET.",
-        "Engaged with customers to gather requirements and feedback on features to find the most efficient workflows.",
+        "Developed contracting company's internal management dashboard in C# Microsoft ASP.NET, with TypeScript, CSS, and Bootstrap on the client.",
+        "Engaged with customers to refine the requirements and deliver a product that met their needs.",
         "Communicated entirely in German in a diverse remote environment based out of Cologne, Germany."
       ]
-    },
+    }
+  ],
+  "volunteer": [
     {
-      "name": "Ohio State Cybersecurity Club",
+      "organization": "Ohio State Cybersecurity Club",
       "url": "https://osucyber.club",
       "startDate": "2023-01",
-      "description": "Student Organization",
       "position": "President",
-      "location": "Columbus, Ohio",
       "highlights": [
         "Lead weekly meetings on various cybersecurity topics to students and network with industry professionals.",
-        "Manage club infrastructure on AWS with Terraform and Docker.",
-        "Host BuckeyeCTF yearly, a competition where last year hosted over 600 teams worldwide online, and 90 in person players. Solved technical issues and kept 99.9% server uptime. Organized and worked through logistical issues including coordinating with 7 different sponsoring companies to provide funding and prizes for the event."
+        "Host BuckeyeCTF yearly, a competition where last year hosted over 600 teams worldwide online, and over 90 in person players. Solved technical issues and kept 99.9% uptime on over 40 services. Organized and worked through logistical challenges including coordinating with 7 sponsoring companies to provide funding and prizes."
       ]
     }
   ],
   "projects": [
     {
       "name": "rhombus",
+      "description": "Jeopardy Style CTF Website Platform",
       "url": "https://github.com/rhombusgg/rhombus",
       "startDate": "2023-10",
-      "keywords": ["TypeScript", "Svelte"],
+      "keywords": ["TypeScript", "Svelte", "TailwindCSS"],
       "highlights": [
-        "Created a Jeopardy style competition platform with a cohesive and modern user interface for hosting scalable and performant CTFs, written in Svelte and TypeScript.",
+        "Created a Jeopardy style competition platform with a cohesive and modern user interface for hosting CTF events, written in Svelte, TypeScript, and TailwindCSS.",
         "Implemented innovative features in the space such as scriptable health checks and a custom ticket support system interacting with Discord."
       ]
     },
@@ -160,6 +161,7 @@
     },
     {
       "name": "homelab",
+      "description": "Running Servers at Home",
       "url": "https://github.com/mbund/homelab",
       "startDate": "2022-08",
       "keywords": ["Kubernetes"],

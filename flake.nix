@@ -22,6 +22,7 @@
             nodePackages_latest.pnpm
             entr
             chromium
+            pdftk
           ];
         };
       }
