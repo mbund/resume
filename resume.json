@@ -35,7 +35,7 @@
       "studyType": "BS",
       "score": "3.785",
       "url": "https://osu.edu",
-      "courses": ["Algorithms and Data Structures", "Database Systems"]
+      "courses": ["Data Structures and Algorithms", "Database Systems"]
     }
   ],
   "skills": [
@@ -113,7 +113,7 @@
     {
       "name": "INSIGMA IT Engineering GmbH",
       "url": "https://insigma.de",
-      "startDate": "2021-02",
+      "startDate": "2021-06",
       "endDate": "2021-08",
       "description": "Software Contractor",
       "position": "Software Engineering Intern",

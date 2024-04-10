@@ -1,0 +1,282 @@
+---
+import Layout from "~/layouts/main.astro";
+
+const today = new Date();
+const title = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}-mark-bundschuh-resume-frontend.pdf`;
+---
+
+<Layout title={title}>
+  <div class="flex flex-col items-center">
+    <h1 class="text-3xl">Mark Bundschuh</h1>
+
+    <h2 class="font-mono">
+      <span>Columbus, Ohio</span>
+      |
+      <a href={`mailto:mark@mbund.dev`}>mark@mbund.dev</a>
+      |
+      <a href={`https://linkedin.com/in/mark-bundschuh`}
+        >linkedin.com/in/mark-bundschuh</a
+      >
+      |
+      <a href={`https://github.com/mbund`}>github.com/mbund</a>
+      |
+      <a href={`https://mbund.dev/?utm_source=resume`}>mbund.dev</a>
+    </h2>
+  </div>
+
+  <div class="wrapper flex flex-col">
+    <h1 class="title">Education</h1>
+    <hr class="separator" />
+    <div class="wrapper flex flex-col gap-2">
+      <div>
+        <h2 class="flex justify-between">
+          <span class="header">The Ohio State University</span>
+          <span>August 2022 - December 2025</span>
+        </h2>
+        <p>B.S. Computer Science and Engineering, 3.785 GPA</p>
+        <p>
+          Relavent Courses: <span class="font-bold"
+            >Data Structures and Algorithms, Database Systems</span
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <h1 class="title">Professional Experience</h1>
+  <hr class="separator" />
+  <div class="wrapper flex flex-col gap-2">
+    <div>
+      <h2 class="flex justify-between">
+        <span>
+          <span class="header">Kudu Dynamics LLC</span>
+        </span>
+        <span>June 2023 - August 2023</span>
+      </h2>
+      <h2 class="flex justify-between">
+        <span class="italic">Software Engineering Intern</span>
+        <span>Columbus, Ohio</span>
+      </h2>
+      <ul class="ml-8 list-disc">
+        <li>
+          Developed <span class="font-bold">VSCode extension</span> in <span
+            class="font-bold">TypeScript</span
+          >
+          to assist in Linux kernel bug triaging process for a DARPA (U.S. Department
+          of Defense research agency) effort.
+        </li>
+        <li>
+          Continuously field tested the extension on known CVEs
+          (vulnerabilities) to find valuable <span class="font-bold">UI/UX</span
+          > improvement areas.
+        </li>
+        <li>
+          Packaged product in minimal dependency <span class="font-bold">Docker</span> containers for kernel building and debugging.
+        </li>
+        <li>
+          Contributed to daily stand up meetings, sprint planning and
+          retrospectives, as well as code reviews following an <span
+            class="font-bold">Agile</span
+          >
+          development process.
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="flex justify-between">
+        <span>
+          <span class="header">INSIGMA IT Engineering GmbH</span>
+        </span>
+        <span>June 2021 - August 2021</span>
+      </h2>
+      <h2 class="flex justify-between">
+        <span class="italic">Software Engineering Intern</span>
+        <span>Remote</span>
+      </h2>
+      <ul class="ml-8 list-disc">
+        <li>
+          Developed contracting company's internal management dashboard in <span
+            class="font-bold">C# ASP.NET</span
+          >, with <span class="font-bold">TypeScript</span>, <span
+            class="font-bold">CSS</span
+          >, and <span class="font-bold">Bootstrap</span>
+          on the client.
+        </li>
+        <li>
+          <span class="font-bold">Engaged with customers</span> to refine the requirements
+          and deliver a product that met their needs.
+        </li>
+        <li>
+          Communicated entirely in German in a diverse remote environment based
+          out of Cologne, Germany.
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <h1 class="title">Leadership Experience</h1>
+  <hr class="separator" />
+  <div class="wrapper flex flex-col gap-2">
+    <div>
+      <h2 class="flex justify-between">
+        <span>
+          <span class="header">Ohio State Cybersecurity Club</span>
+        </span>
+        <span>January 2023 - Present</span>
+      </h2>
+      <h2 class="flex justify-between">
+        <span class="italic">President</span>
+      </h2>
+      <ul class="ml-8 list-disc">
+        <li>
+          Lead weekly meetings on various cybersecurity topics to students and
+          network with industry professionals.
+        </li>
+        <li>
+          Host BuckeyeCTF yearly, a competition where last year hosted <span
+            class="font-bold">over 600 teams worldwide</span
+          > online, and over 90 in person players. Solved technical issues and kept
+          <span class="font-bold">99.9% uptime on over 40 services</span> on <span
+            class="font-bold">AWS</span
+          > using <span class="font-bold">Terraform</span>. Coordinated with <span
+            class="font-bold">7 sponsoring companies</span
+          > to provide funding and prizes.
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <h1 class="title">Skills</h1>
+  <hr class="separator" />
+  <div class="grid grid-cols-[max-content_1fr] gap-x-4">
+    <h2>Programming Languages:</h2>
+    <p class="font-bold">
+      TypeScript, JavaScript, C#, HTML, CSS, Python, Go, Rust
+    </p>
+    <h2>Frameworks & Libraries:</h2>
+    <p class="font-bold">
+      React.js, Node.js, Next.js, ASP.NET, Astro, Svelte, TailwindCSS, Bootstrap
+    </p>
+    <h2>Tools & infrastructure:</h2>
+    <p class="font-bold">AWS, Docker, Git, Kubernetes, Terraform, Linux</p>
+  </div>
+
+  <h1 class="title">Projects</h1>
+  <hr class="separator" />
+  <div class="wrapper flex flex-col gap-2">
+    <div class="project">
+      <h2 class="flex justify-between">
+        <span class="header">Jeopardy Style CTF Website Platform</span>
+        <a class="font-mono" href="https://github.com/rhombusgg/rhombus">
+          github.com/rhombusgg/rhombus
+        </a>
+      </h2>
+      <ul class="ml-8 list-disc">
+        <li>
+          Created a Jeopardy style competition platform with a cohesive and
+          modern user interface for hosting CTF events, written in <span
+            class="font-bold">Svelte</span
+          >,
+          <span class="font-bold">TypeScript</span>, and <span class="font-bold"
+            >TailwindCSS</span
+          >.
+        </li>
+        <li>
+          Embedded <span class="font-bold">TypeScript/JavaScript</span> isolated
+          runtime for secure user-provided healthcheck scripts.
+        </li>
+        <li>
+          Custom ticket support system with Discord integration for <span
+            class="font-bold">real-time support</span
+          > with challenge authors.
+        </li>
+      </ul>
+    </div>
+    <div class="project">
+      <h2 class="flex justify-between">
+        <span class="header">OSU Course Dependency Visualizer</span>
+        <a class="font-mono" href="https://cdr.mbund.dev/?utm_source=resume">
+          cdr.mbund.dev</a
+        >
+      </h2>
+      <ul class="ml-8 list-disc">
+        <li>
+          Parses Ohio State University's course catalog to solve the <span
+            class="font-bold">graph</span
+          > of course prerequisites, presented in an explorable webpage.
+        </li>
+        <li>
+          Written with vanilla <span class="font-bold">HTML</span> and <span
+            class="font-bold">CSS</span
+          >, bundled with <span class="font-bold">Astro</span>, with algorithms
+          in <span class="font-bold">TypeScript</span>.
+        </li>
+      </ul>
+    </div>
+    <div class="project">
+      <h2 class="flex justify-between">
+        <span class="header">Running Servers at Home</span>
+        <a class="font-mono" href="https://github.com/mbund/homelab">
+          github.com/mbund/homelab
+        </a>
+      </h2>
+      <ul class="ml-8 list-disc">
+        <li>
+          Recycled old hardware into personal servers using <span
+            class="font-bold">Kubernetes</span
+          > to breathe new life into them hosting popular service such as Bitwarden,
+          Nextcloud, monitored with <span class="font-bold">Prometheus</span> and
+          <span class="font-bold">Grafana</span>.
+        </li>
+        <li>
+          Practiced backup and <span class="font-bold">disaster recovery</span> with
+          automated offsite cloud backups to keep important data safe.
+        </li>
+      </ul>
+    </div>
+  </div>
+</Layout>
+
+<style lang="postcss">
+  html {
+    font-size: 13px;
+    margin: 0.25in;
+  }
+
+  .title {
+    @apply text-lg mt-2;
+  }
+
+  .separator {
+    @apply mb-2 h-[1px] border-0 bg-black;
+  }
+
+  li {
+    list-style-type: "- ";
+  }
+
+  @media print {
+    @page {
+      orientation: portait;
+      size: Letter;
+      margin: 0.25in;
+    }
+
+    html {
+      margin: 0;
+    }
+
+    * {
+      print-color-adjust: exact;
+    }
+
+    div:not(.wrapper) {
+      break-inside: avoid;
+    }
+
+    .pagebreak {
+      clear: both;
+      page-break-after: always;
+    }
+  }
+</style>
