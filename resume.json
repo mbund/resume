@@ -59,14 +59,7 @@
     },
     {
       "name": "Frameworks & Libraries",
-      "keywords": [
-        "ASP.NET",
-        "Astro",
-        "Next.js",
-        "React",
-        "Svelte",
-        "TailwindCSS"
-      ]
+      "keywords": ["ASP.NET", "Astro", "Svelte", "TailwindCSS", "Vue.js"]
     },
     {
       "name": "Tools & infrastructure",
@@ -96,6 +89,20 @@
   ],
   "work": [
     {
+      "name": "American Greetings",
+      "url": "https://americangreetings.com",
+      "startDate": "2024-06",
+      "endDate": "2024-08",
+      "description": "Greeting Card Manufacturer",
+      "position": "Software Engineering Intern",
+      "location": "Cleveland, Ohio",
+      "highlights": [
+        "Worked in legacy JavaScript codebase and incrementally rewrote PureMVC code into accessible Vue.js components.",
+        "Retooled Vite build system to fix long-standing bugs, and added plugins for better developer experience.",
+        "Thoroughly component tested with Vitest, and end-to-end tested with Playwright."
+      ]
+    },
+    {
       "name": "Kudu Dynamics LLC",
       "url": "https://www.kududyn.com",
       "startDate": "2023-06",
@@ -106,7 +113,7 @@
       "highlights": [
         "Developed VSCode extension in TypeScript to assist in Linux kernel bug triaging process for a DARPA (U.S. Department of Defense research agency) effort.",
         "Continuously field tested the extension on known CVEs (vulnerabilities) to find valuable improvement areas.",
-        "Made heavy use of Docker to speed up kernel builds with caching, and QEMU to run and debug the kernel in an isolated virtual machine.",
+        "Made heavy use of Docker to speed up kernel builds with caching, and QEMU to debug the kernel in a virtual machine.",
         "Contributed to daily stand up meetings, sprint planning and retrospectives, as well as code reviews following an Agile-like development process."
       ]
     },

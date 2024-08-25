@@ -10,8 +10,6 @@ const title = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}
     <h1 class="text-3xl">Mark Bundschuh</h1>
 
     <h2 class="font-mono">
-      <span>Columbus, Ohio</span>
-      |
       <a href={`mailto:mark@mbund.dev`}>mark@mbund.dev</a>
       |
       <a href={`https://linkedin.com/in/mark-bundschuh`}
@@ -21,6 +19,8 @@ const title = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}
       <a href={`https://github.com/mbund`}>github.com/mbund</a>
       |
       <a href={`https://mbund.dev/?utm_source=resume`}>mbund.dev</a>
+      |
+      <span>Columbus, Ohio</span>
     </h2>
   </div>
 
@@ -33,10 +33,11 @@ const title = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}
           <span class="header">The Ohio State University</span>
           <span>August 2022 - December 2025</span>
         </h2>
-        <p>B.S. Computer Science and Engineering, 3.785 GPA</p>
+        <p>B.S. Computer Science and Engineering, 3.8 GPA</p>
         <p>
           Relavent Courses: <span class="font-bold"
-            >Data Structures and Algorithms, Database Systems</span
+            >Data Structures and Algorithms, Database Systems, Computer
+            Architecture</span
           >
         </p>
       </div>
@@ -48,56 +49,70 @@ const title = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}
   <div class="wrapper flex flex-col gap-2">
     <div>
       <h2 class="flex justify-between">
-        <span>
-          <span class="header">Kudu Dynamics LLC</span>
-        </span>
-        <span>June 2023 - August 2023</span>
+        <span class="header">American Greetings Corporation</span>
+        <span>June 2024 - August 2024</span>
       </h2>
       <h2 class="flex justify-between">
-        <span class="italic">Software Engineering Intern</span>
-        <span>Columbus, Ohio</span>
+        <em>Software Engineering Intern</em>
+        <span>Cleveland, Ohio</span>
       </h2>
       <ul class="ml-8 list-disc">
         <li>
-          Developed VSCode extension in <span class="font-bold">TypeScript</span>
-          to assist in <span class="font-bold">Linux kernel</span> bug triaging
-          process for a DARPA (U.S. Department of Defense research agency) effort.
+          Worked in legacy <strong>JavaScript</strong> codebase and incrementally
+          rewrote PureMVC code into accessible <strong>Vue.js</strong> components.
         </li>
         <li>
-          Automated kernel building pipelines with <span class="font-bold">Python</span> and <span class="font-bold">bash</span> with flexible configuration.
+          Retooled <strong>Vite</strong> build system to fix long-standing bugs,
+          and added plugins for better developer experience.
         </li>
         <li>
-          Packaged product in minimal dependency <span class="font-bold">Docker</span> containers for kernel building and debugging.
-        </li>
-        <li>
-          Contributed to daily stand up meetings, sprint planning and
-          retrospectives, as well as code reviews following an <span class="font-bold">Agile</span>
-          development process.
+          Thoroughly component tested with <strong>Vitest</strong>, and
+          end-to-end tested with <strong>Playwright</strong>.
         </li>
       </ul>
     </div>
     <div>
       <h2 class="flex justify-between">
-        <span>
-          <span class="header">INSIGMA IT Engineering GmbH</span>
-        </span>
+        <span class="header">Kudu Dynamics LLC</span>
+        <span>June 2023 - August 2023</span>
+      </h2>
+      <h2 class="flex justify-between">
+        <em>Software Engineering Intern</em>
+        <span>Columbus, Ohio</span>
+      </h2>
+      <ul class="ml-8 list-disc">
+        <li>
+          Developed VSCode extension in <strong>TypeScript</strong> to assist in
+          <strong>Linux kernel</strong> bug triaging process for a DARPA (U.S. Department
+          of Defense research agency) effort.
+        </li>
+        <li>
+          Automated kernel building pipelines with <strong>Python</strong> and <strong
+            >bash</strong
+          > with flexible configuration, packaged in minimal dependency <strong
+            >Docker</strong
+          > containers.
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="flex justify-between">
+        <span class="header">INSIGMA IT Engineering GmbH</span>
         <span>June 2021 - August 2021</span>
       </h2>
       <h2 class="flex justify-between">
-        <span class="italic">Software Engineering Intern</span>
+        <em>Software Engineering Intern</em>
         <span>Remote</span>
       </h2>
       <ul class="ml-8 list-disc">
         <li>
-          Developed contracting company's internal management dashboard in <span
-            class="font-bold">C# ASP.NET</span
-          >, with <span class="font-bold">TypeScript</span> and <span
-            class="font-bold">CSS</span
-          > on the client.
+          Developed contracting company's internal dashboard in <strong
+            >C# ASP.NET</strong
+          >, with <strong>TypeScript</strong> and <strong>CSS</strong> on the client.
         </li>
         <li>
-          <span class="font-bold">Engaged with customers</span> to refine the requirements
-          and deliver a product that met their needs.
+          <strong>Engaged with customers</strong> to refine the requirements and
+          deliver a product that met their needs.
         </li>
         <li>
           Communicated entirely in German in a diverse remote environment based
@@ -112,13 +127,11 @@ const title = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}
   <div class="wrapper flex flex-col gap-2">
     <div>
       <h2 class="flex justify-between">
-        <span>
-          <span class="header">Ohio State Cybersecurity Club</span>
-        </span>
+        <span class="header">Ohio State Cybersecurity Club</span>
         <span>January 2023 - Present</span>
       </h2>
       <h2 class="flex justify-between">
-        <span class="italic">President</span>
+        <em>President</em>
       </h2>
       <ul class="ml-8 list-disc">
         <li>
@@ -126,13 +139,13 @@ const title = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}
           network with industry professionals.
         </li>
         <li>
-          Host BuckeyeCTF yearly, a competition where last year hosted <span
-            class="font-bold">over 600 teams worldwide</span
+          Host BuckeyeCTF yearly, a competition where last year hosted <strong
+            >over 600 teams worldwide</strong
           > online, and over 90 in person players. Solved technical issues and kept
-          <span class="font-bold">99.9% uptime on over 40 services</span> on <span
-            class="font-bold">AWS</span
-          > using <span class="font-bold">Terraform</span>. Coordinated with <span
-            class="font-bold">7 sponsoring companies</span
+          <strong>99.9% uptime on over 40 services</strong> on <strong
+            >AWS</strong
+          > using <strong>Terraform</strong>. Coordinated with <strong
+            >7 sponsoring companies</strong
           > to provide funding and prizes.
         </li>
       </ul>
@@ -143,59 +156,39 @@ const title = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}
   <hr class="separator" />
   <div class="grid grid-cols-[max-content_1fr] gap-x-4">
     <h2>Programming Languages:</h2>
-    <p class="font-bold">
-      C#, Rust, Go, Java, C++, C, Python, TypeScript, JavaScript, HTML, CSS
-    </p>
+    <strong>TypeScript, JavaScript, Rust, C, Go, C#, Python, HTML, CSS</strong>
     <h2>Frameworks & Libraries:</h2>
-    <p class="font-bold">
-      Node.js, Tokio, ASP.NET, SvelteKit, Next.js, React.js
-    </p>
+    <strong>Node.js, Vue.js, Vitest, Playwright, Svelte, TailwindCSS</strong>
     <h2>Tools & infrastructure:</h2>
-    <p class="font-bold">AWS, Docker, Git, Kubernetes, Terraform, Linux</p>
+    <strong>AWS, Docker, Git, Kubernetes, Terraform, Linux</strong>
   </div>
 
-  <h1 class="title">Projects</h1>
+  <h1 class="title">Personal Projects</h1>
   <hr class="separator" />
   <div class="wrapper flex flex-col gap-2">
     <div class="project">
       <h2 class="flex justify-between">
-        <span class="header">Canvas CLI</span>
-        <a class="font-mono" href="https://github.com/mbund/canvas-cli">
-          github.com/mbund/canvas-cli
-        </a>
+        <span class="header">Cybersecurity Training Platform</span>
+        <a class="font-mono" href="https://rhombus.gg">rhombus.gg</a>
       </h2>
       <ul class="ml-8 list-disc">
         <li>
-          Interactive command line interface tool for automating common tasks as a student
-          in OSU's learning management system using official <span class="font-bold">REST</span> APIs
+          Easy to deploy Jeopardy style online competition platform for hosting
+          CTF (capture the flag) events, written in <strong>Rust</strong> and <strong
+            >SQL</strong
+          > on backend, and styled with <strong>TailwindCSS</strong>. Capable of
+          serving <strong>tens of thousands of requests per second</strong>.
         </li>
         <li>
-          Compatibile with any institution's Canvas LMS instance. Cross platform single
-          binary made with <span class="font-bold">Rust</span>.
+          Integrated with many technologies like file uploads to <strong
+            >AWS S3</strong
+          >, <strong>email sending and receiving</strong>, and <strong
+            >OAuth2</strong
+          > sign in.
         </li>
       </ul>
     </div>
-    <div class="project">
-      <h2 class="flex justify-between">
-        <span class="header">OSU Authentication Provider</span>
-        <span class="font-mono">WIP</span>
-      </h2>
-      <ul class="ml-8 list-disc">
-        <li>
-          Built an easy to use <span class="font-bold">authentication provider</span> to
-          allow OSU students to have a "Sign in with OSU" option during hackathons and for
-          general student organization usage using <span class="font-bold">OAuth2</span>.
-        </li>
-        <li>
-          Integrated strong <span class="font-bold">access control</span> policies to allow
-          students to revoke authorized apps and restrict information scopes.
-        </li>
-        <li>
-          Fast <span class="font-bold">Jamstack</span> app with <span class="font-bold">Go</span> backend
-          and statically rendered <span class="font-bold">Svelte</span> frontend.
-        </li>
-      </ul>
-    </div>
+
     <div class="project">
       <h2 class="flex justify-between">
         <span class="header">Running Servers at Home</span>
@@ -205,15 +198,90 @@ const title = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}
       </h2>
       <ul class="ml-8 list-disc">
         <li>
-          Recycled old hardware into personal servers using <span
-            class="font-bold">Kubernetes</span
+          Recycled old hardware into personal servers using <strong
+            >Kubernetes</strong
           > to breathe new life into them hosting popular service such as Bitwarden,
-          Nextcloud, monitored with <span class="font-bold">Prometheus</span> and
-          <span class="font-bold">Grafana</span>.
+          Nextcloud, monitored with <strong>Prometheus</strong> and
+          <strong>Grafana</strong>.
         </li>
         <li>
-          Practiced backup and <span class="font-bold">disaster recovery</span> with
-          automated offsite cloud backups to keep important data safe.
+          Practiced backup and <strong>disaster recovery</strong> with automated
+          offsite cloud backups to keep important data safe.
+        </li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <h2 class="flex justify-between">
+        <span class="header">Technical Blog</span>
+        <a class="font-mono" href="https://mbund.dev">mbund.dev</a>
+      </h2>
+      <ul class="ml-8 list-disc">
+        <li>
+          Personal technical blog where I write in depth about my ideas,
+          experiences, and projects.
+        </li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <h2 class="flex justify-between">
+        <span class="header">Service Health Check Language</span>
+        <a class="font-mono" href="https://github.com/rhombusgg/healthscript">
+          github.com/rhombusgg/healthscript
+        </a>
+      </h2>
+      <ul class="ml-8 list-disc">
+        <li>
+          Concise <strong>DSL (domain specific language)</strong> for writing health
+          checks for services, written in <strong>Rust</strong> using parser combinators.
+        </li>
+        <li>
+          Hosted service available to run scripts in the language and provide
+          "healthy" or "unhealthy" badges as status.
+        </li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <h2 class="flex justify-between">
+        <span class="header">Canvas CLI</span>
+        <a class="font-mono" href="https://github.com/mbund/canvas-cli">
+          github.com/mbund/canvas-cli
+        </a>
+      </h2>
+      <ul class="ml-8 list-disc">
+        <li>
+          Interactive command line interface tool for automating common tasks as
+          a student in OSU's learning management system using official <strong
+            >REST</strong
+          > APIs
+        </li>
+        <li>
+          Compatibile with any institution's Canvas LMS instance. Cross platform
+          single binary made with <strong>Rust</strong>.
+        </li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <h2 class="flex justify-between">
+        <span class="header">OSU Authentication Provider</span>
+        <span class="font-mono">WIP</span>
+      </h2>
+      <ul class="ml-8 list-disc">
+        <li>
+          Built an easy to use <strong>authentication provider</strong> to allow
+          OSU students to have a "Sign in with OSU" option during hackathons and
+          student organization usage using <strong>OAuth2</strong>.
+        </li>
+        <li>
+          Integrated strong <strong>access control</strong> policies to allow students
+          to revoke authorized apps and restrict information scopes.
+        </li>
+        <li>
+          Fast <strong>Jamstack</strong> app with <strong>Go</strong> backend and
+          statically rendered <strong>Svelte</strong> frontend.
         </li>
       </ul>
     </div>

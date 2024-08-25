@@ -10,7 +10,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "print": "chromium --headless --disable-gpu --print-to-pdf=resume-full.pdf --no-margins http://localhost:4321",
+    "print": "chromium --headless --disable-gpu --print-to-pdf=resume-full.pdf --no-margins http://localhost:4321/backend",
     "watch-print": "onchange 'src/**/*.astro' 'resume.json' -- pnpm run print 2> /dev/null",
     "truncate": "pdftk resume-full.pdf cat 1 output resume.pdf",
     "watch-truncate": "onchange 'resume-full.pdf' -- pnpm run truncate 2> /dev/null"

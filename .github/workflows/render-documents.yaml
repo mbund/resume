@@ -40,7 +40,7 @@ jobs:
         run: |
           pnpm preview &
           sleep 10
-          chromium --headless --disable-gpu --print-to-pdf=mark-bundschuh-resume-full.pdf --no-margins http://localhost:4321
+          chromium --headless --disable-gpu --print-to-pdf=mark-bundschuh-resume-full.pdf --no-margins http://localhost:4321/backend
           pdftk mark-bundschuh-resume-full.pdf cat 1 output mark-bundschuh-resume.pdf
           kill %1
           cp mark-bundschuh-resume.pdf $(date --iso-8601)-mark-bundschuh-resume.pdf
